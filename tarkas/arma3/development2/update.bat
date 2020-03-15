@@ -1,6 +1,6 @@
 @echo off
 cls
-set PATH=%SCRIPTS_BASE_PATH%\arma3\development1
+set PATH=%SCRIPTS_BASE_PATH%\arma3\development2
 cd %PATH%
 
 call config.bat
