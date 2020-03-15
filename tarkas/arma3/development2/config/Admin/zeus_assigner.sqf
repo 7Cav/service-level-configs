@@ -10,7 +10,7 @@ WhiteList:
 ----------
 */
 
-ACV_ZeusWhiteList = [
+ZeusWhiteList = [
 
 "76561197976646388", //	(General) Baeder.S
 "76561198102939824", //	(S3 NCOIC) Geki.T
@@ -65,7 +65,7 @@ sleep 5;
 	while {true} do {
 		if (isNil "zeusman1") then {zeusman1 = objNull};
 		_uid = getPlayerUID zeusman1;
-		if (_uid in ACV_ZeusWhiteList) then {
+		if (_uid in ZeusWhiteList) then {
 			if (getAssignedCuratorUnit zeusmodule1 != zeusman1) then {
 				zeusman1 assignCurator zeusmodule1;
 			};
@@ -88,7 +88,7 @@ sleep 5;
 	while {true} do {
 		if (isNil "zeusman2") then {zeusman2 = objNull};
 		_uid = getPlayerUID zeusman2;
-		if (_uid in ACV_ZeusWhiteList) then {
+		if (_uid in ZeusWhiteList) then {
 			if (getAssignedCuratorUnit zeusmodule2 != zeusman2) then {
 				zeusman2 assignCurator zeusmodule2;
 			};
@@ -111,7 +111,7 @@ sleep 5;
 	while {true} do {
 		if (isNil "zeusman3") then {zeusman3 = objNull};
 		_uid = getPlayerUID zeusman3;
-		if (_uid in ACV_ZeusWhiteList) then {
+		if (_uid in ZeusWhiteList) then {
 			if (getAssignedCuratorUnit zeusmodule3 != zeusman3) then {
 				zeusman3 assignCurator zeusmodule3;
 			};
@@ -133,7 +133,7 @@ sleep 5;
 	while {true} do {
 		if (isNil "zeusman4") then {zeusman4 = objNull};
 		_uid = getPlayerUID zeusman4;
-		if (_uid in ACV_ZeusWhiteList) then {
+		if (_uid in ZeusWhiteList) then {
 			if (getAssignedCuratorUnit zeusmodule4 != zeusman4) then {
 				zeusman4 assignCurator zeusmodule4;
 			};
