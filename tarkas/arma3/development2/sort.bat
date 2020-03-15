@@ -28,7 +28,7 @@ robocopy "%STEAM_BASE_PATH%\steamapps\workshop\content\107410\773131200" "%ARMA_
 robocopy "%STEAM_BASE_PATH%\steamapps\workshop\content\107410\884966711" "%ARMA_BASE_PATH%\@ACE_GREF" /mir
 robocopy "%STEAM_BASE_PATH%\steamapps\workshop\content\107410\820924072" "%ARMA_BASE_PATH%\@BPK_CST" /mir
 robocopy "%STEAM_BASE_PATH%\steamapps\workshop\content\107410\1891343103" "%ARMA_BASE_PATH%\@USAF_FIGHTER" /mir
-robocopy "%STEAM_BASE_PATH%\steamapps\workshop\content\107410\1891349162" %ARMA_BASE_PATH%\@USAF_UTIL" /mir
+robocopy "%STEAM_BASE_PATH%\steamapps\workshop\content\107410\1891349162" "%ARMA_BASE_PATH%\@USAF_UTIL" /mir
 robocopy "%STEAM_BASE_PATH%\steamapps\workshop\content\107410\721359761" "%ARMA_BASE_PATH%\@VCOM_AI" /mir
 robocopy "%STEAM_BASE_PATH%\steamapps\workshop\content\107410\620260972" "%ARMA_BASE_PATH%\@ALIVE" /mir
 robocopy "%STEAM_BASE_PATH%\steamapps\workshop\content\107410\723217262" "%ARMA_BASE_PATH%\@ACHILLES" /mir
@@ -73,19 +73,19 @@ robocopy "%ARMA_BASE_PATH%\@ACHILLES\keys"		%ARMA_BASE_PATH%\keys *.bikey
 
 REM Optional Mods
 ECHO [INFO] Copying optional mod keys to \keys directory...
-robocopy "%ARMA_BASE_PATH%\JSRS\keys"                    %ARMA_BASE_PATH%\keys *.bikey
+robocopy "%ARMA_BASE_PATH%\@JSRS\keys"                    %ARMA_BASE_PATH%\keys *.bikey
 
 REM B3 checks all new connections to the server, but when someone is unbanned in B3 it doesn't remove them from Arma 3's bans file.
 REM So we first delete this file, people that are banned in B3 will be re-added when the first try to connect.
 ECHO [INFO] Removing old bans
-del /F /Q %SCRIPTS_BASE_PATH%\arma3\development1\config\BattlEye\bans.txt
+del /F /Q %SCRIPTS_BASE_PATH%\arma3\development2\config\BattlEye\bans.txt
 
 ECHO [INFO] Removing old Zeus Script
-del /F /Q %ARMA_BASE_PATH%\config\serverscripts\zeusserverscripts\tac2_zeus_guids.sqf
+del /F /Q %ARMA_BASE_PATH%\serverscripts\zeusserverscripts\tac2_zeus_guids.sqf
 
 REM Move files from admin to zeusserverscripts.
-ECHO [INFO] copying files from arma3\development1\config\admin to \zeusserverscripts
-robocopy "%SCRIPTS_BASE_PATH%\arma3\development1\config\Admin"    		%ARMA_BASE_PATH%\serverscripts\zeusserverscripts
+ECHO [INFO] copying files from arma3\development2\config\admin to %ARMA_BASE_PATH%\zeusserverscripts
+robocopy "%SCRIPTS_BASE_PATH%\arma3\development2\config\Admin"    		%ARMA_BASE_PATH%\serverscripts\zeusserverscripts
 
 REM End of File
 ECHO [INFO] Finished Sorting files.
