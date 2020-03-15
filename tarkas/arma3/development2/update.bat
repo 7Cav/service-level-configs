@@ -1,7 +1,7 @@
 @echo off
 cls
-set PATH=%SCRIPTS_BASE_PATH%\arma3\development2
-cd %PATH%
+set SERVER_PATH=%SCRIPTS_BASE_PATH%\arma3\development2
+cd %SERVER_PATH%
 
 call config.bat
 
@@ -32,15 +32,15 @@ ECHO **********
 
 ECHO [INFO] Starting sort.bat...
 REM Call script to start moving keys and mods into correct directories
-cd %PATH%
+cd %SERVER_PATH%
 call sort.bat
 
 ECHO [INFO] Inserting sensitive values...
-call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%PATH%\config\BattleEye\beserver_x64.cfg" "RCON_PASSWORD" %RCON_PASSWORD%
-call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%PATH%\config\BattleEye\beserver_x64.cfg" "RCON_PORT" %RCON_PORT%
-call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%PATH%\config\Admin\secretKey.sqf" "CIPHER_SECRET_KEY" %CIPHER_SECRET_KEY%
-call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%PATH%\config\server.cfg" "INGAME_PASSWORD" %INGAME_PASSWORD%
-call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%PATH%\config\server.cfg" "INGAME_ADMIN_PASSWORD" %INGAME_ADMIN_PASSWORD%
+call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%SERVER_PATH%\config\BattlEye\beserver_x64.cfg" "RCON_PASSWORD" %RCON_PASSWORD%
+call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%SERVER_PATH%\config\BattlEye\beserver_x64.cfg" "RCON_PORT" %RCON_PORT%
+call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%SERVER_PATH%\config\Admin\secretKey.sqf" "CIPHER_SECRET_KEY" %CIPHER_SECRET_KEY%
+call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%SERVER_PATH%\config\server.cfg" "INGAME_PASSWORD" %INGAME_PASSWORD%
+call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%SERVER_PATH%\config\server.cfg" "INGAME_ADMIN_PASSWORD" %INGAME_ADMIN_PASSWORD%
 
 :EF
 ECHO [INFO] Updater has finished.
