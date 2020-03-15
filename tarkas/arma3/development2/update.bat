@@ -24,7 +24,7 @@ ECHO **********
 :WorkshopLoader
 ECHO [INFO] Validating and Updating Arma 3 Installation...
 REM %STEAM_BASE_PATH%\steamcmd.exe +login %STEAM_USERNAME% %STEAM_PASSWORD% +force_install_dir D:\gameservers\arma3\development1 +app_update 233780 -beta profiling -betapassword CautionSpecialProfilingAndTestingBranchArma3 validate +quit
-%STEAM_BASE_PATH%\steamcmd.exe +login STEAM_USERNAME %STEAM_PASSWORD% +force_install_dir D:\gameservers\arma3\development1 +app_update 233780 validate +quit
+%STEAM_BASE_PATH%\steamcmd.exe +login %STEAM_USERNAME% %STEAM_PASSWORD% +force_install_dir %ARMA_BASE_PATH% +app_update 233780 validate +quit
 REM Timestamp
 ECHO **********
 time /t
@@ -36,11 +36,11 @@ cd %PATH%
 call sort.bat
 
 ECHO [INFO] Inserting sensitive values...
-call "%SCRIPTS_BASE_PATH%\utilities\replace.bat" "%PATH%\config\BattleEye\beserver_x64.cfg" "RCON_PASSWORD" %RCON_PASSWORD%
-call "%SCRIPTS_BASE_PATH%\utilities\replace.bat" "%PATH%\config\BattleEye\beserver_x64.cfg" "RCON_PORT" %RCON_PORT%
-call "%SCRIPTS_BASE_PATH%\utilities\replace.bat" "%PATH%\config\Admin\secretKey.sqf" "CIPHER_SECRET_KEY" %CIPHER_SECRET_KEY%
-call "%SCRIPTS_BASE_PATH%\utilities\replace.bat" "%PATH%\config\server.cfg" "INGAME_PASSWORD" %INGAME_PASSWORD%
-call "%SCRIPTS_BASE_PATH%\utilities\replace.bat" "%PATH%\config\server.cfg" "INGAME_ADMIN_PASSWORD" %INGAME_ADMIN_PASSWORD%
+call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%PATH%\config\BattleEye\beserver_x64.cfg" "RCON_PASSWORD" %RCON_PASSWORD%
+call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%PATH%\config\BattleEye\beserver_x64.cfg" "RCON_PORT" %RCON_PORT%
+call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%PATH%\config\Admin\secretKey.sqf" "CIPHER_SECRET_KEY" %CIPHER_SECRET_KEY%
+call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%PATH%\config\server.cfg" "INGAME_PASSWORD" %INGAME_PASSWORD%
+call %SCRIPTS_BASE_PATH%\utilities\replace.bat "%PATH%\config\server.cfg" "INGAME_ADMIN_PASSWORD" %INGAME_ADMIN_PASSWORD%
 
 :EF
 ECHO [INFO] Updater has finished.
