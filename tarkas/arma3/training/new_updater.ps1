@@ -1,7 +1,7 @@
 #Instance Configuration
 $instanceName = "Arma3Training1" #Firedaemon shortname
 $serverName = "training" #name of folder for arma 3 installation
-$modListJson = "D:\scripts\arma\training.json" #path to mod list json
+$modListJson = "D:\scripts\arma\training\training.json" #path to mod list json
 $configDir = "D:\config\" #path to config directory
 #Do not edit below this line
 $steamCMDdir = "D:\steam\steamcmd.exe" #path to steamcmd executable
