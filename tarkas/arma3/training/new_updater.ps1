@@ -1,14 +1,19 @@
 #Instance Configuration
-$instanceName = "Arma3Training1" #Firedaemon shortname
-$serverName = "training" #name of folder for arma 3 installation
-$modListJson = "D:\scripts\arma\training\training.json" #path to mod list json
-$configDir = "D:\config\" #path to config directory
-$steamCMDdir = "D:\steam\steamcmd.exe" #path to steamcmd executable
-$installDirWorkshop = "D:\steam\steamapps\workshop\content\107410" #path to workshop directory
-$installDir = "D:\gameservers\"+$serverName
+$config = "D:\config\arma\training.json"
+#
+$configJson = Get-Content -Raw -Path $config | ConvertFrom-Json
+$instanceId = $configJson.server.env.SERVER_ID
+$serverName = $configJson.server.env.SERVER_NAME
+$modListJson = $configJson.mods
+$configDir = $configJson.server.env.ARMA_CONFIG_PATH
+$steamCMDdir = $configJson.server.env.STEAM_BASE_PATH
+$installDirWorkshop = $configJson.server.env.STEAM_WORKSHOP_PATH
+$installDir = $configJson.server.env.ARMA_BASE_PATH
 $installDirArmadirectory = $installDir
-$steamUser = $Env:STEAM_USER #Env var for steam user name
-$steamPass = $Env:STEAM_PASS #Env var for steam password
+$steamUser = $configJson.server.env.STEAM_USERNAME
+$steamPass = $configJson.server.env.STEAM_PASSWORD
+#
+$configDir = "$configDir\$serverName"
 
 Write-Output "Update has started: $(Get-Date)"
 
@@ -17,10 +22,8 @@ Write-Output "Update has started: $(Get-Date)"
 
 #login to steamcmd using env variables
 $argumentListArray = "+login $steamUser $steamPass +force_install_dir "+$installDir+" "
-#Create powershell array from the mod list json file
-$json = Get-Content -Raw -Path $modListJson | ConvertFrom-Json
 #download each item in steamcmd using the app id in the mod list array
-foreach($item in $json) 
+foreach($item in $modListJson) 
 {
 	$id = $item.app
 	$argumentListArray += "+workshop_download_item 107410 $id "
@@ -32,7 +35,7 @@ Write-Output $argumentListArray
 Start-Process -FilePath $steamCMDdir -ArgumentList $argumentListArray -NoNewWindow -Wait
 Write-Output Start-Process -FilePath $steamCMDdir -ArgumentList $argumentListArray -NoNewWindow -Wait
 #copying keys
-foreach($item in $json.mods) 
+foreach($item in $modListJson) 
 {
    $id = $item.app
    $name = $item.name
