@@ -1,5 +1,5 @@
 #Instance Configuration
-$config = "D:\config\arma\training.json"
+$config = "D:\config\arma\training1.json"
 #
 $configJson = Get-Content -Raw -Path $config | ConvertFrom-Json
 $instanceId = $configJson.server.env.SERVER_ID
@@ -67,7 +67,7 @@ Remove-Item $configDir+\training4\*.log
 Write-Output Remove-Item $configDir+\training4\*.rpt 
 Write-Output Remove-Item $configDir+\training4\*.log
 
-Write-Output "Update has finished: $(Get-Date)"
+Write-Output "Update has finished: $(Get-Date) for $serverName"
 
 #Start Firedaemon Service
 #net start $instanceName
