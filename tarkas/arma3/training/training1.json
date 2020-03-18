@@ -58,76 +58,8 @@
         },
         "mods": [
             {
-                "app": "333310405",
-                "name": "@ENH_MOVE"
-            },
-            {
-                "app": "450814997",
-                "name": "@CBA_A3"
-            },
-            {
-                "app": "843577117",
-                "name": "@RHS_USAF"
-            },
-            {
-                "app": "508476583",
-                "name": "@TF47"
-            },
-            {
-                "app": "843425103",
-                "name": "@RHS_AFRF"
-            },
-            {
-                "app": "1891346714",
-                "name": "@USAF_MAIN"
-            },
-            {
                 "app": "463939057",
                 "name": "@ACE"
-            },
-            {
-                "app": "583496184",
-                "name": "@CUP_CORE"
-            },
-            {
-                "app": "583544987",
-                "name": "@CUP_MAPS"
-            },
-            {
-                "app": "843593391",
-                "name": "@RHS_GREF"
-            },
-            {
-                "app": "735566597",
-                "name": "@PRJ_OPF"
-            },
-            {
-                "app": "1537973181",
-                "name": "@ANIZAY"
-            },
-            {
-                "app": "1452435838",
-                "name": "@ESSEKER_FIXED"
-            },
-            {
-                "app": "1368857262",
-                "name": "@RUHA"
-            },
-            {
-                "app": "1128256978",
-                "name": "@CHER_REDUX"
-            },
-            {
-                "app": "1696706969",
-                "name": "@7CAV_CBA"
-            },
-            {
-                "app": "1696706969",
-                "name": "@7CAV_CBA"
-            },
-            {
-                "app": "498740884",
-                "name": "@SHK_UI"
             },
             {
                 "app": "708250744",
@@ -136,6 +68,14 @@
             {
                 "app": "751965892",
                 "name": "@ACRE"
+            },
+            {
+                "app": "843577117",
+                "name": "@RHS_USAF"
+            },
+            {
+                "app": "843593391",
+                "name": "@RHS_GREF"
             },
             {
                 "app": "773125288",
@@ -150,8 +90,8 @@
                 "name": "@ACE_GREF"
             },
             {
-                "app": "820924072",
-                "name": "@BPK_CST"
+                "app": "1891346714",
+                "name": "@USAF_MAIN"
             },
             {
                 "app": "1891343103",
@@ -160,6 +100,60 @@
             {
                 "app": "1891349162",
                 "name": "@USAF_UTIL"
+            },
+            {
+                "app": "735566597",
+                "name": "@PRJ_OPF"
+            },
+            {
+                "app": "508476583",
+                "name": "@TF47"
+            },
+            {
+                "app": "1696706969",
+                "name": "@7CAV_CBA"
+            },
+            {
+                "app": "583496184",
+                "name": "@CUP_CORE"
+            },
+            {
+                "app": "583544987",
+                "name": "@CUP_MAPS"
+            },
+            {
+                "app": "1537973181",
+                "name": "@ANIZAY"
+            },
+            {
+                "app": "1368857262",
+                "name": "@RUHA"
+            },
+            {
+                "app": "1452435838",
+                "name": "@ESSEKER_FIXED"
+            },
+            {
+                "app": "1128256978",
+                "name": "@CHER_REDUX"
+            },
+            {
+                "app": "820924072",
+                "name": "@BPK_CST"
+            },
+            {
+                "app": "333310405",
+                "name": "@ENH_MOVE"
+            },
+            {
+                "app": "498740884",
+                "name": "@SHK_UI"
+            }
+        ],
+        "servermods": [
+            {
+                "app": "723217262",
+                "name": "@ACHILLES"
             },
             {
                 "app": "721359761",
