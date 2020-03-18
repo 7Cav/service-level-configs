@@ -1,9 +1,9 @@
 @echo off
 Setlocal
 REM ~~~~~~~~~~~~~~~~~~ HANDLE UNLOCK ~~~~~~~~~~~~~~~~~~
-REM |     Author: Sweetwater.I
-REM |     Created on March 18, 2020
-REM |     7thCavalry.us
+REM      Author: Sweetwater.I
+REM      Created on March 18, 2020
+REM      7thCavalry.us
 REM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ECHO --------------------------------------------------
