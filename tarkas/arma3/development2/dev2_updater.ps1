@@ -80,10 +80,10 @@ foreach($item in $localModListJson)
 #
 
 #Removing logs after update
-Remove-Item $configDir\*.rpt 
-Remove-Item $configDir\*.log 
-Write-Output Remove-Item $configDir\*.rpt 
-Write-Output Remove-Item $configDir\*.log 
+#Remove-Item $configDir\*.rpt 
+#Remove-Item $configDir\*.log 
+#Write-Output Remove-Item $configDir\*.rpt 
+#Write-Output Remove-Item $configDir\*.log 
 
 Write-Output "Update has finished: $(Get-Date) for $serverName"
 
