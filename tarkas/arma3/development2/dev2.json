@@ -110,10 +110,6 @@
                 "name": "@PRJ_OPF"
             },
             {
-                "app": "508476583",
-                "name": "@TF47"
-            },
-            {
                 "app": "1696706969",
                 "name": "@7CAV_CBA"
             },
@@ -124,22 +120,6 @@
             {
                 "app": "583544987",
                 "name": "@CUP_MAPS"
-            },
-            {
-                "app": "1537973181",
-                "name": "@ANIZAY"
-            },
-            {
-                "app": "1368857262",
-                "name": "@RUHA"
-            },
-            {
-                "app": "1452435838",
-                "name": "@ESSEKER_FIXED"
-            },
-            {
-                "app": "1128256978",
-                "name": "@CHER_REDUX"
             },
             {
                 "app": "820924072",
@@ -159,10 +139,6 @@
                 "app": "723217262",
                 "name": "@ACHILLES"
             },
-            {
-                "app": "721359761",
-                "name": "@VCOM_AI"
-            }
         ],
         "localmods": [
             {
