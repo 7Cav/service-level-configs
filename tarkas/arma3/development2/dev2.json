@@ -1,0 +1,175 @@
+{
+    "server": {
+        "env": {
+            "SERVER_ID": "Arma3Dev2",
+            "SERVER_NAME": "development2",
+            "STEAM_USERNAME": "",
+            "STEAM_PASSWORD": "",
+            "STEAM_BASE_PATH": "D:\\steam\\",
+            "STEAM_WORKSHOP_PATH": "D:\\steam\\steamapps\\workshop\\content\\107410",
+            "SCRIPTS_REL_PATH": "\\serverscripts",
+            "ARMA_CONFIG_PATH": "D:\\config",
+            "LOCAL_MOD_PATH": "D:\\gameservers\\arma\\localmods",
+            "ARMA_BASE_PATH": "D:\\gameservers\\arma\\development",
+            "RCON_PASSOWRD": "",
+            "RCON_PORT": "",
+            "INGAME_PASSWORD": "",
+            "INGAME_ADMIN_PASSWORD": "",
+            "ZEUS_SECRET_KEY": ""
+            },
+        "cfg": {
+            "Max_Bandwidth": "",
+            "Min_Bandwidth": "",
+            "Max_Send": "",
+            "Max_Size": "",
+            "Max_Size_Non": "",
+            "Max_Custom": "",
+            "Error_Near": ""
+            },
+        "arma": {
+            "hostname": "=7Cav=ARMA3 Development 2 [US]",
+            "headless": "\"127.0.0.1\",\"142.44.143.136\"",
+            "localclient": "\"127.0.0.1\",\"142.44.143.136\"",
+            "filepatching": "0",
+            "battleye": "",
+            "verifysig": "",
+            "logfile": "",
+            "motd": "",
+            "motdint": "",
+            "maxplayers": "",
+            "automission": "",
+            "missionclass": "",
+            "difficulty": "",
+            "whitelist": "",
+            "votemissions": "1",
+            "votethreshold": "2",
+            "lobbyidle": "3000",
+            "disablevon": "1",
+            "vonquality": "8",
+            "persistent": "0",
+            "kickdupe": "1",
+            "equalmodreq": "0",
+            "reqsecureid": "2",
+            "timestampfmt": "\"short\"",
+            "onuserconnect": "",
+            "onuserdisconnect": "",
+            "doubleid": ""
+            }
+        },
+        "mods": [
+            {
+                "app": "463939057",
+                "name": "@ACE"
+            },
+            {
+                "app": "708250744",
+                "name": "@ACEX"
+            },
+            {
+                "app": "751965892",
+                "name": "@ACRE"
+            },
+            {
+                "app": "620260972",
+                "name": "@ALIVE"
+            }
+            {
+                "app": "843577117",
+                "name": "@RHS_USAF"
+            },
+            {
+                "app": "843593391",
+                "name": "@RHS_GREF"
+            },
+            {
+                "app": "773125288",
+                "name": "@ACE_USAF"
+            },
+            {
+                "app": "773131200",
+                "name": "@ACE_AFRF"
+            },
+            {
+                "app": "884966711",
+                "name": "@ACE_GREF"
+            },
+            {
+                "app": "1891346714",
+                "name": "@USAF_MAIN"
+            },
+            {
+                "app": "1891343103",
+                "name": "@USAF_FIGHTER"
+            },
+            {
+                "app": "1891349162",
+                "name": "@USAF_UTIL"
+            },
+            {
+                "app": "735566597",
+                "name": "@PRJ_OPF"
+            },
+            {
+                "app": "508476583",
+                "name": "@TF47"
+            },
+            {
+                "app": "1696706969",
+                "name": "@7CAV_CBA"
+            },
+            {
+                "app": "583496184",
+                "name": "@CUP_CORE"
+            },
+            {
+                "app": "583544987",
+                "name": "@CUP_MAPS"
+            },
+            {
+                "app": "1537973181",
+                "name": "@ANIZAY"
+            },
+            {
+                "app": "1368857262",
+                "name": "@RUHA"
+            },
+            {
+                "app": "1452435838",
+                "name": "@ESSEKER_FIXED"
+            },
+            {
+                "app": "1128256978",
+                "name": "@CHER_REDUX"
+            },
+            {
+                "app": "820924072",
+                "name": "@BPK_CST"
+            },
+            {
+                "app": "333310405",
+                "name": "@ENH_MOVE"
+            },
+            {
+                "app": "498740884",
+                "name": "@SHK_UI"
+            }
+        ],
+        "servermods": [
+            {
+                "app": "723217262",
+                "name": "@ACHILLES"
+            },
+            {
+                "app": "721359761",
+                "name": "@VCOM_AI"
+            }
+        ],
+        "localmods": [
+            {
+                "name": "@ASP"
+            },
+            {
+                "name": "@intercept"
+            }
+        ]
+}
