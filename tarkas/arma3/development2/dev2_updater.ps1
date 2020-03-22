@@ -1,5 +1,5 @@
 #Instance Configuration Development 2 Server
-$config = "D:\config\arma3\dev2.json"
+$config = "D:\config\development2\dev2.json"
 #
 $configJson = Get-Content -Raw -Path $config | ConvertFrom-Json
 $instanceId = $configJson.server.env.SERVER_ID
@@ -10,8 +10,8 @@ $localModListJson = $configJson.localmods
 $configDir = $configJson.server.env.ARMA_CONFIG_PATH
 $steamCMDdir = $configJson.server.env.STEAM_BASE_PATH
 $installDirWorkshop = $configJson.server.env.STEAM_WORKSHOP_PATH
-$installDir = $configJson.server.env.ARMA_BASE_PATH
-$installDirArmadirectory = $installDir
+$installDir = $configJson.server.env.STEAM_BASE_PATH
+$installDirArmadirectory = $configJson.server.env.ARMA_BASE_PATH
 $localModDir = $configJson.server.env.LOCAL_MOD_PATH
 # This is populated by system environment for development servers.
 # $steamUser = $configJson.server.env.STEAM_USERNAME
@@ -21,6 +21,7 @@ $steamUser = $env:STEAM_USER
 $steamPass = $env:STEAM_PASS
 #Add server name from json to config path.
 $configDir = "$configDir\$serverName"
+$steamCMDdir += "steamcmd.exe"
 
 #For purposes of updating no need to have seperate arrays for workshop mods in the script.
 $modListJson = $modListJson += $serverModListJson
