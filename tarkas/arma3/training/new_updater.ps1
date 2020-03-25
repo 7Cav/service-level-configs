@@ -53,6 +53,7 @@ foreach($item in $modListJson)
 # Symlink isnt going to work for our needs
 #   New-Item -Path $installDirArmadirectory\$name -ItemType SymbolicLink -Value $installDirWorkshop\$id
 
+   robocopy $installDirWorkshop\$id "$installDirArmadirectory\$name" /mir
 }
 
 #local mod retreival
@@ -67,27 +68,32 @@ foreach($item in $localModListJson)
    Write-Output copy-item $installDirArmadirectory\$name\keys\*.bikey $installDirArmadirectory\keys\ -force -recurse
    copy-item $installDirArmadirectory\$name\key\*.bikey $installDirArmadirectory\key\ -force -recurse
    Write-Output copy-item $installDirArmadirectory\$name\key\*.bikey $installDirArmadirectory\key\ -force -recurse
+
+   robocopy $path\$name "$installDirArmadirectory\" /mir
 }
 
 #Removing logs after update
-Remove-Item $configDir+\training1\*.rpt 
-Remove-Item $configDir+\training1\*.log 
-Write-Output Remove-Item $configDir+\training1\*.rpt 
-Write-Output Remove-Item $configDir+\training1\*.log 
-Remove-Item $configDir+\training2\*.rpt 
-Remove-Item $configDir+\training2\*.log
-Write-Output Remove-Item $configDir+\training2\*.rpt 
-Write-Output Remove-Item $configDir+\training2\*.log 
-Remove-Item $configDir+\training3\*.rpt 
-Remove-Item $configDir+\training3\*.log 
-Write-Output Remove-Item $configDir+\training3\*.rpt 
-Write-Output Remove-Item $configDir+\training3\*.log 
-Remove-Item $configDir+\training4\*.rpt 
-Remove-Item $configDir+\training4\*.log
-Write-Output Remove-Item $configDir+\training4\*.rpt 
-Write-Output Remove-Item $configDir+\training4\*.log
+#Remove-Item $configDir+\training1\*.rpt 
+#Remove-Item $configDir+\training1\*.log 
+#Write-Output Remove-Item $configDir+\training1\*.rpt 
+#Write-Output Remove-Item $configDir+\training1\*.log 
+#Remove-Item $configDir+\training2\*.rpt 
+#Remove-Item $configDir+\training2\*.log
+#Write-Output Remove-Item $configDir+\training2\*.rpt 
+#Write-Output Remove-Item $configDir+\training2\*.log 
+#Remove-Item $configDir+\training3\*.rpt 
+#Remove-Item $configDir+\training3\*.log 
+#Write-Output Remove-Item $configDir+\training3\*.rpt 
+#Write-Output Remove-Item $configDir+\training3\*.log 
+#Remove-Item $configDir+\training4\*.rpt 
+#Remove-Item $configDir+\training4\*.log
+#Write-Output Remove-Item $configDir+\training4\*.rpt 
+#Write-Output Remove-Item $configDir+\training4\*.log
 
 Write-Output "Update has finished: $(Get-Date) for $serverName"
 
 #Start Firedaemon Service
 #net start $instanceName
+
+#exit the script
+exit
