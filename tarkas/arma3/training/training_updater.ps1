@@ -1,5 +1,5 @@
-#Instance Configuration
-$config = "D:\config\arma\training1.json"
+#Instance Configuration training Server
+$config = "D:\config\training5\training.json"
 #
 $configJson = Get-Content -Raw -Path $config | ConvertFrom-Json
 $instanceId = $configJson.server.env.SERVER_ID
@@ -10,15 +10,20 @@ $localModListJson = $configJson.localmods
 $configDir = $configJson.server.env.ARMA_CONFIG_PATH
 $steamCMDdir = $configJson.server.env.STEAM_BASE_PATH
 $installDirWorkshop = $configJson.server.env.STEAM_WORKSHOP_PATH
-$installDir = $configJson.server.env.ARMA_BASE_PATH
-$installDirArmadirectory = $installDir
+$installDir = $configJson.server.env.STEAM_BASE_PATH
+$installDirArmadirectory = $configJson.server.env.ARMA_BASE_PATH
 $localModDir = $configJson.server.env.LOCAL_MOD_PATH
-$steamUser = $configJson.server.env.STEAM_USERNAME
-$steamPass = $configJson.server.env.STEAM_PASSWORD
-#
+# This is populated by system environment for development servers.
+# $steamUser = $configJson.server.env.STEAM_USERNAME
+# $steamPass = $configJson.server.env.STEAM_PASSWORD
+# Leave this block commented out unless using the json for steam login info.
+$steamUser = $env:STEAM_USER
+$steamPass = $env:STEAM_PASS
+#Add server name from json to config path.
 $configDir = "$configDir\$serverName"
+$steamCMDdir += "steamcmd.exe"
 
-#For purposes of updating no need to have seperate arrays for mods.
+#For purposes of updating no need to have seperate arrays for workshop mods in the script.
 $modListJson = $modListJson += $serverModListJson
 
 Write-Output "Update has started: $(Get-Date)"
@@ -40,7 +45,7 @@ Write-Output $argumentListArray
 
 Start-Process -FilePath $steamCMDdir -ArgumentList $argumentListArray -NoNewWindow -Wait
 Write-Output Start-Process -FilePath $steamCMDdir -ArgumentList $argumentListArray -NoNewWindow -Wait
-#copying keys
+#copying keys and mods to dir from workshop
 foreach($item in $modListJson) 
 {
    $id = $item.app
@@ -50,10 +55,11 @@ foreach($item in $modListJson)
    Write-Output copy-item $installDirWorkshop\$id\keys\*.bikey $installDirArmadirectory\keys\ -force -recurse
    copy-item $installDirWorkshop\$id\key\*.bikey $installDirArmadirectory\keys\ -force -recurse
    Write-Output copy-item $installDirWorkshop\$id\key\*.bikey $installDirArmadirectory\keys\ -force -recurse
-# Symlink isnt going to work for our needs
-#   New-Item -Path $installDirArmadirectory\$name -ItemType SymbolicLink -Value $installDirWorkshop\$id
+
+   New-Item -Path $installDirArmadirectory\$name -ItemType SymbolicLink -Value $installDirWorkshop\$id
 
    robocopy $installDirWorkshop\$id "$installDirArmadirectory\$name" /mir
+   Write-Output robocopy $installDirWorkshop\$id "$installDirArmadirectory\$name" /mir
 }
 
 #local mod retreival
@@ -69,31 +75,23 @@ foreach($item in $localModListJson)
    copy-item $installDirArmadirectory\$name\key\*.bikey $installDirArmadirectory\key\ -force -recurse
    Write-Output copy-item $installDirArmadirectory\$name\key\*.bikey $installDirArmadirectory\key\ -force -recurse
 
-   robocopy $path\$name "$installDirArmadirectory\" /mir
+   robocopy $path\$name "$installDirArmadirectory\$name" /mir
+   Write-Output robocopy $path\$name "$installDirArmadirectory\$name" /mir
 }
 
+# To Do,
+# Add recursive copying of server side scripts
+# Add automatic unlocks for mpmissions for backups and insession updating
+#
+
 #Removing logs after update
-#Remove-Item $configDir+\training1\*.rpt 
-#Remove-Item $configDir+\training1\*.log 
-#Write-Output Remove-Item $configDir+\training1\*.rpt 
-#Write-Output Remove-Item $configDir+\training1\*.log 
-#Remove-Item $configDir+\training2\*.rpt 
-#Remove-Item $configDir+\training2\*.log
-#Write-Output Remove-Item $configDir+\training2\*.rpt 
-#Write-Output Remove-Item $configDir+\training2\*.log 
-#Remove-Item $configDir+\training3\*.rpt 
-#Remove-Item $configDir+\training3\*.log 
-#Write-Output Remove-Item $configDir+\training3\*.rpt 
-#Write-Output Remove-Item $configDir+\training3\*.log 
-#Remove-Item $configDir+\training4\*.rpt 
-#Remove-Item $configDir+\training4\*.log
-#Write-Output Remove-Item $configDir+\training4\*.rpt 
-#Write-Output Remove-Item $configDir+\training4\*.log
+Remove-Item $configDir\*.rpt 
+Remove-Item $configDir\*.log 
+Write-Output Remove-Item $configDir\*.rpt 
+Write-Output Remove-Item $configDir\*.log 
 
 Write-Output "Update has finished: $(Get-Date) for $serverName"
 
 #Start Firedaemon Service
 #net start $instanceName
-
-#exit the script
 exit
