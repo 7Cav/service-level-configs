@@ -1,0 +1,76 @@
+{
+    "server": {
+        "env": {
+            "SERVER_ID": "",
+            "SERVER_NAME": "",
+            "STEAM_USERNAME": "",
+            "STEAM_PASSWORD": "",
+            "STEAM_BASE_PATH": "",
+            "STEAM_WORKSHOP_PATH": "",
+            "SCRIPTS_REL_PATH": "",
+            "ARMA_CONFIG_PATH": "",
+            "LOCAL_MOD_PATH": "",
+            "ARMA_BASE_PATH": "",
+            "RCON_PASSOWRD": "",
+            "RCON_PORT": "",
+            "INGAME_PASSWORD": "",
+            "INGAME_ADMIN_PASSWORD": "",
+            "ZEUS_SECRET_KEY": ""
+            },
+        "cfg": {
+            "Max_Bandwidth": "",
+            "Min_Bandwidth": "",
+            "Max_Send": "",
+            "Max_Size": "",
+            "Max_Size_Non": "",
+            "Max_Custom": "",
+            "Error_Near": ""
+            },
+        "arma": {
+            "hostname": "",
+            "headless": "",
+            "localclient": "",
+            "filepatching": "",
+            "battleye": "",
+            "verifysig": "",
+            "logfile": "",
+            "motd": "",
+            "motdint": "",
+            "maxplayers": "",
+            "automission": "",
+            "missionclass": "",
+            "difficulty": "",
+            "whitelist": "",
+            "votemissions": "",
+            "votethreshold": "",
+            "lobbyidle": "",
+            "disablevon": "",
+            "vonquality": "",
+            "persistent": "",
+            "kickdupe": "",
+            "equalmodreq": "",
+            "reqsecureid": "",
+            "timestampfmt": "",
+            "onuserconnect": "",
+            "onuserdisconnect": "",
+            "doubleid": ""
+            }
+        },
+        "mods": [
+            {
+                "app": "",
+                "name": ""
+            }
+        ],
+        "servermods": [
+            {
+                "app": "",
+                "name": ""
+            }
+        ],
+        "localmods": [
+            {
+                "name": ""
+            }
+        ]
+}
