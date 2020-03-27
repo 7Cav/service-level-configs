@@ -52,16 +52,16 @@ foreach($item in $modListJson)
       New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target $installDirWorkshop\$id
       Write-Output New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target $installDirWorkshop\$id
 
-      copy-item $installDirWorkshop\$id\ke[ys]\*.bikey $installDirArmadirectory\keys\ -force -recurse
-      Write-Output $installDirWorkshop\$id\ke[ys]\*.bikey $installDirArmadirectory\keys\ -force -recurse
+      copy-item $installDirWorkshop\$id\[Kk][eE][yYsS]\*.bikey $installDirArmadirectory\keys\ -force -recurse
+      Write-Output $installDirWorkshop\$id\[Kk][eE][yYsS]\*.bikey $installDirArmadirectory\keys\ -force -recurse
    }
    else
    {
       New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target "$path\$name"
       Write-Output New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target "$path\$name"
 
-      copy-item $installDirArmadirectory\$name\ke[ys]\*.bikey $installDirArmadirectory\keys\ -force -recurse
-      Write-Output copy-item $installDirArmadirectory\$name\ke[ys]\*.bikey $installDirArmadirectory\keys\ -force -recurse
+      copy-item $installDirArmadirectory\$name\[Kk][eE][yYsS]\*.bikey $installDirArmadirectory\keys\ -force -recurse
+      Write-Output copy-item $installDirArmadirectory\$name\[Kk][eE][yYsS]\*.bikey $installDirArmadirectory\keys\ -force -recurse
    }
 }
 
