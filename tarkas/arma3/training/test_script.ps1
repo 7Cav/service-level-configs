@@ -29,8 +29,11 @@ $argumentListArray = "+login $steamUser $steamPass +force_install_dir "+$install
 #download each item in steamcmd using the app id in the mod list array
 foreach($item in $modListJson) 
 {
-	$id = $item.app
-	$argumentListArray += "+workshop_download_item 107410 $id "
+    $id = $item.app
+    if ($id -ne "")
+    {
+    $argumentListArray += "+workshop_download_item 107410 $id "
+    }
 }   
 #update and validate arma 3 base installation
 $argumentListArray += "+force_install_dir $installDirArmadirectory +app_update 233780 validate +quit"
