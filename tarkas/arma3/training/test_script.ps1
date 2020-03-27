@@ -2,6 +2,7 @@
 $configPath = 'https://raw.githubusercontent.com/7Cav/service-level-configs/master/tarkas/arma3/training/test.json'
 $configJson = (New-Object System.Net.WebClient).DownloadString($configPath) | ConvertFrom-Json
 #
+$getpath = Get-Location
 $instanceId = $configJson.server.env.SERVER_ID
 $serverName = $configJson.server.env.SERVER_NAME
 $modListJson = $configJson.mods
@@ -18,6 +19,8 @@ $steamPass = $env:STEAM_PASS
 $configDir = "$configDir\$serverName"
 $steamCMDdir += "steamcmd.exe"
 $serverScripts = "$installDirArmadirectory\$scripts"
+#Start Transcript
+Start-Transcript -path $getpath\update.txt -NoClobber -IncludeInvocationHeader
 
 Write-Output "Update has started: $(Get-Date) for Service $instanceId - $serverName"
 
@@ -78,7 +81,8 @@ Write-Output Remove-Item $configDir\*.rpt
 Write-Output Remove-Item $configDir\*.log 
 
 Write-Output "Update has finished: $(Get-Date) for $serverName"
-
+#stopping transcript
+Stop-Transcript
 #Start Firedaemon Service
 #net start $instanceId
 exit
