@@ -1,8 +1,8 @@
 {
     "server": {
         "env": {
-            "SERVER_ID": "Arma3Training1",
-            "SERVER_NAME": "training1",
+            "SERVER_ID": "Arma3Training5",
+            "SERVER_NAME": "training5",
             "STEAM_USERNAME": "",
             "STEAM_PASSWORD": "",
             "STEAM_BASE_PATH": "D:\\steam\\",
