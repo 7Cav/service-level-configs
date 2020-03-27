@@ -80,6 +80,24 @@ Write-Output "$serverScripts has yet to be assigned in the script"
 # Add recursive copying of server side scripts
 # Add automatic unlocks for mpmissions for backups and insession updating
 #
+$modparam = "mod="
+$modserverparam = "servermod="
+foreach($item in $modListJson)
+{
+    $name = $item.name
+    $server = $item.server
+    if ($server = "false")
+    {
+        $modparam += "$name;"
+    }
+    else
+    {
+        $modserverparam += "$name;"
+    }
+}
+$modenv = "$modparam  $modserverparam"
+[System.Environment]::SetEnvironmentVariable('$serverName','$modenv',[System.EnvironmentVariableTarget]::Machine)
+Write-Output "Mods Parameter:  $modenv"
 
 #Removing logs after update
 Remove-Item $configDir\*.rpt 

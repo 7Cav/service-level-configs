@@ -60,137 +60,137 @@
             {
                 "app": "463939057",
                 "name": "@ACE",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "708250744",
                 "name": "@ACEX",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "751965892",
                 "name": "@ACRE",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "843577117",
                 "name": "@RHS_USAF",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "843593391",
                 "name": "@RHS_GREF",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "773125288",
                 "name": "@ACE_USAF",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "773131200",
                 "name": "@ACE_AFRF",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "884966711",
                 "name": "@ACE_GREF",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "",
                 "name": "@CavPackv3_8",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "1891346714",
                 "name": "@USAF_MAIN",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "1891343103",
                 "name": "@USAF_FIGHTER",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "1891349162",
                 "name": "@USAF_UTIL",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "735566597",
                 "name": "@PRJ_OPF",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "508476583",
                 "name": "@TF47",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "1696706969",
                 "name": "@7CAV_CBA",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "583496184",
                 "name": "@CUP_CORE",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "583544987",
                 "name": "@CUP_MAPS",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "1537973181",
                 "name": "@ANIZAY",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "1368857262",
                 "name": "@RUHA",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "1452435838",
                 "name": "@ESSEKER_FIXED",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "1128256978",
                 "name": "@CHER_REDUX",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "820924072",
                 "name": "@BPK_CST",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "333310405",
                 "name": "@ENH_MOVE",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "498740884",
                 "name": "@SHK_UI",
-                "server": false
+                "server": "false"
             },
             {
                 "app": "723217262",
                 "name": "@ACHILLES",
-                "server": true
+                "server": "true"
             },
             {
                 "app": "721359761",
                 "name": "@VCOM_AI",
-                "server": true
+                "server": "true"
             },
             {
                 "app": "",
                 "name": "@CavMetrics",
-                "server": true
+                "server": "true"
             }
         ]
 }
