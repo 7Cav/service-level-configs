@@ -86,7 +86,7 @@ foreach($item in $modListJson)
 {
     $name = $item.name
     $server = $item.server
-    if ($server = "false")
+    if ($server -ne "true")
     {
         $modparam += "$name;"
     }
