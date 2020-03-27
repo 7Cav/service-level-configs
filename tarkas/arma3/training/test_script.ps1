@@ -19,10 +19,17 @@ $steamPass = $env:STEAM_PASS
 $configDir = "$configDir\$serverName"
 $steamCMDdir += "steamcmd.exe"
 $serverScripts = "$installDirArmadirectory\$scripts"
+# Remove existing symbolic links
+#
 #Start Transcript
-Start-Transcript -path $getpath\update.txt -NoClobber -IncludeInvocationHeader
+Start-Transcript -path $getpath\update.log -IncludeInvocationHeader -Force
 
 Write-Output "Update has started: $(Get-Date) for Service $instanceId - $serverName"
+$dirp = Get-Item $installDirArmadirectory\@*
+foreach($item in $dirp)
+{
+$item.Delete()
+}
 
 #Stop Firedaemon Service
 #net stop $instanceId
@@ -55,16 +62,16 @@ foreach($item in $modListJson)
       New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target $installDirWorkshop\$id
       Write-Output New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target $installDirWorkshop\$id
 
-      copy-item $installDirWorkshop\$id\[Kk][eE][yYsS]\*.bikey $installDirArmadirectory\keys\ -force -recurse
-      Write-Output $installDirWorkshop\$id\[Kk][eE][yYsS]\*.bikey $installDirArmadirectory\keys\ -force -recurse
+      copy-item $installDirWorkshop\$id\[kK]*\*.bikey $installDirArmadirectory\keys\ -force -recurse
+      Write-Output $installDirWorkshop\$id\[kK]*\*.bikey $installDirArmadirectory\keys\ -force -recurse
    }
    else
    {
       New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target "$path\$name"
       Write-Output New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target "$path\$name"
 
-      copy-item $installDirArmadirectory\$name\[Kk][eE][yYsS]\*.bikey $installDirArmadirectory\keys\ -force -recurse
-      Write-Output copy-item $installDirArmadirectory\$name\[Kk][eE][yYsS]\*.bikey $installDirArmadirectory\keys\ -force -recurse
+      copy-item $installDirArmadirectory\$name\[kK]*\*.bikey $installDirArmadirectory\keys\ -force -recurse
+      Write-Output copy-item $installDirArmadirectory\$name\[kK]*\*.bikey $installDirArmadirectory\keys\ -force -recurse
    }
 }
 
