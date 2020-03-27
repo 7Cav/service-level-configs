@@ -7,7 +7,7 @@
             "STEAM_PASSWORD": "",
             "STEAM_BASE_PATH": "D:\\steam\\",
             "STEAM_WORKSHOP_PATH": "D:\\steam\\steamapps\\workshop\\content\\107410",
-            "SCRIPTS_REL_PATH": "\\serverscripts",
+            "SCRIPTS_REL_PATH": "serverscripts",
             "ARMA_CONFIG_PATH": "D:\\config",
             "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
             "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\training5",
