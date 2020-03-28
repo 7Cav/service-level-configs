@@ -114,7 +114,7 @@ $armacfgpath = "-cfg=$configDir\arma3.cfg"
 $armaconfigpath = "-config=$configDir\server.cfg"
 $beconfigpath = "-bepath=$configDir\BattlEye\"
 
-$compileParams = "$ipassign $port $Parameters $profilepath $armacfgpath $armaconfigpath $beconfigpath "
+$compileParams = "$ipassign $port $Parameters $profilepath $armacfgpath $armaconfigpath $beconfigpath $modenv"
 [System.Environment]::SetEnvironmentVariable('$serverName','$compileParams',[System.EnvironmentVariableTarget]::Machine)
 
 Write-Output "Set Parameters: $compileParams"
