@@ -3,19 +3,15 @@
         "env": {
             "SERVER_ID": "Arma3Training5",
             "SERVER_NAME": "training5",
-            "STEAM_USERNAME": "",
-            "STEAM_PASSWORD": "",
+            "IP_ADDRESS": "144.217.11.41",
+            "PORT": "2312",
+            "PARAMETERS": "-noSound -noLogs",
             "STEAM_BASE_PATH": "D:\\steam\\",
             "STEAM_WORKSHOP_PATH": "D:\\steam\\steamapps\\workshop\\content\\107410",
             "SCRIPTS_REL_PATH": "serverscripts",
             "ARMA_CONFIG_PATH": "D:\\config",
             "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
-            "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\training5",
-            "RCON_PASSOWRD": "",
-            "RCON_PORT": "",
-            "INGAME_PASSWORD": "",
-            "INGAME_ADMIN_PASSWORD": "",
-            "ZEUS_SECRET_KEY": ""
+            "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\training5"
             },
         "cfg": {
             "Max_Bandwidth": "1073741824",

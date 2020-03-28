@@ -34,6 +34,7 @@ $item.Delete()
 #Stop Firedaemon Service
 #net stop $instanceId
 
+Write-Output "Starting SteamCMD Download for $modlistJson and Validate Base Installation"
 #login to steamcmd using env variables
 $argumentListArray = "+login $steamUser $steamPass +force_install_dir "+$installDir+" "
 #download each item in steamcmd using the app id in the mod list array
@@ -47,10 +48,9 @@ foreach($item in $modListJson)
 }   
 #update and validate arma 3 base installation
 $argumentListArray += "+force_install_dir $installDirArmadirectory +app_update 233780 validate +quit"
-Write-Output $argumentListArray
 
 Start-Process -FilePath $steamCMDdir -ArgumentList $argumentListArray -NoNewWindow -Wait
-Write-Output Start-Process -FilePath $steamCMDdir -ArgumentList $argumentListArray -NoNewWindow -Wait
+
 #copying keys and mods to dir from workshop
 foreach($item in $modListJson) 
 {
@@ -80,6 +80,13 @@ Write-Output "$serverScripts has yet to be assigned in the script"
 # Add recursive copying of server side scripts
 # Add automatic unlocks for mpmissions for backups and insession updating
 #
+# ------------------------------------------------------
+# 
+#             START CONFIG GENERATION
+#
+# ------------------------------------------------------
+#
+# Instance Mods
 $modparam = "mod="
 $modserverparam = "servermod="
 foreach($item in $modListJson)
@@ -96,8 +103,21 @@ foreach($item in $modListJson)
     }
 }
 $modenv = "$modparam  $modserverparam"
-[System.Environment]::SetEnvironmentVariable('$serverName','$modenv',[System.EnvironmentVariableTarget]::Machine)
-Write-Output "Mods Parameter:  $modenv"
+
+Write-Output "Mods Parameter: $modenv"
+
+$ipassign = $configJson.server.env.IP_ADDRESS
+$port = $configJson.server.env.PORT
+$Parameters = $configJson.server.env.PARAMETERS
+$profilepath = "-profiles=$configDir\"
+$armacfgpath = "-cfg=$configDir\arma3.cfg"
+$armaconfigpath = "-config=$configDir\server.cfg"
+$beconfigpath = "-bepath=$configDir\BattlEye\"
+
+$compileParams = "$ipassign $port $Parameters $profilepath $armacfgpath $armaconfigpath $beconfigpath "
+[System.Environment]::SetEnvironmentVariable('$serverName','$compileParams',[System.EnvironmentVariableTarget]::Machine)
+
+Write-Output "Set Parameters: $compileParams"
 
 #Removing logs after update
 Remove-Item $configDir\*.rpt 
