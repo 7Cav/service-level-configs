@@ -5,6 +5,9 @@ $configJson = (New-Object System.Net.WebClient).DownloadString($configPath) | Co
 $getpath = Get-Location
 $instanceId = $configJson.server.env.SERVER_ID
 $serverName = $configJson.server.env.SERVER_NAME
+$ipaddr = $configJson.server.env.IP_ADDRESS
+$port = $configJson.server.env.PORT
+$Parameters = $configJson.server.env.PARAMETERS
 $modListJson = $configJson.mods
 $scripts = $configJson.server.env.SCRIPTS_REL_PATH
 $configDir = $configJson.server.env.ARMA_CONFIG_PATH
@@ -23,27 +26,30 @@ $serverScripts = "$installDirArmadirectory\$scripts"
 #
 #Start Transcript
 Start-Transcript -path $getpath\update.log -IncludeInvocationHeader -Force
-
 Write-Output "Update has started: $(Get-Date) for Service $instanceId - $serverName"
 $dirp = Get-Item $installDirArmadirectory\@*
 foreach($item in $dirp)
 {
 $item.Delete()
+Write-Output "Removing Junction Point at $item"
 }
 
 #Stop Firedaemon Service
 #net stop $instanceId
 
-Write-Output "Starting SteamCMD Download for $modlistJson and Validate Base Installation"
+Write-Output "Starting SteamCMD Download and Validate Base Installation"
 #login to steamcmd using env variables
 $argumentListArray = "+login $steamUser $steamPass +force_install_dir "+$installDir+" "
 #download each item in steamcmd using the app id in the mod list array
 foreach($item in $modListJson) 
 {
     $id = $item.app
+    $name = $item.name
+    $server = $item.server
     if ($id -ne "")
     {
     $argumentListArray += "+workshop_download_item 107410 $id "
+    Write-Output "Found Item_ID: $id ($name) - Servermod = $server"
     }
 }   
 #update and validate arma 3 base installation
@@ -59,19 +65,15 @@ foreach($item in $modListJson)
    $path = $localModDir
    if ($id -ne "")
    {
-      New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target $installDirWorkshop\$id
-      Write-Output New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target $installDirWorkshop\$id
-
+      New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target $installDirWorkshop\$id     
       copy-item $installDirWorkshop\$id\[kK]*\*.bikey $installDirArmadirectory\keys\ -force -recurse
-      Write-Output $installDirWorkshop\$id\[kK]*\*.bikey $installDirArmadirectory\keys\ -force -recurse
+      Write-Output "Copy Key $name" 
    }
    else
    {
       New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target "$path\$name"
-      Write-Output New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target "$path\$name"
-
       copy-item $installDirArmadirectory\$name\[kK]*\*.bikey $installDirArmadirectory\keys\ -force -recurse
-      Write-Output copy-item $installDirArmadirectory\$name\[kK]*\*.bikey $installDirArmadirectory\keys\ -force -recurse
+      Write-Output "Copy Key $name"
    }
 }
 
@@ -79,13 +81,7 @@ Write-Output "$serverScripts has yet to be assigned in the script"
 # To Do,
 # Add recursive copying of server side scripts
 # Add automatic unlocks for mpmissions for backups and insession updating
-#
-# ------------------------------------------------------
-# 
-#             START CONFIG GENERATION
-#
-# ------------------------------------------------------
-#
+
 # Instance Mods
 $modparam = "mod="
 $modserverparam = "servermod="
@@ -104,18 +100,15 @@ foreach($item in $modListJson)
 }
 $modenv = "$modparam  $modserverparam"
 
-Write-Output "Mods Parameter: $modenv"
-
-$ipassign = $configJson.server.env.IP_ADDRESS
-$port = $configJson.server.env.PORT
-$Parameters = $configJson.server.env.PARAMETERS
+$ipaddrparam = "-ip=$ipaddr"
+$portparam = "-port=$port"
 $profilepath = "-profiles=$configDir\"
 $armacfgpath = "-cfg=$configDir\arma3.cfg"
 $armaconfigpath = "-config=$configDir\server.cfg"
 $beconfigpath = "-bepath=$configDir\BattlEye\"
 
-$compileParams = "$ipassign $port $Parameters $profilepath $armacfgpath $armaconfigpath $beconfigpath $modenv"
-[System.Environment]::SetEnvironmentVariable('$serverName','$compileParams',[System.EnvironmentVariableTarget]::Machine)
+$compileParams = "$ipaddrparam $portparam $Parameters $profilepath $armacfgpath $armaconfigpath $beconfigpath $modenv"
+#[System.Environment]::SetEnvironmentVariable($serverName, $compileParams,[System.EnvironmentVariableTarget]::Machine)
 
 Write-Output "Set Parameters: $compileParams"
 
@@ -125,6 +118,11 @@ Remove-Item $configDir\*.log
 Write-Output Remove-Item $configDir\*.rpt 
 Write-Output Remove-Item $configDir\*.log 
 
+Write-Output ""
+Write-Output
+Write-Output
+Write-Output
+Write-Output
 Write-Output "Update has finished: $(Get-Date) for $serverName"
 #stopping transcript
 Stop-Transcript
