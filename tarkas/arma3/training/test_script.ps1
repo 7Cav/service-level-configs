@@ -20,6 +20,8 @@ $steamUser = $env:STEAM_USER
 $steamPass = $env:STEAM_PASS
 # Join Paths and other
 $storePath += "$serverName"
+$installDirWorkshop = "$storePath\$installDirWorkshop"
+
 $configDir = "$configDir\$serverName"
 $steamCMDdir += "steamcmd.exe"
 $serverScripts = "$installDirArmadirectory\$scripts"
@@ -115,7 +117,7 @@ $nameparam = "-name=$serverName"
 $compileParams = "$ipaddrparam $portparam $Parameters $nameparam $profilepath $armacfgpath $armaconfigpath $beconfigpath $modenv"
 #[System.Environment]::SetEnvironmentVariable($serverName, $compileParams,[System.EnvironmentVariableTarget]::Machine)
 Write-Output "Parameters: $compileParams"
-Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name $serverName –Value $compileParams
+Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name $serverName -Value $compileParams
 
 #Removing logs after update
 #Remove-Item $configDir\*.rpt 
