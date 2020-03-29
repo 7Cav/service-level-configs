@@ -98,7 +98,7 @@ foreach($item in $modListJson)
         $modserverparam += "$name;"
     }
 }
-$modenv = "$modparam  $modserverparam"
+$modenv = "$modparam $modserverparam"
 
 $ipaddrparam = "-ip=$ipaddr"
 $portparam = "-port=$port"
