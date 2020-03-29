@@ -79,6 +79,11 @@
                 "server": "false"
             },
             {
+                "app": "843425103",
+                "name": "@RHS_AFRF",
+                "server": "false"
+            },
+            {
                 "app": "843593391",
                 "name": "@RHS_GREF",
                 "server": "false"
@@ -137,7 +142,6 @@
                 "app": "583544987",
                 "name": "@CUP_MAPS",
                 "server": "false"
-            },
             {
                 "app": "620260972",
                 "name": "@ALiVE",
