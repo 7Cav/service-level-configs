@@ -20,6 +20,8 @@ $steamPass = $env:STEAM_PASS
 # Join Paths and other
 $storePath += "$serverName"
 $installDirWorkshop = "$storePath\$installDirWorkshop"
+$ServiceName = "$instanceId"
+$ServiceName += "Updater"
 
 $configDir = "$configDir\$serverName"
 $steamCMDdir += "steamcmd.exe"
@@ -123,6 +125,6 @@ Write-Output Remove-Item $configDir\*.rpt
 Write-Output Remove-Item $configDir\*.log 
 
 Write-Output "Update has finished: $(Get-Date) for $serverName"
-#Start Firedaemon Service
-#net start $instanceId
+#Stop myself if service Firedaemon Service
+net stop $ServiceName
 [Environment]::Exit(66)
