@@ -35,7 +35,9 @@ Write-Output "Removing Junction Point at $item"
 }
 
 #Stop Firedaemon Service
-#net stop $instanceId
+net stop $instanceId
+Start-Sleep -s 5
+Write-Output Start-Sleep -s 15
 
 Write-Output "Starting SteamCMD Download and Validate Base Installation"
 #login to steamcmd using env variables
