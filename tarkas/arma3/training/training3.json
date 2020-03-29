@@ -1,10 +1,10 @@
 {
     "server": {
         "env": {
-            "SERVER_ID": "Arma3Training1",
-            "SERVER_NAME": "training1",
+            "SERVER_ID": "Arma3Training3",
+            "SERVER_NAME": "training3",
             "IP_ADDRESS": "144.217.11.41",
-            "PORT": "2312",
+            "PORT": "2332",
             "PARAMETERS": "-noSound -noLogs",
             "STEAM_BASE_PATH": "D:\\steam\\",
             "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
@@ -12,7 +12,7 @@
             "SCRIPTS_REL_PATH": "serverscripts",
             "ARMA_CONFIG_PATH": "D:\\config",
             "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
-            "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\training1"
+            "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\training3"
             },
         "cfg": {
             "Max_Bandwidth": "1073741824",
@@ -24,7 +24,7 @@
             "Error_Near": "0.008"
             },
         "arma": {
-            "hostname": "=7Cav=ARMA3 Training Server 1 [US]",
+            "hostname": "=7Cav=ARMA3 Training Server 3 [US]",
             "headless": "\"127.0.0.1\",\"142.44.143.136\"",
             "localclient": "\"127.0.0.1\",\"142.44.143.136\"",
             "filepatching": "0",

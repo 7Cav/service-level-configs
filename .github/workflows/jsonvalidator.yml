@@ -11,4 +11,4 @@ jobs:
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
           INPUT_SCHEMA: /schema.json
-          INPUT_JSONS: /tarkas/arma3/development2/development2.json
+          INPUT_JSONS: /tarkas/arma3/development/development1.json, /tarkas/arma3/development/development2.json, /tarkas/arma3/training/training1.json, /tarkas/arma3/training/training2.json, /tarkas/arma3/training/training3.json, /tarkas/arma3/training/training4.json, /tarkas/arma3/public/tacticalrealism1.json

@@ -1,8 +1,7 @@
-#Instance Configuration devlopment 2 Server
-$configPath = 'https://raw.githubusercontent.com/7Cav/service-level-configs/master/tarkas/arma3/development2/development2.json'
+#Instance Configuration Tactical Realism 1 Server
+$configPath = 'https://raw.githubusercontent.com/7Cav/service-level-configs/master/tarkas/arma3/public/tacticalrealism1.json'
 $configJson = (New-Object System.Net.WebClient).DownloadString($configPath) | ConvertFrom-Json
 #
-$getpath = Get-Location
 $instanceId = $configJson.server.env.SERVER_ID
 $serverName = $configJson.server.env.SERVER_NAME
 $ipaddr = $configJson.server.env.IP_ADDRESS
@@ -13,20 +12,22 @@ $scripts = $configJson.server.env.SCRIPTS_REL_PATH
 $configDir = $configJson.server.env.ARMA_CONFIG_PATH
 $steamCMDdir = $configJson.server.env.STEAM_BASE_PATH
 $installDirWorkshop = $configJson.server.env.STEAM_WORKSHOP_PATH
-$installDir = $configJson.server.env.STEAM_BASE_PATH
+$storePath = $configJson.server.env.STORE_PATH
 $installDirArmadirectory = $configJson.server.env.ARMA_BASE_PATH
 $localModDir = $configJson.server.env.LOCAL_MOD_PATH
 $steamUser = $env:STEAM_USER
 $steamPass = $env:STEAM_PASS
 # Join Paths and other
+$storePath += "$serverName"
+$installDirWorkshop = "$storePath\$installDirWorkshop"
+
 $configDir = "$configDir\$serverName"
 $steamCMDdir += "steamcmd.exe"
 $serverScripts = "$installDirArmadirectory\$scripts"
 # Remove existing symbolic links
 #
-#Start Transcript
-Start-Transcript -path $getpath\update.log -IncludeInvocationHeader -Force
 Write-Output "Update has started: $(Get-Date) for Service $instanceId - $serverName"
+
 $dirp = Get-Item $installDirArmadirectory\@*
 foreach($item in $dirp)
 {
@@ -41,7 +42,7 @@ Write-Output Start-Sleep -s 15
 
 Write-Output "Starting SteamCMD Download and Validate Base Installation"
 #login to steamcmd using env variables
-$argumentListArray = "+login $steamUser $steamPass +force_install_dir "+$installDir+" "
+$argumentListArray = "+login $steamUser $steamPass +force_install_dir "+$storePath+" "
 #download each item in steamcmd using the app id in the mod list array
 foreach($item in $modListJson) 
 {
@@ -113,17 +114,15 @@ $nameparam = "-name=$serverName"
 $compileParams = "$ipaddrparam $portparam $Parameters $nameparam $profilepath $armacfgpath $armaconfigpath $beconfigpath $modenv"
 #[System.Environment]::SetEnvironmentVariable($serverName, $compileParams,[System.EnvironmentVariableTarget]::Machine)
 Write-Output "Parameters: $compileParams"
-Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name $serverName –Value $compileParams
+Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name $serverName -Value $compileParams
 
 #Removing logs after update
-#Remove-Item $configDir\*.rpt 
-#Remove-Item $configDir\*.log 
-#Write-Output Remove-Item $configDir\*.rpt 
-#Write-Output Remove-Item $configDir\*.log 
+Remove-Item $configDir\*.rpt 
+Remove-Item $configDir\*.log 
+Write-Output Remove-Item $configDir\*.rpt 
+Write-Output Remove-Item $configDir\*.log 
 
 Write-Output "Update has finished: $(Get-Date) for $serverName"
-#stopping transcript
-Stop-Transcript
 #Start Firedaemon Service
 #net start $instanceId
-exit
+[Environment]::Exit(66)

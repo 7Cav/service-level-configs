@@ -1,8 +1,7 @@
-#Instance Configuration devlopment 2 Server
-$configPath = 'https://raw.githubusercontent.com/7Cav/service-level-configs/master/tarkas/arma3/training/test.json'
+#Instance Configuration Training 3 Server
+$configPath = 'https://raw.githubusercontent.com/7Cav/service-level-configs/master/tarkas/arma3/training/training3.json'
 $configJson = (New-Object System.Net.WebClient).DownloadString($configPath) | ConvertFrom-Json
 #
-$getpath = Get-Location
 $instanceId = $configJson.server.env.SERVER_ID
 $serverName = $configJson.server.env.SERVER_NAME
 $ipaddr = $configJson.server.env.IP_ADDRESS
@@ -27,8 +26,6 @@ $steamCMDdir += "steamcmd.exe"
 $serverScripts = "$installDirArmadirectory\$scripts"
 # Remove existing symbolic links
 #
-#Start Transcript
-Start-Transcript -path $getpath\update.log -IncludeInvocationHeader -Force
 Write-Output "Update has started: $(Get-Date) for Service $instanceId - $serverName"
 
 $dirp = Get-Item $installDirArmadirectory\@*
@@ -120,14 +117,12 @@ Write-Output "Parameters: $compileParams"
 Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name $serverName -Value $compileParams
 
 #Removing logs after update
-#Remove-Item $configDir\*.rpt 
-#Remove-Item $configDir\*.log 
-#Write-Output Remove-Item $configDir\*.rpt 
-#Write-Output Remove-Item $configDir\*.log 
+Remove-Item $configDir\*.rpt 
+Remove-Item $configDir\*.log 
+Write-Output Remove-Item $configDir\*.rpt 
+Write-Output Remove-Item $configDir\*.log 
 
 Write-Output "Update has finished: $(Get-Date) for $serverName"
-#stopping transcript
-Stop-Transcript
 #Start Firedaemon Service
 #net start $instanceId
 [Environment]::Exit(66)

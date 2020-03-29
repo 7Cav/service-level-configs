@@ -1,17 +1,18 @@
 {
     "server": {
         "env": {
-            "SERVER_ID": "Arma3Dev2",
-            "SERVER_NAME": "development2",
+            "SERVER_ID": "Arma3Training2",
+            "SERVER_NAME": "training2",
             "IP_ADDRESS": "144.217.11.41",
-            "PORT": "2352",
-            "PARAMETERS": "-noSound",
+            "PORT": "2322",
+            "PARAMETERS": "-noSound -noLogs",
             "STEAM_BASE_PATH": "D:\\steam\\",
-            "STEAM_WORKSHOP_PATH": "D:\\steam\\steamapps\\workshop\\content\\107410",
+            "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
+            "STORE_PATH": "D:\\store\\arma3\\",
             "SCRIPTS_REL_PATH": "serverscripts",
             "ARMA_CONFIG_PATH": "D:\\config",
             "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
-            "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development2"
+            "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\training2"
             },
         "cfg": {
             "Max_Bandwidth": "1073741824",
@@ -23,7 +24,7 @@
             "Error_Near": "0.008"
             },
         "arma": {
-            "hostname": "=7Cav=ARMA3 Development 2 [US]",
+            "hostname": "=7Cav=ARMA3 Training Server 2 [US]",
             "headless": "\"127.0.0.1\",\"142.44.143.136\"",
             "localclient": "\"127.0.0.1\",\"142.44.143.136\"",
             "filepatching": "0",
@@ -54,11 +55,6 @@
         },
         "mods": [
             {
-                "app": "450814997",
-                "name": "@CBA_A3",
-                "server": "false"
-            },
-            {
                 "app": "463939057",
                 "name": "@ACE",
                 "server": "false"
@@ -79,11 +75,6 @@
                 "server": "false"
             },
             {
-                "app": "843425103",
-                "name": "@RHS_AFRF",
-                "server": "false"
-            },
-            {
                 "app": "843593391",
                 "name": "@RHS_GREF",
                 "server": "false"
@@ -101,6 +92,11 @@
             {
                 "app": "884966711",
                 "name": "@ACE_GREF",
+                "server": "false"
+            },
+            {
+                "app": "",
+                "name": "@CavPackv3_8",
                 "server": "false"
             },
             {
@@ -144,13 +140,48 @@
                 "server": "false"
             },
             {
-                "app": "620260972",
-                "name": "@ALiVE",
+                "app": "1537973181",
+                "name": "@ANIZAY",
+                "server": "false"
+            },
+            {
+                "app": "1368857262",
+                "name": "@RUHA",
+                "server": "false"
+            },
+            {
+                "app": "1452435838",
+                "name": "@ESSEKER_FIXED",
+                "server": "false"
+            },
+            {
+                "app": "1128256978",
+                "name": "@CHER_REDUX",
+                "server": "false"
+            },
+            {
+                "app": "820924072",
+                "name": "@BPK_CST",
+                "server": "false"
+            },
+            {
+                "app": "333310405",
+                "name": "@ENH_MOVE",
+                "server": "false"
+            },
+            {
+                "app": "498740884",
+                "name": "@SHK_UI",
                 "server": "false"
             },
             {
                 "app": "723217262",
                 "name": "@ACHILLES",
+                "server": "true"
+            },
+            {
+                "app": "721359761",
+                "name": "@VCOM_AI",
                 "server": "true"
             },
             {
