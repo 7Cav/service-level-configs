@@ -19,7 +19,7 @@ $localModDir = $configJson.server.env.LOCAL_MOD_PATH
 $steamUser = $env:STEAM_USER
 $steamPass = $env:STEAM_PASS
 # Join Paths and other
-$storePath += $serverName
+$storePath += "$serverName"
 $configDir = "$configDir\$serverName"
 $steamCMDdir += "steamcmd.exe"
 $serverScripts = "$installDirArmadirectory\$scripts"
@@ -28,6 +28,7 @@ $serverScripts = "$installDirArmadirectory\$scripts"
 #Start Transcript
 Start-Transcript -path $getpath\update.log -IncludeInvocationHeader -Force
 Write-Output "Update has started: $(Get-Date) for Service $instanceId - $serverName"
+
 $dirp = Get-Item $installDirArmadirectory\@*
 foreach($item in $dirp)
 {
