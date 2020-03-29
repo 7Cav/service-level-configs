@@ -55,6 +55,26 @@
         },
         "mods": [
             {
+                "app": "450814997",
+                "name": "@CBA_A3",
+                "server": "true"
+            },
+            {
+                "app": "333310405",
+                "name": "@ENH_MOVE",
+                "server": "true"
+            },
+            {
+                "app": "723217262",
+                "name": "@ACHILLES",
+                "server": "true"
+            },
+            {
+                "app": "",
+                "name": "@CavMetrics",
+                "server": "true"
+            },
+            {
                 "app": "",
                 "name": "@inidbi2",
                 "server": "true"
