@@ -1,4 +1,4 @@
-#Instance Configuration training Server
+#Instance Configuration devlopment 2 Server
 $configPath = 'https://raw.githubusercontent.com/7Cav/service-level-configs/master/tarkas/arma3/training/test.json'
 $configJson = (New-Object System.Net.WebClient).DownloadString($configPath) | ConvertFrom-Json
 #
@@ -13,12 +13,13 @@ $scripts = $configJson.server.env.SCRIPTS_REL_PATH
 $configDir = $configJson.server.env.ARMA_CONFIG_PATH
 $steamCMDdir = $configJson.server.env.STEAM_BASE_PATH
 $installDirWorkshop = $configJson.server.env.STEAM_WORKSHOP_PATH
-$installDir = $configJson.server.env.STEAM_BASE_PATH
+$storePath = $configJson.server.env.STORE_PATH
 $installDirArmadirectory = $configJson.server.env.ARMA_BASE_PATH
 $localModDir = $configJson.server.env.LOCAL_MOD_PATH
 $steamUser = $env:STEAM_USER
 $steamPass = $env:STEAM_PASS
 # Join Paths and other
+$storePath += $serverName
 $configDir = "$configDir\$serverName"
 $steamCMDdir += "steamcmd.exe"
 $serverScripts = "$installDirArmadirectory\$scripts"
@@ -35,11 +36,13 @@ Write-Output "Removing Junction Point at $item"
 }
 
 #Stop Firedaemon Service
-#net stop $instanceId
+net stop $instanceId
+Start-Sleep -s 5
+Write-Output Start-Sleep -s 15
 
 Write-Output "Starting SteamCMD Download and Validate Base Installation"
 #login to steamcmd using env variables
-$argumentListArray = "+login $steamUser $steamPass +force_install_dir "+$installDir+" "
+$argumentListArray = "+login $steamUser $steamPass +force_install_dir "+$storePath+" "
 #download each item in steamcmd using the app id in the mod list array
 foreach($item in $modListJson) 
 {
@@ -98,7 +101,7 @@ foreach($item in $modListJson)
         $modserverparam += "$name;"
     }
 }
-$modenv = "$modparam  $modserverparam"
+$modenv = "$modparam $modserverparam"
 
 $ipaddrparam = "-ip=$ipaddr"
 $portparam = "-port=$port"
@@ -114,10 +117,10 @@ Write-Output "Parameters: $compileParams"
 Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name $serverName –Value $compileParams
 
 #Removing logs after update
-Remove-Item $configDir\*.rpt 
-Remove-Item $configDir\*.log 
-Write-Output Remove-Item $configDir\*.rpt 
-Write-Output Remove-Item $configDir\*.log 
+#Remove-Item $configDir\*.rpt 
+#Remove-Item $configDir\*.log 
+#Write-Output Remove-Item $configDir\*.rpt 
+#Write-Output Remove-Item $configDir\*.log 
 
 Write-Output "Update has finished: $(Get-Date) for $serverName"
 #stopping transcript
