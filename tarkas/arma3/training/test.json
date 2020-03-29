@@ -8,7 +8,7 @@
             "PARAMETERS": "-noSound -noLogs",
             "STEAM_BASE_PATH": "D:\\steam\\",
             "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
-            "STORE_PATH": "D:\\store\\arma3",
+            "STORE_PATH": "D:\\store\\arma3\\",
             "SCRIPTS_REL_PATH": "serverscripts",
             "ARMA_CONFIG_PATH": "D:\\config",
             "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",

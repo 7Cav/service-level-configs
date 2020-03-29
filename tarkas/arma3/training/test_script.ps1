@@ -130,4 +130,4 @@ Write-Output "Update has finished: $(Get-Date) for $serverName"
 Stop-Transcript
 #Start Firedaemon Service
 #net start $instanceId
-exit
+[Environment]::Exit(66)
