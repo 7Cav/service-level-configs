@@ -54,6 +54,11 @@
         },
         "mods": [
             {
+                "app": "450814997",
+                "name": "@CBA_A3",
+                "server": "false"
+            },
+            {
                 "app": "463939057",
                 "name": "@ACE",
                 "server": "false"
@@ -131,6 +136,10 @@
             {
                 "app": "583544987",
                 "name": "@CUP_MAPS",
+                "server": "false"
+            {
+                "app": "620260972",
+                "name": "@ALiVE",
                 "server": "false"
             },
             {
