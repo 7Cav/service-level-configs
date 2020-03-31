@@ -70,6 +70,21 @@
                 "server": "true"
             },
             {
+                "app": "767380317",
+                "name": "@BCESA",
+                "server": "true"
+            },
+            {
+                "app": "853303947",
+                "name": "@BCESA_VS",
+                "server": "true"
+            },
+            {
+                "app": "825181638",
+                "name": "@DynaSound2",
+                "server": "true"
+            },
+            {
                 "app": "",
                 "name": "@CavMetrics",
                 "server": "true"
