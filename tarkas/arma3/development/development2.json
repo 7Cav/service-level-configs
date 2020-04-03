@@ -152,7 +152,12 @@
             {
                 "app": "1858075458",
                 "name": "@LAMBS",
-                "server": "false"
+                "server": "true"
+            },
+            {
+                "app": "723217262",
+                "name": "@ACHILLES",
+                "server": "true"
             },
             {
                 "app": "",
@@ -162,11 +167,6 @@
             {
                 "app": "",
                 "name": "@ASP",
-                "server": "true"
-            },
-            {
-                "app": "723217262",
-                "name": "@ACHILLES",
                 "server": "true"
             },
             {
