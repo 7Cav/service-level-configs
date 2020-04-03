@@ -70,18 +70,18 @@
                 "server": "false"
             },
 			{
-                "app": "708250744",
+                "app": "751965892",
                 "name": "@ACRE2",
                 "server": "false"
             },
 			{
                 "app": "1477612867",
-                "name": "@Blacky's Vietnam Radio Hits",
+                "name": "@Blackys_Radio",
                 "server": "false"
             },
 			{
                 "app": "549676314",
-                "name": "@CUP Weapons",
+                "name": "@CUP_Weapons",
                 "server": "false"
             },
 			{
@@ -91,22 +91,17 @@
             },
 			{
                 "app": "1224892496",
-                "name": "@GRAD Trenches",
+                "name": "@GRAD",
                 "server": "false"
             },
 			{
                 "app": "508042151",
-                "name": "@Medium Utility Helicopters",
+                "name": "@MUH",
                 "server": "false"
             },
 			{
                 "app": "498740884",
                 "name": "@SHK_UI",
-                "server": "false"
-            },
-			{
-                "app": "549676314",
-                "name": "@CUP ACE3 Compatibility Addon - Weapons",
                 "server": "false"
             },
 			{
