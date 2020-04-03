@@ -86,7 +86,7 @@
             },
 			{
                 "app": "333310405",
-                "name": "@Enhanced Movement",
+                "name": "@ENH_MOVE",
                 "server": "false"
             },
 			{
@@ -101,7 +101,7 @@
             },
 			{
                 "app": "498740884",
-                "name": "@ShackTac User Interface",
+                "name": "@SHK_UI",
                 "server": "false"
             },
 			{
@@ -121,8 +121,18 @@
             },
 			{
                 "app": "721359761",
-                "name": "@Vcom AI V3.3.3",
+                "name": "@Vcom_AI",
                 "server": "false"
-            }
+            },
+			{
+                "app": "723217262",
+                "name": "@ACHILLES",
+                "server": "true"
+            },
+			{
+                "app": "",
+                "name": "@CavMetrics",
+                "server": "true"
+			}
         ]
 }
