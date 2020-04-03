@@ -81,6 +81,11 @@
             },
 			{
                 "app": "549676314",
+                "name": "@ACECUP_WEP",
+                "server": "false"
+            },
+            {
+                "app": "497660133",
                 "name": "@CUP_Weapons",
                 "server": "false"
             },
