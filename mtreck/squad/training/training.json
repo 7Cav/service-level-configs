@@ -5,6 +5,7 @@
             "SERVER_NAME": "training1",
             "IP_ADDRESS": "142.44.143.136",
             "PORT": "7789",
+            "QUERY_PORT": "",
             "PARAMETERS": "-log",
             "MAX_PLAYERS": "80",
             "FIXEDTICKRATE": "15",
@@ -12,19 +13,11 @@
             "CPU_AFFINITY": "FF",
             "STEAM_BASE_PATH": "D:\\steam\\",
             "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\393380\\",
-            "STORE_PATH": "D:\\store\\arma3\\",
-            "SCRIPTS_REL_PATH": "serverscripts",
+            "STORE_PATH": "D:\\store\\squad\\",
+            "SCRIPTS_REL_PATH": "",
             "SQUAD_CONFIG_PATH": "D:\\config",
-            "LOCAL_MOD_PATH": "D:\\gameservers\\squad\\localmods",
             "SQUAD_BASE_PATH": "D:\\gameservers\\squad\\training1"
             }
-        },
-        "mods": [
-            {
-                "app": "1123920",
-                "name": "CAF",
-                "DLC": "true"
-            }
-        ]
+        }
 }
 
