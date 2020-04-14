@@ -20,9 +20,8 @@ Configurations are managed by using JSON.
 For more information about these types of files [Click Here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
 
 ### Where to find Configurations:
-To change the configuration of a given gameserver you will need to find the JSON file for it.
-The current convention is ``/<Server Name>/<Game Name>/<Gameserver Type>/<Gameserver Name .json>``
-
+To change the configuration of a given gameserver you will need to find the JSON file for it.<br></br>
+The current convention is ``/<Server Name>/<Game Name>/<Gameserver Type>/<Gameserver Name .json>``<br></br>
 *example:* ``service-level-configs/mtreck/arma3/public/tacticalrealism2.json``
 
 Once you have located the json configuration file, you will need to either clone the repository or make changes via the github website.
@@ -73,7 +72,7 @@ Here we have the values added to the keys.
 ``"key1":`` = ``"I love the cav"``,
 ``"key2":`` = ``"false"``
 
-Take note that the values can be boolean (true / false) or strings "this is a string of text"
+Take note that the values can be boolean (true / false) or strings "this is a string of text"<br></br>
 While this is simplifying the terminology its sufficent for editing these JSON configurations.
 
 ## Troubleshooting:
