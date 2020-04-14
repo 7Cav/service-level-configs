@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/7Cav/service-level-configs/blob/master/media/7cav_logo.png"></p>
 <p align="center"><img src="https://github.com/7Cav/service-level-configs/blob/master/media/S6_SLC_Logo.png"></p>
-## About
+# About
 
 Service Level Configs is a framework for configuration files and scripts that are in use to manage the 7th Cavalry Gameservers.
 This monorepo is specifically for S3 and S6 Staff to use for any modifications for Gameserver Parameters, Game Mods, And other features.
