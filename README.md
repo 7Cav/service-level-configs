@@ -108,4 +108,4 @@ As shown above you can see that the ``}`` for ``"env":`` has a comma at the end 
 <p align="center"><img width=100% src="https://github.com/7Cav/service-level-configs/blob/master/media/TS_flow.png"></p>
 
 ## Further Documentation
-For more detailed information, Check the Service-Level-Configs Wiki
+For more detailed information, Check the [Service-Level-Configs Wiki](https://github.com/7Cav/service-level-configs/wiki)
