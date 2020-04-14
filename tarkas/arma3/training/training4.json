@@ -53,86 +53,151 @@
             "doubleid": ""
             }
         },
-        "mods": [
-            {
-                "app": "450814997",
-                "name": "@CBA_A3",
-                "server": "false"
-            },
-            {
-                "app": "463939057",
-                "name": "@ACE",
-                "server": "false"
-            },
-			{
-                "app": "708250744",
-                "name": "@ACEX",
-                "server": "false"
-            },
-			{
-                "app": "751965892",
-                "name": "@ACRE2",
-                "server": "false"
-            },
-			{
-                "app": "1477612867",
-                "name": "@Blackys_Radio",
-                "server": "false"
-            },
-			{
-                "app": "549676314",
-                "name": "@ACECUP_WEP",
-                "server": "false"
-            },
-            {
-                "app": "497660133",
-                "name": "@CUP_Weapons",
-                "server": "false"
-            },
-			{
-                "app": "333310405",
-                "name": "@ENH_MOVE",
-                "server": "false"
-            },
-			{
-                "app": "1224892496",
-                "name": "@GRAD",
-                "server": "false"
-            },
-			{
-                "app": "508042151",
-                "name": "@MUH",
-                "server": "false"
-            },
-			{
-                "app": "498740884",
-                "name": "@SHK_UI",
-                "server": "false"
-            },
-			{
-                "app": "943001311",
-                "name": "@Unsung",
-                "server": "false"
-            },
-			{
-                "app": "825174634",
-                "name": "@Suppress",
-                "server": "false"
-            },
-			{
-                "app": "721359761",
-                "name": "@Vcom_AI",
-                "server": "false"
-            },
-			{
-                "app": "723217262",
-                "name": "@ACHILLES",
-                "server": "true"
-            },
-			{
-                "app": "",
-                "name": "@CavMetrics",
-                "server": "true"
-			}
-        ]
+	"mods": [
+		{
+			"app": "450814997",
+			"name": "@CBA_A3",
+			"server": "false"
+		},
+		{
+			"app": "463939057",
+			"name": "@ACE",
+			"server": "false"
+		},
+		{
+			"app": "708250744",
+			"name": "@ACEX",
+			"server": "false"
+		},
+		{
+			"app": "751965892",
+			"name": "@ACRE",
+			"server": "false"
+		},
+		{
+			"app": "843425103",
+			"name": "@RHS_AFRF",
+			"server": "false"
+		},
+		{
+			"app": "843577117",
+			"name": "@RHS_USAF",
+			"server": "false"
+		},
+		{
+			"app": "843593391",
+			"name": "@RHS_GREF",
+			"server": "false"
+		},
+		{
+			"app": "773125288",
+			"name": "@ACE_USAF",
+			"server": "false"
+		},
+		{
+			"app": "773131200",
+			"name": "@ACE_AFRF",
+			"server": "false"
+		},
+		{
+			"app": "884966711",
+			"name": "@ACE_GREF",
+			"server": "false"
+		},
+		{
+			"app": "",
+			"name": "@CavPackv3_8",
+			"server": "false"
+		},
+		{
+			"app": "1891346714",
+			"name": "@USAF_MAIN",
+			"server": "false"
+		},
+		{
+			"app": "1891343103",
+			"name": "@USAF_FIGHTER",
+			"server": "false"
+		},
+		{
+			"app": "1891349162",
+			"name": "@USAF_UTIL",
+			"server": "false"
+		},
+		{
+			"app": "735566597",
+			"name": "@PRJ_OPF",
+			"server": "false"
+		},
+		{
+			"app": "508476583",
+			"name": "@TF47",
+			"server": "false"
+		},
+		{
+			"app": "1696706969",
+			"name": "@7CAV_CBA",
+			"server": "false"
+		},
+		{
+			"app": "583496184",
+			"name": "@CUP_CORE",
+			"server": "false"
+		},
+		{
+			"app": "583544987",
+			"name": "@CUP_MAPS",
+			"server": "false"
+		},
+		{
+			"app": "1537973181",
+			"name": "@ANIZAY",
+			"server": "false"
+		},
+		{
+			"app": "1368857262",
+			"name": "@RUHA",
+			"server": "false"
+		},
+		{
+			"app": "1452435838",
+			"name": "@ESSEKER_FIXED",
+			"server": "false"
+		},
+		{
+			"app": "1128256978",
+			"name": "@CHER_REDUX",
+			"server": "false"
+		},
+		{
+			"app": "820924072",
+			"name": "@BPK_CST",
+			"server": "false"
+		},
+		{
+			"app": "333310405",
+			"name": "@ENH_MOVE",
+			"server": "false"
+		},
+		{
+			"app": "498740884",
+			"name": "@SHK_UI",
+			"server": "false"
+		},
+		{
+			"app": "723217262",
+			"name": "@ACHILLES",
+			"server": "true"
+		},
+		{
+			"app": "721359761",
+			"name": "@VCOM_AI",
+			"server": "true"
+		},
+		{
+			"app": "",
+			"name": "@CavMetrics",
+			"server": "true"
+		}
+    ]
 }
