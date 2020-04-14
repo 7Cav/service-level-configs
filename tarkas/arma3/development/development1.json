@@ -55,7 +55,7 @@
         },
         "mods": [
             {
-                "app":"450814997",
+                "app": "450814997",
                 "name": "@CBA_A3",
                 "server": "false"
             },
@@ -72,6 +72,11 @@
             {
                 "app": "751965892",
                 "name": "@ACRE",
+                "server": "false"
+            },
+            {
+                "app": "843425103",
+                "name": "@RHS_AFRF",
                 "server": "false"
             },
             {
@@ -195,4 +200,4 @@
                 "server": "true"
             }
         ]
-}
+    }
