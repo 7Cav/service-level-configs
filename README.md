@@ -64,7 +64,7 @@ Values:
 {
 "config": {
     "key0": "value",
-    "key1": "I love the cav",
+    "key1": "Killroywashere",
     "key2": "false"
   }
 }
