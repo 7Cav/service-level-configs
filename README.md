@@ -3,9 +3,9 @@
 # About
 
 Service Level Configs is a framework for configuration files and scripts that are in use to manage the 7th Cavalry gameservers.
-This is specifically for S3 and S6 Staff within the 7cav.us community to use for any modifications such as but not limited to,<br></br> 1. Gameserver startup parameters,
-1. Mods and or DLC's installed
-1. Miscellaneous configuration files
+This is specifically for S3 and S6 Staff within the 7cav.us community to use for any modifications such as but not limited to,<br></br> * Gameserver startup parameters,
+* Mods and or DLC's installed
+* Miscellaneous configuration files
 <br></br>
 This is currently Work-In-Progress, Expect features to change.
 
