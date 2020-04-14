@@ -74,7 +74,8 @@ Here we have the values added to the keys.
 ``"key2":`` = ``"false"``
 
 Take note that the values can be boolean (true / false) or strings "this is a string of text"<br></br>
-While this is simplifying the terminology its sufficent for editing these JSON configurations.
+Keys can be arrays such as ``"key": { }`` in which these can also contain multiple keys with values or even more nested arrays.<br></br>
+*Example:* ``"key": { "keyA": { "Key1": "value" }, "keyB": { "Key2": "value" } }`` which gives you ``"key"`` with 4 keys inside nested arrays.
 
 ## Don't Forget the Comma!
 A typical issue with editing JSON files is forgetting what the comma does for a given key and value within the JSON configurations.<br></br>
