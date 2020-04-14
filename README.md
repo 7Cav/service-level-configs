@@ -1,5 +1,6 @@
 <p align="center"><img src="https://github.com/7Cav/service-level-configs/blob/master/media/7cav_logo.png"></p>
 <p align="center"><img src="https://github.com/7Cav/service-level-configs/blob/master/media/S6_SLC_Logo.png"></p>
+
 # About
 
 Service Level Configs is a framework for configuration files and scripts that are in use to manage the 7th Cavalry Gameservers.
@@ -77,6 +78,7 @@ Take note that the values can be boolean (true / false) or strings "this is a st
 While this is simplifying the terminology its sufficent for editing these JSON configurations.
 
 ## Troubleshooting:
-<p align="center"><img width=50% src="https://github.com/7Cav/service-level-configs/blob/master/media/TL_flow.png"></p>
+<p align="center"><img width=50% src="https://github.com/7Cav/service-level-configs/blob/master/media/TS_flow.png"></p>
+
 ## Further Documentation
 For more detailed information, Check the Service-Level-Configs Wiki
