@@ -78,7 +78,7 @@ Take note that the values can be boolean (true / false) or strings "this is a st
 While this is simplifying the terminology its sufficent for editing these JSON configurations.
 
 ## Troubleshooting:
-<p align="center"><img width=12.7% src="https://github.com/7Cav/service-level-configs/blob/master/media/TS_flow.png"></p>
+<p align="center"><img width=100% src="https://github.com/7Cav/service-level-configs/blob/master/media/TS_flow.png"></p>
 
 ## Further Documentation
 For more detailed information, Check the Service-Level-Configs Wiki
