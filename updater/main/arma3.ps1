@@ -1,5 +1,8 @@
-#Instance Configuration Tactical Realism 1 Server
-$configPath = 'https://raw.githubusercontent.com/7Cav/service-level-configs/master/tarkas/arma3/public/tacticalrealism1.json'
+$ConfigPath = $args[0]
+$AutoStart = $args[1]
+$logs = $args[2]
+$Nuke = $args[3]
+
 $configJson = (New-Object System.Net.WebClient).DownloadString($configPath) | ConvertFrom-Json
 #
 $instanceId = $configJson.server.env.SERVER_ID
@@ -29,18 +32,34 @@ $serverScripts = "$installDirArmadirectory\$scripts"
 # Remove existing symbolic links
 #
 Write-Output "Update has started: $(Get-Date) for Service $instanceId - $serverName"
-
+#Stop Firedaemon Service
+net stop $instanceId
+Start-Sleep -s 5
+Write-Output Start-Sleep -s 15
 $dirp = Get-Item $installDirArmadirectory\@*
 foreach($item in $dirp)
 {
 $item.Delete()
 Write-Output "Removing Junction Point at $item"
 }
-
-#Stop Firedaemon Service
-net stop $instanceId
-Start-Sleep -s 5
-Write-Output Start-Sleep -s 15
+# Nuke it all
+if ($Nuke -eq $True) {
+Write-Output "!!!!!!!!!!"
+Write-Output "Warning, -Nuke Parameter was used. all files related to this server instance will be wiped"
+Write-Output "!!!!!!!!!!"
+$dirp = Get-Item $installDirArmadirectory\*
+foreach ($item in $dirp)
+{
+Remove-Item -Recurse -Force $item
+Write-Output "Removing from Installation Directory: $item"
+}
+$dirS = Get-Item $installDirWorkshop
+foreach ($item in $dirS)
+{
+Remove-Item -Recurse -Force $item
+Write-Output "Removing from Store Directory: $item"
+}
+}
 
 Write-Output "Starting SteamCMD Download and Validate Base Installation"
 #login to steamcmd using env variables
@@ -119,12 +138,26 @@ Write-Output "Parameters: $compileParams"
 Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name $serverName -Value $compileParams
 
 #Removing logs after update
-Remove-Item $configDir\*.rpt 
-Remove-Item $configDir\*.log 
-Write-Output Remove-Item $configDir\*.rpt 
-Write-Output Remove-Item $configDir\*.log 
-
+    if ($Logs -ne $True) {
+        Write-Output "-logs not found, removing .rpt and .log files from config directory"
+    Remove-Item $configDir\*.rpt 
+    Remove-Item $configDir\*.log 
+    Write-Output Remove-Item $configDir\*.rpt 
+    Write-Output Remove-Item $configDir\*.log S
+    }
+    else 
+        {
+    Write-Output "-Logs found, keeping old .rpt and .log files"
+}
 Write-Output "Update has finished: $(Get-Date) for $serverName"
+    if ($AutoStart -eq $True) {
+    net start $instanceId
+    Write-Output "Starting $instanceId"
+    }
+    else 
+        {
+    Write-Output "-AutoStart was not set, exiting without starting server instance"
+    }
 #Stop myself if service Firedaemon Service
 net stop $ServiceName
 [Environment]::Exit(66)
