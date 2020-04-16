@@ -35,12 +35,15 @@ $steamCMDdir += "steamcmd.exe"
 $serverScripts = "$installDirSquaddirectory\$scripts"
 # Remove existing symbolic links
 #
+Write-Output "###"
 Write-Output "Update has started: $(Get-Date) for Service $instanceId - $serverName"
-
+Write-Output "###"
 #Stop Firedaemon Service
+Write-Output "[Notice] Stopping Instance for $instanceId"
+Write-Output "[Notice] Error for stopping instance will occur if instance is not currently running"
 net stop $instanceId
 Start-Sleep -s 5
-Write-Output Start-Sleep -s 15
+Write-Output "[Notice] Starting File Removal in \Mods Directory"
 $dirp = Get-Item $installDirSquaddirectory\SquadGame\Plugins\Mods\*
 foreach($item in $dirp)
 {
@@ -49,9 +52,9 @@ Write-Output "Removing $item from \Mods"
 }
 
 if ($Nuke -eq $True) {
-    Write-Output "!!!!!!!!!!"
-    Write-Output "Warning, -Nuke Parameter was used. all files related to this server instance will be wiped"
-    Write-Output "!!!!!!!!!!"
+    Write-Output "###"
+    Write-Output "[Warning] -Nuke Parameter was used. all files related to this server instance will be wiped"
+    Write-Output "###"
     $dirp = Get-Item $installDirSquaddirectory\*
     foreach ($item in $dirp)
     {
@@ -65,8 +68,9 @@ if ($Nuke -eq $True) {
     Write-Output "Removing from Store Directory: $item"
     }
 }
-Write-Output "Starting SteamCMD Download and Validate Base Installation"
-
+Write-Output "###"
+Write-Output "[Notice] Starting SteamCMD Download and Validate Base Installation"
+Write-Output "###"
 #login to steamcmd using env variables
 $argumentListArray = "+login $steamUser $steamPass +force_install_dir "+$storePath+" "
 
@@ -82,11 +86,17 @@ foreach($item in $modListJson)
     Write-Output "Blank Workshop Item ID, Skipping"
     }
 }
-#update and validate squad base installation
-$argumentListArray += "+force_install_dir $installDirSquaddirectory +app_update 393380 validate +quit"
-
+$argumentListArray += "+quit"
 Start-Process -FilePath $steamCMDdir -ArgumentList $argumentListArray -NoNewWindow -Wait
-
+Write-Output "###"
+Write-Output "[Notice] End of Workshop Items Process"
+Write-Output "###"
+#update and validate squad base installation
+$argumentListArray = "+login anonymous +force_install_dir $installDirSquaddirectory +app_update 403240 validate +quit"
+Start-Process -FilePath $steamCMDdir -ArgumentList $argumentListArray -NoNewWindow -Wait
+Write-Output "###"
+Write-Output "[Notice] End of Base Installation Process"
+Write-Output "###"
 foreach($item in $modListJson) 
 {
    $id = $item.app
@@ -98,13 +108,14 @@ foreach($item in $modListJson)
     }
 }
 #download each item in steamcmd using the app id in the mod list array
-Write-Output "$serverScripts has yet to be assigned in the script"
+Write-Output "[Notice] ServerScripts has yet to be assigned in the script"
 if ($Logs -ne $True) {
-    Write-Output "log file management is not currently setup"
+    Write-Output "[Notice] -logs is being used"
+    Write-Output "[Notice] log file management is not currently setup"
 }
 else 
     {
-Write-Output "log file management is not currently setup"
+Write-Output "[Notice] log file management is not currently setup"
 }
 # Instance parameters
 $ipaddrparam = "MULTIHOME=$ipaddr"
@@ -117,18 +128,20 @@ $PreferPreProcessorparam = "PREFERPREPROCESSOR=$PreferPreProcessor"
 
 $compileParams = "$ipaddrparam $portparam $Qportparam $Randomparam $FixedMaxplayersparam $FixedMaxTickRateparam $PreferPreProcessorparam $Parameters"
 #[System.Environment]::SetEnvironmentVariable($serverName, $compileParams,[System.EnvironmentVariableTarget]::Machine)
-Write-Output "Parameters: $compileParams"
+Write-Output "[Notice] Setting Command Line Parameters: $compileParams"
 Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name $serverName -Value $compileParams
 
-Write-Output "Update has finished: $(Get-Date) for $serverName"
+Write-Output "[Notice] Update has finished: $(Get-Date) for $serverName"
 if ($AutoStart -eq $True) {
     net start $instanceId
-    Write-Output "Starting $instanceId"
+    Write-Output "[Notice] -AutoStart is being used"
+    Write-Output "[Notice] Starting $instanceId"
     }
     else 
         {
-    Write-Output "-AutoStart was not set, exiting without starting server instance"
+    Write-Output "[Notice] -AutoStart was not set, exiting without starting server instance"
     }
 #Stop myself if service Firedaemon Service
+Write-Output "End of Script"
 net stop $ServiceName
 [Environment]::Exit(66)
