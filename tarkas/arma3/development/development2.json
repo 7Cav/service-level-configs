@@ -104,6 +104,21 @@
                 "name": "@ACE_AFRF",
                 "server": "false"
             },
+            {	
+                "app": "1891346714",	
+                "name": "@USAF_MAIN",	
+                "server": "false"	
+            },	
+            {	
+                "app": "1891343103",	
+                "name": "@USAF_FIGHTER",	
+                "server": "false"	
+            },	
+            {	
+                "app": "1891349162",	
+                "name": "@USAF_UTIL",	
+                "server": "false"	
+            },
             {
                 "app": "884966711",
                 "name": "@ACE_GREF",
