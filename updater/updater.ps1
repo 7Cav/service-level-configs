@@ -14,7 +14,8 @@ $Config += '.json'
 #
 $configPath = 'https://raw.githubusercontent.com/7Cav/service-level-configs/master/' + $Server + $Game + $Type + $Config
 #
-Set-Location -Path D:\scripts\updater
+$locpath = (Get-Location).ToString()
+Set-Location -Path $locpath
 # 
 if ($Game -eq "arma3/") {
   .\main\arma3.ps1 $configPath $AutoStart $logs $Nuke

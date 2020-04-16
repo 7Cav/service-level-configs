@@ -16,7 +16,7 @@ $TickRate = $configJson.server.env.FIXEDTICKRATE
 $PreferPreProcessor = $configJson.server.env.CPU_AFFINITY
 $Parameters = $configJson.server.env.PARAMETERS
 $modListJson = $configJson.mods
-$scripts = $configJson.server.env.SCRIPTS_REL_PATH
+# $scripts = $configJson.server.env.SCRIPTS_REL_PATH
 $configDir = $configJson.server.env.SQUAD_CONFIG_PATH
 $steamCMDdir = $configJson.server.env.STEAM_BASE_PATH
 $installDirWorkshop = $configJson.server.env.STEAM_WORKSHOP_PATH
@@ -32,7 +32,7 @@ $ServiceName += "Updater"
 
 $configDir = "$configDir\$serverName"
 $steamCMDdir += "steamcmd.exe"
-$serverScripts = "$installDirSquaddirectory\$scripts"
+# $serverScripts = "$installDirSquaddirectory\$scripts"
 # Remove existing symbolic links
 #
 Write-Output "###"
