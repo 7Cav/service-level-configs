@@ -1,11 +1,11 @@
 {
     "server": {
         "env": {
-            "SERVER_ID": "SquadEvent",
-            "SERVER_NAME": "event",
+            "SERVER_ID": "SquadEvent1",
+            "SERVER_NAME": "event1",
             "IP_ADDRESS": "142.44.143.136",
-            "PORT": "7989",
-            "QUERY_PORT": "",
+            "PORT": "7991",
+            "QUERY_PORT": "27161",
             "PARAMETERS": "-log",
             "MAX_PLAYERS": "80",
             "FIXEDTICKRATE": "50",
@@ -16,7 +16,7 @@
             "STORE_PATH": "D:\\store\\squad\\",
             "SCRIPTS_REL_PATH": "",
             "SQUAD_CONFIG_PATH": "D:\\config",
-            "SQUAD_BASE_PATH": "D:\\gameservers\\squad\\event"
+            "SQUAD_BASE_PATH": "D:\\gameservers\\squad\\event1"
             },
         "mods": {
             "app": "",
