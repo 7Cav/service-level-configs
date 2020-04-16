@@ -41,11 +41,11 @@ Write-Output "Update has started: $(Get-Date) for Service $instanceId - $serverN
 net stop $instanceId
 Start-Sleep -s 5
 Write-Output Start-Sleep -s 15
-$dirp = Get-Item $installDirSquaddirectory\*
+$dirp = Get-Item $installDirSquaddirectory\SquadGame\Plugins\Mods\*
 foreach($item in $dirp)
 {
-$item.Delete()
-Write-Output "Removing Junction Point at $item"
+Remove-Item -Recurse -Force $item
+Write-Output "Removing $item from \Mods"
 }
 
 if ($Nuke -eq $True) {
