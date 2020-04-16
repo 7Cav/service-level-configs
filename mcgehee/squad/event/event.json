@@ -1,0 +1,27 @@
+{
+    "server": {
+        "env": {
+            "SERVER_ID": "SquadEvent1",
+            "SERVER_NAME": "event1",
+            "IP_ADDRESS": "142.44.143.136",
+            "PORT": "7991",
+            "QUERY_PORT": "27161",
+            "PARAMETERS": "-log",
+            "MAX_PLAYERS": "80",
+            "FIXEDTICKRATE": "50",
+            "RANDOM": "NONE",
+            "CPU_AFFINITY": "FF",
+            "STEAM_BASE_PATH": "D:\\steam\\",
+            "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\393380\\",
+            "STORE_PATH": "D:\\store\\squad\\",
+            "SCRIPTS_REL_PATH": "",
+            "SQUAD_CONFIG_PATH": "D:\\config",
+            "SQUAD_BASE_PATH": "D:\\gameservers\\squad\\event1"
+            },
+        "mods": {
+            "app": "",
+            "name": ""
+        }
+        }
+}
+
