@@ -20,7 +20,9 @@ Set-Location -Path $locpath
 if ($Game -eq "arma3/") {
   .\main\arma3.ps1 $configPath $AutoStart $logs $Nuke
 } elseif ($Game -eq "squad/") {
-  .\main\squad.ps1 $configPath $AutoStart $logs $Nuke
+  .\main\arma3.ps1 $configPath $AutoStart $logs $Nuke
 } else {
     throw "Game Type not Found"
 }
+
+
