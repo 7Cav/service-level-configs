@@ -104,21 +104,6 @@
                 "name": "@ACE_AFRF",
                 "server": "false"
             },
-            {	
-                "app": "1891346714",	
-                "name": "@USAF_MAIN",	
-                "server": "false"	
-            },	
-            {	
-                "app": "1891343103",	
-                "name": "@USAF_FIGHTER",	
-                "server": "false"	
-            },	
-            {	
-                "app": "1891349162",	
-                "name": "@USAF_UTIL",	
-                "server": "false"	
-            },
             {
                 "app": "884966711",
                 "name": "@ACE_GREF",
@@ -130,13 +115,8 @@
                 "server": "false"
             },
             {
-                "app": "508476583",
-                "name": "@TF47",
-                "server": "false"
-            },
-            {
-                "app": "1696706969",
-                "name": "@7CAV_CBA",
+                "app": "2039615238",
+                "name": "@7CAV_CBA_Dev",
                 "server": "false"
             },
             {
@@ -145,14 +125,39 @@
                 "server": "false"
             },
             {
-                "app": "583544987",
-                "name": "@CUP_MAPS",
-                "server": "false"
-            },
-            {
                 "app": "620260972",
                 "name": "@ALiVE",
                 "server": "false"
+            },
+            {
+                "app": "1224892496",
+                "name": "@GRAD",
+                "server": "false" 
+            },
+            {
+                "app": "366425329",
+                "name": "@FIR",
+                "server": "false" 
+            },
+            {
+                "app": "787892271",
+                "name": "@A10",
+                "server": "false" 
+            },
+            {
+                "app": "366423278",
+                "name": "@F16",
+                "server": "false" 
+            },
+            {
+                "app": "714149065",
+                "name": "@ISLA_DUALA",
+                "server": "false" 
+            },
+            {
+                "app": "1926513010",
+                "name": "@VIROLAHTI",
+                "server": "false" 
             },
             {
                 "app": "1858075458",
