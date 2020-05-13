@@ -8,7 +8,7 @@
             "QUERY_PORT": "27167",
             "PARAMETERS": "-log",
             "MAX_PLAYERS": "80",
-            "FIXEDTICKRATE": "50",
+            "FIXEDTICKRATE": "30",
             "RANDOM": "NONE",
             "CPU_AFFINITY": "FF",
             "STEAM_BASE_PATH": "D:\\steam\\",
