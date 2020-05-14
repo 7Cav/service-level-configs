@@ -90,11 +90,6 @@
                 "server": "false"
             },
             {
-                "app": "843593391",
-                "name": "@RHS_GREF",
-                "server": "false"
-            },
-            {
                 "app": "773125288",
                 "name": "@ACE_USAF",
                 "server": "false"
@@ -102,16 +97,6 @@
             {
                 "app": "773131200",
                 "name": "@ACE_AFRF",
-                "server": "false"
-            },
-            {
-                "app": "884966711",
-                "name": "@ACE_GREF",
-                "server": "false"
-            },
-            {
-                "app": "735566597",
-                "name": "@PRJ_OPF",
                 "server": "false"
             },
             {
