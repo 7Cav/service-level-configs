@@ -165,11 +165,6 @@
                 "server": "true"
             },
             {
-                "app": "1180534892",
-                "name": "@JSRS_GREF",
-                "server": "true"
-            },
-            {
                 "app": "",
                 "name": "@intercept",
                 "server": "true"
