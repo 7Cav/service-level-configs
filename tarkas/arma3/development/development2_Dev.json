@@ -55,23 +55,28 @@
         },
         "mods": [
             {
-                "app": "450814997",
-                "name": "@CBA_A3",
+                "app": "620260972",
+                "name": "@ALIVE",
                 "server": "false"
             },
             {
-                "app": "463939057",
-                "name": "@ACE",
+                "app": "884966711",
+                "name": "@ACE_GREF",
                 "server": "false"
             },
             {
-                "app": "708250744",
-                "name": "@ACEX",
+                "app": "843593391",
+                "name": "@RHS_GREF",
                 "server": "false"
             },
             {
-                "app": "751965892",
-                "name": "ACRE2",
+                "app": "773131200",
+                "name": "@ACE_AFRF",
+                "server": "false"
+            },
+            {
+                "app": "843425103",
+                "name": "@RHS_AFRF",
                 "server": "false"
             },
             {
@@ -85,28 +90,23 @@
                 "server": "false"
             },
             {
-                "app": "843425103",
-                "name": "@RHS_AFRF",
+                "app": "751965892",
+                "name": "ACRE2",
                 "server": "false"
             },
             {
-                "app": "773131200",
-                "name": "@ACE_AFRF",
+                "app": "708250744",
+                "name": "@ACEX",
                 "server": "false"
             },
             {
-                "app": "843593391",
-                "name": "@RHS_GREF",
+                "app": "463939057",
+                "name": "@ACE",
                 "server": "false"
             },
             {
-                "app": "884966711",
-                "name": "@ACE_GREF",
-                "server": "false"
-            },
-            {
-                "app": "620260972",
-                "name": "@ALIVE",
+                "app": "450814997",
+                "name": "@CBA_A3",
                 "server": "false"
             }
         ]
