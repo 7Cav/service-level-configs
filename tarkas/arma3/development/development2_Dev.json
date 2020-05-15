@@ -60,8 +60,28 @@
                 "server": "false"
             },
             {
-                "app": "463939057",
-                "name": "@ACE",
+                "app": "463939057"
+                "name": "@ACE"
+                "server": "false"
+            },
+            {
+                "app": "708250744"
+                "name": "@ACEX"
+                "server": "false"
+            },
+            {
+                "app": "751965892"
+                "name": "ACRE2"
+                "server": "false"
+            },
+            {
+                "app": "620260972"
+                "name": "@ALIVE"
+                "server": "false"
+            },
+            {
+                "app": "2039615238"
+                "name": "@7CAV_DEV"
                 "server": "false"
             }
         ]
