@@ -135,36 +135,6 @@
                 "server": "true"
             },
             {
-                "app": "723217262",
-                "name": "@ACHILLES",
-                "server": "true"
-            },
-            {
-                "app": "498740884",
-                "name": "@SHK_UI",
-                "server": "true"
-            },
-            {
-                "app": "333310405",
-                "name": "@ENH",
-                "server": "true"
-            },
-            {
-                "app": "861133494",
-                "name": "@JSRS",
-                "server": "true"
-            },
-            {
-                "app": "1180533757",
-                "name": "@JSRS_USAF",
-                "server": "true"
-            },
-            {
-                "app": "945476727",
-                "name": "@JSRS_AFRF",
-                "server": "true"
-            },
-            {
                 "app": "",
                 "name": "@intercept",
                 "server": "true"
