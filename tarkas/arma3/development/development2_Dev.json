@@ -55,48 +55,8 @@
         },
         "mods": [
             {
-                "app": "620260972",
-                "name": "@ALIVE",
-                "server": "false"
-            },
-            {
-                "app": "884966711",
-                "name": "@ACE_GREF",
-                "server": "false"
-            },
-            {
-                "app": "843593391",
-                "name": "@RHS_GREF",
-                "server": "false"
-            },
-            {
-                "app": "773131200",
-                "name": "@ACE_AFRF",
-                "server": "false"
-            },
-            {
-                "app": "843425103",
-                "name": "@RHS_AFRF",
-                "server": "false"
-            },
-            {
-                "app": "843577117",
-                "name": "@RHS_USAF",
-                "server": "false"
-            },
-            {
-                "app": "773125288",
-                "name": "@ACE_USAF",
-                "server": "false"
-            },
-            {
-                "app": "751965892",
-                "name": "ACRE2",
-                "server": "false"
-            },
-            {
-                "app": "708250744",
-                "name": "@ACEX",
+                "app": "450814997",
+                "name": "@CBA_A3",
                 "server": "false"
             },
             {
@@ -105,8 +65,18 @@
                 "server": "false"
             },
             {
-                "app": "450814997",
-                "name": "@CBA_A3",
+                "app": "708250744",
+                "name": "@ACEX",
+                "server": "false"
+            },
+            {
+                "app": "751965892",
+                "name": "ACRE2",
+                "server": "false"
+            },
+            {
+                "app": "620260972",
+                "name": "@ALIVE",
                 "server": "false"
             }
         ]
