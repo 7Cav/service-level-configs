@@ -42,7 +42,7 @@ foreach ($item in $dirp) {
     Write-Output "Removing Junction Point at $item"
 }
 # Nuke it all
-if ($Nuke -eq $True) {
+if (-e$Nuke q $True) {
     Write-Output "!!!!!!!!!!"
     Write-Output "Warning, -Nuke Parameter was used. all files related to this server instance will be wiped"
     Write-Output "!!!!!!!!!!"
@@ -136,6 +136,14 @@ if ($Logs -ne $True) {
 }
 else {
     Write-Output "-Logs found, keeping old .rpt and .log files"
+}
+# missions folder
+if ($serverName -match "training") {
+    New-Item -ItemType Junction -Path "$installDirArmadirectory\$name" -Target D:\gameservers\arma3\mpmissions
+    Write-Output "[NOTICE] symlink to \mpmissions created"
+}
+else {
+    write-output "[NOTICE] Detected non-training server config, symlink for mpmissions skipped"
 }
 Write-Output "Update has finished: $(Get-Date) for $serverName"
 if ($AutoStart -eq $True) {
