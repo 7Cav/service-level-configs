@@ -1,8 +1,8 @@
 {
     "server": {
         "env": {
-            "SERVER_ID": "Arma3Tact1",
-            "SERVER_NAME": "tacticalrealism1",
+            "SERVER_ID": "Arma3Tact2",
+            "SERVER_NAME": "tacticalrealism2",
             "IP_ADDRESS": "144.217.11.41",
             "PORT": "2302",
             "PARAMETERS": "-noSound",

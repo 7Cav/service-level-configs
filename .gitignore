@@ -1,0 +1,21 @@
+# Bash
+*~
+
+# Visual Studio Code
+.vscode
+.vscode-test
+
+# Dependency Directories
+node_modules/
+
+# Build & Compiled Binaries Directory
+build/
+release/
+
+# Executables
+*.exe
+*.out
+*.app
+
+# npm Cache Directory
+.npm

@@ -161,16 +161,6 @@
             },
             {
                 "app": "",
-                "name": "@intercept",
-                "server": "true"
-            },
-            {
-                "app": "",
-                "name": "@ASP",
-                "server": "true"
-            },
-            {
-                "app": "",
                 "name": "@CavMetrics",
                 "server": "true"
             }

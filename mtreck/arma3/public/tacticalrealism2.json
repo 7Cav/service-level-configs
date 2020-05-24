@@ -1,18 +1,18 @@
 {
     "server": {
         "env": {
-            "SERVER_ID": "Arma3Dev1",
-            "SERVER_NAME": "development1",
-            "IP_ADDRESS": "144.217.11.41",
-            "PORT": "2372",
-            "PARAMETERS": "-noSound",
+            "SERVER_ID": "Arma3Tact2",
+            "SERVER_NAME": "tacticalrealism2",
+            "IP_ADDRESS": "142.44.143.136",
+            "PORT": "2322",
+            "PARAMETERS": "-nologs -enableHT -malloc=system -noSound",
             "STEAM_BASE_PATH": "D:\\steam\\",
             "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
             "STORE_PATH": "D:\\store\\arma3\\",
             "SCRIPTS_REL_PATH": "serverscripts",
             "ARMA_CONFIG_PATH": "D:\\config",
             "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
-            "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development1"
+            "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\tacticalrealism2"
             },
         "cfg": {
             "Max_Bandwidth": "1073741824",
@@ -24,7 +24,7 @@
             "Error_Near": "0.008"
             },
         "arma": {
-            "hostname": "=7Cav=ARMA3 Development 1 [US]",
+            "hostname": "=7Cav=ARMA3 Tactical Realism 2 [US]",
             "headless": "\"127.0.0.1\",\"142.44.143.136\"",
             "localclient": "\"127.0.0.1\",\"142.44.143.136\"",
             "filepatching": "0",
@@ -55,28 +55,13 @@
         },
         "mods": [
             {
-                "app": "2039615238",
-                "name": "@7Cav_CBA_Dev",
+                "app": "450814997",
+                "name": "@CBA_A3",
                 "server": "false"
             },
             {
                 "app": "463939057",
                 "name": "@ACE",
-                "server": "false"
-            },
-            {
-                "app": "773131200",
-                "name": "@ACE_AFRF",
-                "server": "false"
-            },
-            {
-                "app": "884966711",
-                "name": "@ACE_GREF",
-                "server": "false"
-            },
-            {
-                "app": "773125288",
-                "name": "@ACE_USAF",
                 "server": "false"
             },
             {
@@ -90,13 +75,8 @@
                 "server": "false"
             },
             {
-                "app": "450814997",
-                "name": "@CBA",
-                "server": "false"
-            },
-            {
-                "app": "498740884",
-                "name": "@SHK_UI",
+                "app": "843577117",
+                "name": "@RHS_USAF",
                 "server": "false"
             },
             {
@@ -110,8 +90,33 @@
                 "server": "false"
             },
             {
-                "app": "843577117",
-                "name": "@RHS_USAF",
+                "app": "773125288",
+                "name": "@ACE_USAF",
+                "server": "false"
+            },
+            {
+                "app": "773131200",
+                "name": "@ACE_AFRF",
+                "server": "false"
+            },
+            {
+                "app": "884966711",
+                "name": "@ACE_GREF",
+                "server": "false"
+            },
+            {
+                "app": "1891346714",
+                "name": "@USAF_MAIN",
+                "server": "false"
+            },
+            {
+                "app": "1891343103",
+                "name": "@USAF_FIGHTER",
+                "server": "false"
+            },
+            {
+                "app": "1891349162",
+                "name": "@USAF_UTIL",
                 "server": "false"
             },
             {
@@ -120,23 +125,13 @@
                 "server": "false"
             },
             {
-                "app": "366425329",
-                "name": "@FIR_AWS",
+                "app": "508476583",
+                "name": "@TF47",
                 "server": "false"
             },
             {
-                "app": "787892271",
-                "name": "@FIR_A10",
-                "server": "false"
-            },
-            {
-                "app": "582478120",
-                "name": "@FIR_F15",
-                "server": "false"
-            },
-            {
-                "app": "366423278",
-                "name": "@FIR_F16",
+                "app": "1696706969",
+                "name": "@7CAV_CBA",
                 "server": "false"
             },
             {
@@ -145,48 +140,23 @@
                 "server": "false"
             },
             {
-                "app": "648172507",
-                "name": "@Al_Rayak",
+                "app": "583544987",
+                "name": "@CUP_MAPS",
                 "server": "false"
             },
             {
-                "app": "1224892496",
-                "name": "@GRAD",
+                "app": "620260972",
+                "name": "@ALiVE",
                 "server": "false"
-            },
-            {
-                "app": "714149065",
-                "name": "@Isla_Duala",
-                "server": "false"
-            },
-            {
-                "app": "718649903",
-                "name": "@Lingor_Dingor",
-                "server": "false"
-            },
-            {
-                "app": "1252091296",
-                "name": "@Tembelan",
-                "server": "false"
-            },
-            {
-                "app": "1926513010",
-                "name": "@Virolahti",
-                "server": "false"
-            },
-            {
-                "app": "",
-                "name": "@CavPackv3_9_Dev",
-                "server": "false"
-            },
-            {
-                "app": "723217262",
-                "name": "@ACHILLES",
-                "server": "true"
             },
             {
                 "app": "1858075458",
                 "name": "@LAMBS",
+                "server": "true"
+            },
+            {
+                "app": "723217262",
+                "name": "@ACHILLES",
                 "server": "true"
             },
             {
@@ -195,4 +165,5 @@
                 "server": "true"
             }
         ]
-    }
+}
+
