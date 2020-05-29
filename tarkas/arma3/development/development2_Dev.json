@@ -71,13 +71,148 @@
             },
             {
                 "app": "751965892",
-                "name": "ACRE2",
+                "name": "@ACRE",
+                "server": "false"
+            },
+            {
+                "app": "843577117",
+                "name": "@RHS_USAF",
+                "server": "false"
+            },
+            {
+                "app": "718649903",
+                "name": "@Lingor",
+                "server": "false"
+            },
+            {
+                "app": "843425103",
+                "name": "@RHS_AFRF",
+                "server": "false"
+            },
+            {
+                "app": "843593391",
+                "name": "@RHS_GREF",
+                "server": "false"
+            },
+            {
+                "app": "773125288",
+                "name": "@ACE_USAF",
+                "server": "false"
+            },
+            {
+                "app": "773131200",
+                "name": "@ACE_AFRF",
+                "server": "false"
+            },
+            {
+                "app": "884966711",
+                "name": "@ACE_GREF",
+                "server": "false"
+            },
+            {
+                "app": "735566597",
+                "name": "@PRJ_OPF",
+                "server": "false"
+            },
+            {
+                "app": "2039615238",
+                "name": "@7CAV_CBA_Dev",
+                "server": "false"
+            },
+            {
+                "app": "583496184",
+                "name": "@CUP_CORE",
                 "server": "false"
             },
             {
                 "app": "620260972",
-                "name": "@ALIVE",
+                "name": "@ALiVE",
                 "server": "false"
+            },
+            {
+                "app": "1224892496",
+                "name": "@GRAD",
+                "server": "false" 
+            },
+            {
+                "app": "366425329",
+                "name": "@FIR",
+                "server": "false" 
+            },
+            {
+                "app": "787892271",
+                "name": "@A10",
+                "server": "false" 
+            },
+            {
+                "app": "366423278",
+                "name": "@F16",
+                "server": "false" 
+            },
+            {
+                "app": "714149065",
+                "name": "@ISLA_DUALA",
+                "server": "false" 
+            },
+            {
+                "app": "648775794",
+                "name": "@ISLA_ABRAMIA",
+                "server": "false" 
+            },
+            {
+                "app": "1858075458",
+                "name": "@LAMBS",
+                "server": "true"
+            },
+            {
+                "app": "723217262",
+                "name": "@ACHILLES",
+                "server": "true"
+            },
+            {
+                "app": "498740884",
+                "name": "@SHK_UI",
+                "server": "true"
+            },
+            {
+                "app": "333310405",
+                "name": "@ENH",
+                "server": "true"
+            },
+            {
+                "app": "861133494",
+                "name": "@JSRS",
+                "server": "true"
+            },
+            {
+                "app": "1180533757",
+                "name": "@JSRS_USAF",
+                "server": "true"
+            },
+            {
+                "app": "945476727",
+                "name": "@JSRS_AFRF",
+                "server": "true"
+            },
+            {
+                "app": "1180534892",
+                "name": "@JSRS_GREF",
+                "server": "true"
+            },
+            {
+                "app": "",
+                "name": "@intercept",
+                "server": "true"
+            },
+            {
+                "app": "",
+                "name": "@ASP",
+                "server": "true"
+            },
+            {
+                "app": "",
+                "name": "@CavMetrics",
+                "server": "true"
             }
         ]
 }
