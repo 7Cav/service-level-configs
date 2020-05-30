@@ -21,6 +21,7 @@
             "Max_Size": "768",
             "Max_Size_Non": "512",
             "Max_Custom": "350000",
+	    "randomMissionOrder = true",
             "Error_Near": "0.008"
             },
         "arma": {
