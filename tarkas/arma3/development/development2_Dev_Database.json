@@ -194,7 +194,7 @@
                 "name": "@JSRS_GREF",
                 "server": "true"
             },
-			{
+			      {
                 "app": "",
                 "name": "@ext3db",
                 "server": "true"
