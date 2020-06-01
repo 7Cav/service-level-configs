@@ -122,10 +122,12 @@
       "randomMissionOrder": "true",
       "autoSelectMission": "true",
       "classMissions": [
-        { "class": "7Cav_testMission" },
-        { "template": "7Cav-test.Altis" },
-        { "difficulty": "custom" },
-        { "classParams": [{ "param": "" }] }
+        {
+          "class": "7Cav_testMission",
+          "template": "7Cav-test.Altis",
+          "difficulty": "custom",
+          "classParams": [{ "param": "" }]
+        }
       ],
       "missionWhitelist": [
         { "mission": "7Cav-test.Altis" },
