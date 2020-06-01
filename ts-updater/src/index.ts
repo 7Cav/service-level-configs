@@ -1,7 +1,4 @@
-import { resolve } from "dns";
-
 var fs = require("fs");
-var path = require("path");
 var Mustache = require("mustache");
 var fetch = require("node-fetch");
 
@@ -18,11 +15,13 @@ const template = fetch(
 Promise.all([data, template])
   .then((res) => {
     const resolvedData = res[0].server.configuration;
-    console.log(resolvedData);
     const resolvedTemplate = res[1];
 
     // Cache the template for future uses
     Mustache.parse(resolvedTemplate);
+    Mustache.escape = function (text: any) {
+      return text;
+    };
 
     var output = Mustache.render(resolvedTemplate, resolvedData);
 

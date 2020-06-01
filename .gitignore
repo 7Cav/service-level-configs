@@ -19,3 +19,5 @@ release/
 
 # npm Cache Directory
 .npm
+ts-updater/test.cfg
+ts-updater/server.cfg
