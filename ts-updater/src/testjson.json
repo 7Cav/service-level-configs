@@ -22,13 +22,13 @@
       "serverCommandPassword": "serverpasswordnew",
       "logFile": "console.log",
       "motd": [
-        "line": "__________     SYSTEM MESSAGES __________",
-        "line": "Welcome to a 7th Cavalry Testing Server 1",
-        "line": "IMPORTANT   Verify Signatures is enabled",
-        "line": "TS3 Server:     ts3.7cav.us Password: 7thCavalry",
-        "line": "Web:            7cav.us",
-        "line": "__________     END OF MESSAGE __________",
-        "line": ""
+        { "line": "__________     SYSTEM MESSAGES __________" },
+        { "line": "Welcome to a 7th Cavalry Testing Server 1" },
+        { "line": "IMPORTANT   Verify Signatures is enabled" },
+        { "line": "TS3 Server:     ts3.7cav.us Password: 7thCavalry" },
+        { "line": "Web:            7cav.us" },
+        { "line": "__________     END OF MESSAGE __________" },
+        { "line": "" }
       ],
       "motdInterval": "5",
       "maxPlayers": "100",
