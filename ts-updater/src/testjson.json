@@ -121,11 +121,11 @@
       "onDifferentData": "",
       "randomMissionOrder": "true",
       "autoSelectMission": "true",
-      "class Missions": [
+      "classMissions": [
         { "class": "7Cav_testMission" },
         { "template": "7Cav-test.Altis" },
         { "difficulty": "custom" },
-        { "class Params": [{ "param": "" }] }
+        { "classParams": [{ "param": "" }] }
       ],
       "missionWhitelist": [
         { "mission": "7Cav-test.Altis" },
