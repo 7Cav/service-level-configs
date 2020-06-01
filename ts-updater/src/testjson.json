@@ -103,10 +103,9 @@
       "maxPacketLoss": "50",
       "kickClientsOnSlowNetwork": "0, 0, 0, 0,",
       "kickTimeout": [
-        { "one": "{0, -1}" },
-        { "two": "{1, 180}" },
-        { "three": "{2, 180}" },
-        { "four": "{3, 180}" }
+        { "line": "{0, 300}" },
+        { "line": "{1, 0}" },
+        { "line": "{2, 0}" }
       ],
       "votingTimeOut": "60, 90",
       "roleTimeOut": "90, 120",
