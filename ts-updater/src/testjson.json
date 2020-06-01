@@ -28,14 +28,14 @@
         { "line": "TS3 Server:     ts3.7cav.us Password: 7thCavalry" },
         { "line": "Web:            7cav.us" },
         { "line": "__________     END OF MESSAGE __________" },
-        { "last": "" }
+        { "line": "" }
       ],
       "motdInterval": "5",
       "maxPlayers": "100",
       "kickDuplicate": "1",
       "verifySignatures": "2",
       "allowedFilePatching": "0",
-      "filePatchingExceptions": [{ "steamid": "" }, { "last": "" }],
+      "filePatchingExceptions": [{ "steamid": "" }, { "steamid": "" }],
       "voteMissionPlayers": "1",
       "voteThreshold": "2",
       "disableVon": "1",
@@ -65,7 +65,7 @@
         { "ext": "bikb" },
         { "ext": "html" },
         { "ext": "biedi" },
-        { "last": "b64" }
+        { "ext": "b64" }
       ],
       "allowedPreprocessFileExtensions": [
         { "ext": "hpp" },
@@ -88,13 +88,13 @@
         { "ext": "bikb" },
         { "ext": "html" },
         { "ext": "biedi" },
-        { "last": "b64" }
+        { "ext": "b64" }
       ],
       "allowedHTMLLoadExtensions": [
         { "ext": "htm" },
         { "ext": "html" },
         { "ext": "xml" },
-        { "last": "txt" }
+        { "ext": "txt" }
       ],
       "allowedHTMLLoadURIs": [{ "uri": "7cav.us" }],
       "disconnectTimeout": "60",
@@ -129,7 +129,7 @@
       ],
       "missionWhitelist": [
         { "mission": "7Cav-test.Altis" },
-        { "last": "7Cav-test.Malden" }
+        { "mission": "7Cav-test.Malden" }
       ]
     },
     "mods": [
