@@ -13,48 +13,48 @@
       "ARMA_CONFIG_PATH": "D:\\config",
       "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
       "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\tacticalrealism1"
+    }
+  },
+  "mods": [
+    {
+      "app": "450814997",
+      "name": "@CBA_A3",
+      "server": "true"
     },
-    "mods": [
-      {
-        "app": "450814997",
-        "name": "@CBA_A3",
-        "server": "true"
-      },
-      {
-        "app": "333310405",
-        "name": "@ENH_MOVE",
-        "server": "true"
-      },
-      {
-        "app": "723217262",
-        "name": "@ACHILLES",
-        "server": "true"
-      },
-      {
-        "app": "767380317",
-        "name": "@BCESA",
-        "server": "true"
-      },
-      {
-        "app": "853303947",
-        "name": "@BCESA_VS",
-        "server": "true"
-      },
-      {
-        "app": "825181638",
-        "name": "@DynaSound2",
-        "server": "true"
-      },
-      {
-        "app": "",
-        "name": "@CavMetrics",
-        "server": "true"
-      },
-      {
-        "app": "",
-        "name": "@inidbi2",
-        "server": "true"
-      }
-    ]
-  }
+    {
+      "app": "333310405",
+      "name": "@ENH_MOVE",
+      "server": "true"
+    },
+    {
+      "app": "723217262",
+      "name": "@ACHILLES",
+      "server": "true"
+    },
+    {
+      "app": "767380317",
+      "name": "@BCESA",
+      "server": "true"
+    },
+    {
+      "app": "853303947",
+      "name": "@BCESA_VS",
+      "server": "true"
+    },
+    {
+      "app": "825181638",
+      "name": "@DynaSound2",
+      "server": "true"
+    },
+    {
+      "app": "",
+      "name": "@CavMetrics",
+      "server": "true"
+    },
+    {
+      "app": "",
+      "name": "@inidbi2",
+      "server": "true"
+    }
+  ]
 }

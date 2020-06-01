@@ -13,148 +13,148 @@
       "ARMA_CONFIG_PATH": "D:\\config",
       "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
       "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development1"
+    }
+  },
+  "mods": [
+    {
+      "app": "2039615238",
+      "name": "@7Cav_CBA_Dev",
+      "server": "false"
     },
-    "mods": [
-      {
-        "app": "2039615238",
-        "name": "@7Cav_CBA_Dev",
-        "server": "false"
-      },
-      {
-        "app": "463939057",
-        "name": "@ACE",
-        "server": "false"
-      },
-      {
-        "app": "773131200",
-        "name": "@ACE_AFRF",
-        "server": "false"
-      },
-      {
-        "app": "884966711",
-        "name": "@ACE_GREF",
-        "server": "false"
-      },
-      {
-        "app": "773125288",
-        "name": "@ACE_USAF",
-        "server": "false"
-      },
-      {
-        "app": "708250744",
-        "name": "@ACEX",
-        "server": "false"
-      },
-      {
-        "app": "751965892",
-        "name": "@ACRE",
-        "server": "false"
-      },
-      {
-        "app": "450814997",
-        "name": "@CBA",
-        "server": "false"
-      },
-      {
-        "app": "498740884",
-        "name": "@SHK_UI",
-        "server": "false"
-      },
-      {
-        "app": "843425103",
-        "name": "@RHS_AFRF",
-        "server": "false"
-      },
-      {
-        "app": "843593391",
-        "name": "@RHS_GREF",
-        "server": "false"
-      },
-      {
-        "app": "843577117",
-        "name": "@RHS_USAF",
-        "server": "false"
-      },
-      {
-        "app": "735566597",
-        "name": "@PRJ_OPF",
-        "server": "false"
-      },
-      {
-        "app": "366425329",
-        "name": "@FIR_AWS",
-        "server": "false"
-      },
-      {
-        "app": "787892271",
-        "name": "@FIR_A10",
-        "server": "false"
-      },
-      {
-        "app": "582478120",
-        "name": "@FIR_F15",
-        "server": "false"
-      },
-      {
-        "app": "366423278",
-        "name": "@FIR_F16",
-        "server": "false"
-      },
-      {
-        "app": "583496184",
-        "name": "@CUP_CORE",
-        "server": "false"
-      },
-      {
-        "app": "648172507",
-        "name": "@Al_Rayak",
-        "server": "false"
-      },
-      {
-        "app": "1224892496",
-        "name": "@GRAD",
-        "server": "false"
-      },
-      {
-        "app": "714149065",
-        "name": "@Isla_Duala",
-        "server": "false"
-      },
-      {
-        "app": "718649903",
-        "name": "@Lingor_Dingor",
-        "server": "false"
-      },
-      {
-        "app": "1252091296",
-        "name": "@Tembelan",
-        "server": "false"
-      },
-      {
-        "app": "1926513010",
-        "name": "@Virolahti",
-        "server": "false"
-      },
-      {
-        "app": "",
-        "name": "@CavPackv3_9_Dev",
-        "server": "false"
-      },
-      {
-        "app": "723217262",
-        "name": "@ACHILLES",
-        "server": "true"
-      },
-      {
-        "app": "1858075458",
-        "name": "@LAMBS",
-        "server": "true"
-      },
-      {
-        "app": "",
-        "name": "@CavMetrics",
-        "server": "true"
-      }
-    ]
-  }
+    {
+      "app": "463939057",
+      "name": "@ACE",
+      "server": "false"
+    },
+    {
+      "app": "773131200",
+      "name": "@ACE_AFRF",
+      "server": "false"
+    },
+    {
+      "app": "884966711",
+      "name": "@ACE_GREF",
+      "server": "false"
+    },
+    {
+      "app": "773125288",
+      "name": "@ACE_USAF",
+      "server": "false"
+    },
+    {
+      "app": "708250744",
+      "name": "@ACEX",
+      "server": "false"
+    },
+    {
+      "app": "751965892",
+      "name": "@ACRE",
+      "server": "false"
+    },
+    {
+      "app": "450814997",
+      "name": "@CBA",
+      "server": "false"
+    },
+    {
+      "app": "498740884",
+      "name": "@SHK_UI",
+      "server": "false"
+    },
+    {
+      "app": "843425103",
+      "name": "@RHS_AFRF",
+      "server": "false"
+    },
+    {
+      "app": "843593391",
+      "name": "@RHS_GREF",
+      "server": "false"
+    },
+    {
+      "app": "843577117",
+      "name": "@RHS_USAF",
+      "server": "false"
+    },
+    {
+      "app": "735566597",
+      "name": "@PRJ_OPF",
+      "server": "false"
+    },
+    {
+      "app": "366425329",
+      "name": "@FIR_AWS",
+      "server": "false"
+    },
+    {
+      "app": "787892271",
+      "name": "@FIR_A10",
+      "server": "false"
+    },
+    {
+      "app": "582478120",
+      "name": "@FIR_F15",
+      "server": "false"
+    },
+    {
+      "app": "366423278",
+      "name": "@FIR_F16",
+      "server": "false"
+    },
+    {
+      "app": "583496184",
+      "name": "@CUP_CORE",
+      "server": "false"
+    },
+    {
+      "app": "648172507",
+      "name": "@Al_Rayak",
+      "server": "false"
+    },
+    {
+      "app": "1224892496",
+      "name": "@GRAD",
+      "server": "false"
+    },
+    {
+      "app": "714149065",
+      "name": "@Isla_Duala",
+      "server": "false"
+    },
+    {
+      "app": "718649903",
+      "name": "@Lingor_Dingor",
+      "server": "false"
+    },
+    {
+      "app": "1252091296",
+      "name": "@Tembelan",
+      "server": "false"
+    },
+    {
+      "app": "1926513010",
+      "name": "@Virolahti",
+      "server": "false"
+    },
+    {
+      "app": "",
+      "name": "@CavPackv3_9_Dev",
+      "server": "false"
+    },
+    {
+      "app": "723217262",
+      "name": "@ACHILLES",
+      "server": "true"
+    },
+    {
+      "app": "1858075458",
+      "name": "@LAMBS",
+      "server": "true"
+    },
+    {
+      "app": "",
+      "name": "@CavMetrics",
+      "server": "true"
+    }
+  ]
 }
