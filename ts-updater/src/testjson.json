@@ -96,6 +96,7 @@
         { "ext": "xml" },
         { "ext": "txt" }
       ],
+      "allowedHTMLLoadURIs": [{ "uri": "7cav.us" }],
       "disconnectTimeout": "60",
       "maxDesync": "150",
       "maxPing": "200",
