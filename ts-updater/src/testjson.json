@@ -125,8 +125,7 @@
         {
           "class": "7Cav_testMission",
           "template": "7Cav-test.Altis",
-          "difficulty": "custom",
-          "classParams": [{ "param": "" }]
+          "difficulty": "custom"
         }
       ],
       "missionWhitelist": [
