@@ -4,12 +4,12 @@ var Mustache = require("mustache");
 var fetch = require("node-fetch");
 
 // Get external data with fetch
-const data = fetch("data.json").then((response) => {
+const data = fetch("testjson.json").then((response: { json: () => any }) => {
   return response.json();
 });
 
 // Get external template with fetch
-const template = fetch("server.cfg").then((response) => {
+const template = fetch("server.cfg").then((response: { text: () => any }) => {
   return response.text();
 });
 
@@ -27,9 +27,10 @@ Promise.all([data, template])
     // Write out the rendered template
     return fs.writeFile("server.cfg", output, (err: any) => {
       if (err) throw err;
-      console.log("generated template");
+      console.log("generated configuration");
     });
   })
   .catch((error) =>
     console.log("Unable to get all template data: ", error.message)
   );
+// at this point gotta think where to proceed

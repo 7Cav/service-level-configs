@@ -130,144 +130,153 @@
     },
     "mods": [
       {
+        "_Comment": "app = Steam workshop ID. If left blank - search for mod inside /localmod dir"
+      },
+      {
+        "_Comment": "name = Name of mod folder to create and use for this mod"
+      },
+      {
+        "_Comment": "setup = (1) Normal, (2) Server, (3) Keys only. Default 1"
+      },
+      {
         "app": "2039615238",
         "name": "@7Cav_CBA_Dev",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "463939057",
         "name": "@ACE",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "773131200",
         "name": "@ACE_AFRF",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "884966711",
         "name": "@ACE_GREF",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "773125288",
         "name": "@ACE_USAF",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "708250744",
         "name": "@ACEX",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "751965892",
         "name": "@ACRE",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "450814997",
         "name": "@CBA",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "498740884",
         "name": "@SHK_UI",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "843425103",
         "name": "@RHS_AFRF",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "843593391",
         "name": "@RHS_GREF",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "843577117",
         "name": "@RHS_USAF",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "735566597",
         "name": "@PRJ_OPF",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "366425329",
         "name": "@FIR_AWS",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "787892271",
         "name": "@FIR_A10",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "582478120",
         "name": "@FIR_F15",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "366423278",
         "name": "@FIR_F16",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "583496184",
         "name": "@CUP_CORE",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "648172507",
         "name": "@Al_Rayak",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "1224892496",
         "name": "@GRAD",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "714149065",
         "name": "@Isla_Duala",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "718649903",
         "name": "@Lingor_Dingor",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "1252091296",
         "name": "@Tembelan",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "1926513010",
         "name": "@Virolahti",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "",
         "name": "@CavPackv3_9_Dev",
-        "server": "false"
+        "setup": "1"
       },
       {
         "app": "723217262",
         "name": "@ACHILLES",
-        "server": "true"
+        "setup": "2"
       },
       {
         "app": "1858075458",
         "name": "@LAMBS",
-        "server": "true"
+        "setup": "2"
       },
       {
         "app": "",
         "name": "@CavMetrics",
-        "server": "true"
+        "setup": "2"
       }
     ]
   }
