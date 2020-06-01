@@ -107,11 +107,12 @@
         { "line": "{1, 0}" },
         { "line": "{2, 0}" }
       ],
-      "votingTimeOut": "60, 90",
+      "votingTimeOut": "30, 60",
       "roleTimeOut": "90, 120",
-      "briefingTimeOut": "60, 90",
-      "debriefingTimeOut": "45, 60",
-      "lobbyIdleTimeout": "300",
+      "briefingTimeOut": "15, 60",
+      "debriefingTimeOut": "15, 30",
+      "lobbyIdleTimeout": "600",
+      "missionsToServerRestart": "2",
       "onUserConnected": "",
       "onUserDisconnected": "",
       "doubleIdDetected": "",
@@ -129,7 +130,8 @@
       "missionWhitelist": [
         { "mission": "7Cav-test.Altis" },
         { "mission": "7Cav-test.Malden" }
-      ]
+      ],
+      "steamProtocolMaxDataSize": "1024"
     },
     "mods": [
       {
