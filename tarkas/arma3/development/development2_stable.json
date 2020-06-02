@@ -1,168 +1,130 @@
 {
-    "server": {
-        "env": {
-            "SERVER_ID": "Arma3Dev2",
-            "SERVER_NAME": "development2",
-            "IP_ADDRESS": "144.217.11.41",
-            "PORT": "2352",
-            "PARAMETERS": "-noSound -profilerAdapter Tracy -profilerEnableFAlloc -profilerEngineDoMem -profilerEnableInstruction",
-            "STEAM_BASE_PATH": "D:\\steam\\",
-            "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
-            "STORE_PATH": "D:\\store\\arma3\\",
-            "SCRIPTS_REL_PATH": "serverscripts",
-            "ARMA_CONFIG_PATH": "D:\\config",
-            "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
-            "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development2"
-            },
-        "cfg": {
-            "Max_Bandwidth": "1073741824",
-            "Min_Bandwidth": "107374182",
-            "Max_Send": "256",
-            "Max_Size": "768",
-            "Max_Size_Non": "512",
-            "Max_Custom": "350000",
-            "Error_Near": "0.008"
-            },
-        "arma": {
-            "hostname": "=7Cav=ARMA3 Development 2 [US]",
-            "headless": "\"127.0.0.1\",\"142.44.143.136\"",
-            "localclient": "\"127.0.0.1\",\"142.44.143.136\"",
-            "filepatching": "0",
-            "battleye": "1",
-            "verifysig": "1",
-            "logfile": "a3master.log",
-            "motd": "",
-            "motdint": "5",
-            "maxplayers": "120",
-            "automission": "true",
-            "missionclass": "7cav-Alive-v5.5.0.Tanoa",
-            "difficulty": "custom",
-            "whitelist": "\"7Cav-Alive-v5.5.0.Altis\",\\n\"7Cav-Alive-v5.5.0.Tanoa\",",
-            "votemissions": "1",
-            "votethreshold": "2",
-            "lobbyidle": "3000",
-            "disablevon": "1",
-            "vonquality": "8",
-            "persistent": "0",
-            "kickdupe": "1",
-            "equalmodreq": "0",
-            "reqsecureid": "2",
-            "timestampfmt": "\"short\"",
-            "onuserconnect": "",
-            "onuserdisconnect": "",
-            "doubleid": ""
-            }
-        },
-        "mods": [
-            {
-                "app": "450814997",
-                "name": "@CBA_A3",
-                "server": "false"
-            },
-            {
-                "app": "463939057",
-                "name": "@ACE",
-                "server": "false"
-            },
-            {
-                "app": "708250744",
-                "name": "@ACEX",
-                "server": "false"
-            },
-            {
-                "app": "751965892",
-                "name": "@ACRE",
-                "server": "false"
-            },
-            {
-                "app": "843577117",
-                "name": "@RHS_USAF",
-                "server": "false"
-            },
-            {
-                "app": "843425103",
-                "name": "@RHS_AFRF",
-                "server": "false"
-            },
-            {
-                "app": "843593391",
-                "name": "@RHS_GREF",
-                "server": "false"
-            },
-            {
-                "app": "773125288",
-                "name": "@ACE_USAF",
-                "server": "false"
-            },
-            {
-                "app": "773131200",
-                "name": "@ACE_AFRF",
-                "server": "false"
-            },
-            {
-                "app": "884966711",
-                "name": "@ACE_GREF",
-                "server": "false"
-            },
-            {
-                "app": "1891346714",
-                "name": "@USAF_MAIN",
-                "server": "false"
-            },
-            {
-                "app": "1891343103",
-                "name": "@USAF_FIGHTER",
-                "server": "false"
-            },
-            {
-                "app": "1891349162",
-                "name": "@USAF_UTIL",
-                "server": "false"
-            },
-            {
-                "app": "735566597",
-                "name": "@PRJ_OPF",
-                "server": "false"
-            },
-            {
-                "app": "508476583",
-                "name": "@TF47",
-                "server": "false"
-            },
-            {
-                "app": "1696706969",
-                "name": "@7CAV_CBA",
-                "server": "false"
-            },
-            {
-                "app": "583496184",
-                "name": "@CUP_CORE",
-                "server": "false"
-            },
-            {
-                "app": "583544987",
-                "name": "@CUP_MAPS",
-                "server": "false"
-            },
-            {
-                "app": "620260972",
-                "name": "@ALiVE",
-                "server": "false"
-            },
-            {
-                "app": "1858075458",
-                "name": "@LAMBS",
-                "server": "true"
-            },
-            {
-                "app": "723217262",
-                "name": "@ACHILLES",
-                "server": "true"
-            },
-            {
-                "app": "",
-                "name": "@CavMetrics",
-                "server": "true"
-            }
-        ]
+  "server": {
+    "env": {
+      "SERVER_ID": "Arma3Dev2",
+      "SERVER_NAME": "development2",
+      "IP_ADDRESS": "144.217.11.41",
+      "PORT": "2352",
+      "PARAMETERS": "-noSound -profilerAdapter Tracy -profilerEnableFAlloc -profilerEngineDoMem -profilerEnableInstruction",
+      "STEAM_BASE_PATH": "D:\\steam\\",
+      "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
+      "STORE_PATH": "D:\\store\\arma3\\",
+      "SCRIPTS_REL_PATH": "serverscripts",
+      "ARMA_CONFIG_PATH": "D:\\config",
+      "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
+      "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development2"
+    }
+  },
+  "mods": [
+    {
+      "app": "450814997",
+      "name": "@CBA_A3",
+      "server": "false"
+    },
+    {
+      "app": "463939057",
+      "name": "@ACE",
+      "server": "false"
+    },
+    {
+      "app": "708250744",
+      "name": "@ACEX",
+      "server": "false"
+    },
+    {
+      "app": "751965892",
+      "name": "@ACRE",
+      "server": "false"
+    },
+    {
+      "app": "843577117",
+      "name": "@RHS_USAF",
+      "server": "false"
+    },
+    {
+      "app": "843425103",
+      "name": "@RHS_AFRF",
+      "server": "false"
+    },
+    {
+      "app": "843593391",
+      "name": "@RHS_GREF",
+      "server": "false"
+    },
+    {
+      "app": "773125288",
+      "name": "@ACE_USAF",
+      "server": "false"
+    },
+    {
+      "app": "773131200",
+      "name": "@ACE_AFRF",
+      "server": "false"
+    },
+    {
+      "app": "884966711",
+      "name": "@ACE_GREF",
+      "server": "false"
+    },
+    {
+      "app": "1891346714",
+      "name": "@USAF_MAIN",
+      "server": "false"
+    },
+    {
+      "app": "1891343103",
+      "name": "@USAF_FIGHTER",
+      "server": "false"
+    },
+    {
+      "app": "1891349162",
+      "name": "@USAF_UTIL",
+      "server": "false"
+    },
+    {
+      "app": "735566597",
+      "name": "@PRJ_OPF",
+      "server": "false"
+    },
+    {
+      "app": "508476583",
+      "name": "@TF47",
+      "server": "false"
+    },
+    {
+      "app": "1696706969",
+      "name": "@7CAV_CBA",
+      "server": "false"
+    },
+    {
+      "app": "583496184",
+      "name": "@CUP_CORE",
+      "server": "false"
+    },
+    {
+      "app": "583544987",
+      "name": "@CUP_MAPS",
+      "server": "false"
+    },
+    {
+      "app": "620260972",
+      "name": "@ALiVE",
+      "server": "false"
+    },
+    {
+      "app": "1858075458",
+      "name": "@LAMBS",
+      "server": "true"
+    },
+    {
+      "app": "723217262",
+      "name": "@ACHILLES",
+      "server": "true"
+    },
+    {
+      "app": "",
+      "name": "@CavMetrics",
+      "server": "true"
+    }
+  ]
 }

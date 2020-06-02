@@ -1,0 +1,289 @@
+{
+  "server": {
+    "_comment": "THIS IS AN EXAMPLE FILE DO NOT USE AS IS",
+    "env": {
+      "SERVER_ID": "Arma3Test1",
+      "SERVER_NAME": "test1",
+      "IP_ADDRESS": "127.0.0.1",
+      "PORT": "8000",
+      "PARAMETERS": "-exampleParameter",
+      "STEAM_BASE_PATH": "D:\\steam\\",
+      "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
+      "STORE_PATH": "D:\\store\\arma3\\",
+      "SCRIPTS_REL_PATH": "serverscripts",
+      "ARMA_CONFIG_PATH": "D:\\config",
+      "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
+      "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development1"
+    },
+    "configuration": {
+      "hostname": "=7Cav= Testing Server 1 [US]",
+      "password": "newpassword",
+      "passwordAdmin": "anothernewpassword",
+      "serverCommandPassword": "serverpasswordnew",
+      "logFile": "console.log",
+      "motd": [
+        { "line": "__________     SYSTEM MESSAGES __________" },
+        { "line": "Welcome to a 7th Cavalry Testing Server 1" },
+        { "line": "IMPORTANT   Verify Signatures is enabled" },
+        { "line": "TS3 Server:     ts3.7cav.us Password: 7thCavalry" },
+        { "line": "Web:            7cav.us" },
+        { "line": "__________     END OF MESSAGE __________" },
+        { "line": "" }
+      ],
+      "motdInterval": "5",
+      "maxPlayers": "100",
+      "kickDuplicate": "1",
+      "verifySignatures": "2",
+      "allowedFilePatching": "0",
+      "filePatchingExceptions": [{ "steamid": "" }, { "steamid": "" }],
+      "voteMissionPlayers": "1",
+      "voteThreshold": "2",
+      "disableVon": "1",
+      "vonCodec": "1",
+      "vonCodecQuality": "30",
+      "persistent": "1",
+      "timeStampFormat": "short",
+      "BattlEye": "1",
+      "allowedLoadFileExtensions": [
+        { "ext": "hpp" },
+        { "ext": "sqs" },
+        { "ext": "sqf" },
+        { "ext": "fsm" },
+        { "ext": "cpp" },
+        { "ext": "paa" },
+        { "ext": "txt" },
+        { "ext": "xml" },
+        { "ext": "inc" },
+        { "ext": "ext" },
+        { "ext": "sqm" },
+        { "ext": "ods" },
+        { "ext": "fxy" },
+        { "ext": "lip" },
+        { "ext": "csv" },
+        { "ext": "kb" },
+        { "ext": "bik" },
+        { "ext": "bikb" },
+        { "ext": "html" },
+        { "ext": "biedi" },
+        { "ext": "b64" }
+      ],
+      "allowedPreprocessFileExtensions": [
+        { "ext": "hpp" },
+        { "ext": "sqs" },
+        { "ext": "sqf" },
+        { "ext": "fsm" },
+        { "ext": "cpp" },
+        { "ext": "paa" },
+        { "ext": "txt" },
+        { "ext": "xml" },
+        { "ext": "inc" },
+        { "ext": "ext" },
+        { "ext": "sqm" },
+        { "ext": "ods" },
+        { "ext": "fxy" },
+        { "ext": "lip" },
+        { "ext": "csv" },
+        { "ext": "kb" },
+        { "ext": "bik" },
+        { "ext": "bikb" },
+        { "ext": "html" },
+        { "ext": "biedi" },
+        { "ext": "b64" }
+      ],
+      "allowedHTMLLoadExtensions": [
+        { "ext": "htm" },
+        { "ext": "html" },
+        { "ext": "xml" },
+        { "ext": "txt" }
+      ],
+      "allowedHTMLLoadURIs": [{ "uri": "7cav.us" }],
+      "disconnectTimeout": "60",
+      "maxDesync": "150",
+      "maxPing": "200",
+      "maxPacketLoss": "50",
+      "kickClientsOnSlowNetwork": "0, 0, 0, 0,",
+      "kickTimeout": [
+        { "line": "{0, 300}" },
+        { "line": "{1, 0}" },
+        { "line": "{2, 0}" }
+      ],
+      "votingTimeOut": "30, 60",
+      "roleTimeOut": "90, 120",
+      "briefingTimeOut": "15, 60",
+      "debriefingTimeOut": "15, 30",
+      "lobbyIdleTimeout": "600",
+      "missionsToServerRestart": "2",
+      "onUserConnected": "",
+      "onUserDisconnected": "",
+      "doubleIdDetected": "",
+      "onUnsignedData": "kick (_this select 0)",
+      "onHackedData": "kick (_this select 0)",
+      "onDifferentData": "",
+      "randomMissionOrder": "true",
+      "autoSelectMission": "true",
+      "classMissions": [
+        {
+          "class": "7Cav_testMission",
+          "template": "7Cav-test.Altis",
+          "difficulty": "custom"
+        }
+      ],
+      "missionWhitelist": [
+        { "mission": "7Cav-test.Altis" },
+        { "mission": "7Cav-test.Malden" }
+      ],
+      "steamProtocolMaxDataSize": "1024"
+    },
+    "mods": [
+      {
+        "_Comment": "app = Steam workshop ID. If left blank - search for mod inside /localmod dir"
+      },
+      {
+        "_Comment": "name = Name of mod folder to create and use for this mod"
+      },
+      {
+        "_Comment": "setup = (1) Normal, (2) Server, (3) Keys only. Default 1"
+      },
+      {
+        "app": "2039615238",
+        "name": "@7Cav_CBA_Dev",
+        "setup": "1"
+      },
+      {
+        "app": "463939057",
+        "name": "@ACE",
+        "setup": "1"
+      },
+      {
+        "app": "773131200",
+        "name": "@ACE_AFRF",
+        "setup": "1"
+      },
+      {
+        "app": "884966711",
+        "name": "@ACE_GREF",
+        "setup": "1"
+      },
+      {
+        "app": "773125288",
+        "name": "@ACE_USAF",
+        "setup": "1"
+      },
+      {
+        "app": "708250744",
+        "name": "@ACEX",
+        "setup": "1"
+      },
+      {
+        "app": "751965892",
+        "name": "@ACRE",
+        "setup": "1"
+      },
+      {
+        "app": "450814997",
+        "name": "@CBA",
+        "setup": "1"
+      },
+      {
+        "app": "498740884",
+        "name": "@SHK_UI",
+        "setup": "1"
+      },
+      {
+        "app": "843425103",
+        "name": "@RHS_AFRF",
+        "setup": "1"
+      },
+      {
+        "app": "843593391",
+        "name": "@RHS_GREF",
+        "setup": "1"
+      },
+      {
+        "app": "843577117",
+        "name": "@RHS_USAF",
+        "setup": "1"
+      },
+      {
+        "app": "735566597",
+        "name": "@PRJ_OPF",
+        "setup": "1"
+      },
+      {
+        "app": "366425329",
+        "name": "@FIR_AWS",
+        "setup": "1"
+      },
+      {
+        "app": "787892271",
+        "name": "@FIR_A10",
+        "setup": "1"
+      },
+      {
+        "app": "582478120",
+        "name": "@FIR_F15",
+        "setup": "1"
+      },
+      {
+        "app": "366423278",
+        "name": "@FIR_F16",
+        "setup": "1"
+      },
+      {
+        "app": "583496184",
+        "name": "@CUP_CORE",
+        "setup": "1"
+      },
+      {
+        "app": "648172507",
+        "name": "@Al_Rayak",
+        "setup": "1"
+      },
+      {
+        "app": "1224892496",
+        "name": "@GRAD",
+        "setup": "1"
+      },
+      {
+        "app": "714149065",
+        "name": "@Isla_Duala",
+        "setup": "1"
+      },
+      {
+        "app": "718649903",
+        "name": "@Lingor_Dingor",
+        "setup": "1"
+      },
+      {
+        "app": "1252091296",
+        "name": "@Tembelan",
+        "setup": "1"
+      },
+      {
+        "app": "1926513010",
+        "name": "@Virolahti",
+        "setup": "1"
+      },
+      {
+        "app": "",
+        "name": "@CavPackv3_9_Dev",
+        "setup": "1"
+      },
+      {
+        "app": "723217262",
+        "name": "@ACHILLES",
+        "setup": "2"
+      },
+      {
+        "app": "1858075458",
+        "name": "@LAMBS",
+        "setup": "2"
+      },
+      {
+        "app": "",
+        "name": "@CavMetrics",
+        "setup": "2"
+      }
+    ]
+  }
+}
