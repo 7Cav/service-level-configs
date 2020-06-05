@@ -17,8 +17,8 @@
   },
   "mods": [
     {
-      "app": "450814997",
-      "name": "@CBA_A3",
+      "app": "2039615238",
+      "name": "@CAV_EXP",
       "server": "false"
     },
     {
@@ -37,68 +37,38 @@
       "server": "false"
     },
     {
-      "app": "843577117",
-      "name": "@RHS_USAF",
-      "server": "false"
-    },
-    {
-      "app": "718649903",
-      "name": "@Lingor",
-      "server": "false"
-    },
-    {
-      "app": "843425103",
-      "name": "@RHS_AFRF",
-      "server": "false"
-    },
-    {
-      "app": "843593391",
-      "name": "@RHS_GREF",
-      "server": "false"
-    },
-    {
-      "app": "773125288",
-      "name": "@ACE_USAF",
-      "server": "false"
-    },
-    {
-      "app": "773131200",
-      "name": "@ACE_AFRF",
-      "server": "false"
-    },
-    {
-      "app": "884966711",
-      "name": "@ACE_GREF",
-      "server": "false"
-    },
-    {
-      "app": "735566597",
-      "name": "@PRJ_OPF",
-      "server": "false"
-    },
-    {
-      "app": "2039615238",
-      "name": "@7CAV_CBA_Dev",
-      "server": "false"
-    },
-    {
-      "app": "583496184",
-      "name": "@CUP_CORE",
-      "server": "false"
-    },
-    {
       "app": "620260972",
-      "name": "@ALiVE",
+      "name": "@ALIVE",
+      "server": "false"
+    },
+    {
+      "app": "450814997",
+      "name": "@CBA_A3",
+      "server": "false"
+    },
+    {
+      "app": "820924072",
+      "name": "@BOC",
       "server": "false"
     },
     {
       "app": "1224892496",
-      "name": "@GRAD",
+      "name": "@GRD_TRNCH",
+      "server": "false"
+    },
+    {
+      "app": "498740884",
+      "name": "@SHK_UI",
       "server": "false"
     },
     {
       "app": "366425329",
-      "name": "@FIR",
+      "name": "@FIR_AWS",
+      "server": "false"
+    },
+    {
+      "app": "366423278",
+      "name": "@F16_FF",
       "server": "false"
     },
     {
@@ -107,8 +77,43 @@
       "server": "false"
     },
     {
-      "app": "366423278",
-      "name": "@F16",
+      "app": "735566597",
+      "name": "@PRJOF",
+      "server": "false"
+    },
+    {
+      "app": "843425103",
+      "name": "@RHS_AFRF",
+      "server": "false"
+    },
+    {
+      "app": "843577117",
+      "name": "@RHS_USAF",
+      "server": "false"
+    },
+    {
+      "app": "843593391",
+      "name": "@RHS_GREF",
+      "server": "false"
+    },
+    {
+      "app": "773131200",
+      "name": "@ACE_AFRF",
+      "server": "false"
+    },
+    {
+      "app": "773125288",
+      "name": "@ACE_USAF",
+      "server": "false"
+    },
+    {
+      "app": "884966711",
+      "name": "@ACE_GREF",
+      "server": "false"
+    },
+    {
+      "app": "583496184",
+      "name": "@CUP_CORE",
       "server": "false"
     },
     {
@@ -117,18 +122,18 @@
       "server": "false"
     },
     {
-      "app": "1858075458",
-      "name": "@LAMBS",
-      "server": "true"
+      "app": "718649903",
+      "name": "@LINGOR",
+      "server": "false"
+    },
+    {
+      "app": "761349672",
+      "name": "@CLAFGAHN",
+      "server": "false"
     },
     {
       "app": "723217262",
       "name": "@ACHILLES",
-      "server": "true"
-    },
-    {
-      "app": "498740884",
-      "name": "@SHK_UI",
       "server": "true"
     },
     {
@@ -154,6 +159,11 @@
     {
       "app": "1180534892",
       "name": "@JSRS_GREF",
+      "server": "true"
+    },
+    {
+      "app": "1858075458",
+      "name": "@LMBS_DNGR",
       "server": "true"
     },
     {
