@@ -18,7 +18,7 @@
   "mods": [
     {
       "app": "2039615238",
-      "name": "@CAVADDON_EXPERIMENTAL",
+      "name": "@CAV_EXP",
       "server": "false"
 	},
 	{
@@ -58,27 +58,27 @@
 	},
 	{
       "app": "773131200",
-      "name": "@ACE_COMPAT_AFRF",
+      "name": "@ACE_AFRF",
       "server": "false"
 	},
 	{
       "app": "773125288",
-      "name": "@ACE_COMPAT_USAF",
+      "name": "@ACE_USAF",
       "server": "false"
 	},
 	{
       "app": "884966711",
-      "name": "@ACE_COMPAT_GREF",
+      "name": "@ACE_GREF",
       "server": "false"
 	},
 	{
       "app": "1224892496",
-      "name": "@GRAD_TRENCHES",
+      "name": "@GRD_TRNCH",
       "server": "false"
 	},
 	{
       "app": "498740884",
-      "name": "@SHACTAC_UI",
+      "name": "@SHK_UI",
       "server": "false"
 	},
 	{
@@ -103,7 +103,7 @@
 	},
 	{
       "app": "735566597",
-      "name": "@PROJECT_OPFOR",
+      "name": "@PROJOF",
       "server": "false"
 	},
 	{
@@ -118,7 +118,7 @@
 	},
 	{
       "app": "648172507",
-      "name": "@GOS_AL_RAYAK",
+      "name": "@ALRAYAK",
       "server": "false"
 	},
 	{
@@ -158,22 +158,22 @@
 	},
 	{
       "app": "945476727",
-      "name": "@JSRS_COMPAT_AFRF",
+      "name": "@JSRS_AFRF",
       "server": "true"
 	},
 	{
       "app": "1180533757",
-      "name": "@JSRS_COMPAT_USAF",
+      "name": "@JSRS_USAF",
       "server": "true"
 	},
 	{
       "app": "1180534892",
-      "name": "@JSRS_COMPAT_GREF",
+      "name": "@JSRS_GREF",
       "server": "true"
 	},
 	{
       "app": "1858075458",
-      "name": "@LAMBS_DANGER",
+      "name": "@LMBS_DGR",
       "server": "true"
 	},
     {
