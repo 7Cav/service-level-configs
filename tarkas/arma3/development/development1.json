@@ -16,12 +16,12 @@
     }
   },
   "mods": [
-    { 
+    {
       "app": "2039615238",
       "name": "@CAV_EXP",
       "server": "false"
     },
-    {     
+    {
       "app": "463939057",
       "name": "@ACE",
       "server": "false"
