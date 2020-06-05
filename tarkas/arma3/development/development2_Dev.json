@@ -27,23 +27,13 @@
       "server": "false"
     },
 	{
-      "app": "773131200",
-      "name": "@ACE_COMPAT_AFRF",
-      "server": "false"
-    },
-	{
-      "app": "773125288",
-      "name": "@ACE_COMPAT_USAF",
-      "server": "false"
-    },
-	{
-      "app": "884966711",
-      "name": "@ACE_COMPAT_GREF",
-      "server": "false"
-    },
-	{
       "app": "708250744",
       "name": "@ACEX",
+      "server": "false"
+    },
+	{
+      "app": "751965892",
+      "name": "@ACRE2",
       "server": "false"
     },
 	{
@@ -68,7 +58,7 @@
     },
 	{
       "app": "498740884",
-      "name": "@SHK_UI",
+      "name": "@SHACTAC_UI",
       "server": "false"
     },
 	{
@@ -98,18 +88,33 @@
       "server": "false"
     },
 	{
-      "app": "843593391",
-      "name": "@RHS_GREF",
-      "server": "false"
-    },
-	{
       "app": "843577117",
       "name": "@RHS_USAF",
       "server": "false"
     },
 	{
+      "app": "843593391",
+      "name": "@RHS_GREF",
+      "server": "false"
+    },
+	{
+      "app": "773131200",
+      "name": "@ACE_COMPAT_AFRF",
+      "server": "false"
+    },
+	{
+      "app": "773125288",
+      "name": "@ACE_COMPAT_USAF",
+      "server": "false"
+    },
+	{
+      "app": "884966711",
+      "name": "@ACE_COMPAT_GREF",
+      "server": "false"
+    },
+	{
       "app": "583496184",
-      "name": "@CUP_TERRAINS_CORE",
+      "name": "@CUP_CORE",
       "server": "false"
     },
 	{

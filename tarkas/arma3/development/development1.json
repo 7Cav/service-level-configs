@@ -18,139 +18,164 @@
   "mods": [
     {
       "app": "2039615238",
-      "name": "@7Cav_CBA_Dev",
+      "name": "@CAVADDON_EXPERIMENTAL",
       "server": "false"
-    },
-    {
+	},
+	{
       "app": "463939057",
       "name": "@ACE",
       "server": "false"
-    },
-    {
-      "app": "773131200",
-      "name": "@ACE_AFRF",
-      "server": "false"
-    },
-    {
-      "app": "884966711",
-      "name": "@ACE_GREF",
-      "server": "false"
-    },
-    {
-      "app": "773125288",
-      "name": "@ACE_USAF",
-      "server": "false"
-    },
-    {
+	},
+	{
       "app": "708250744",
       "name": "@ACEX",
       "server": "false"
-    },
-    {
+	},
+	{
       "app": "751965892",
-      "name": "@ACRE",
+      "name": "@ACRE2",
       "server": "false"
-    },
-    {
+	},
+	{
       "app": "450814997",
-      "name": "@CBA",
+      "name": "@CBA_A3",
       "server": "false"
-    },
-    {
-      "app": "498740884",
-      "name": "@SHK_UI",
-      "server": "false"
-    },
-    {
+	},
+	{
       "app": "843425103",
       "name": "@RHS_AFRF",
       "server": "false"
-    },
-    {
-      "app": "843593391",
-      "name": "@RHS_GREF",
-      "server": "false"
-    },
-    {
+	},
+	{
       "app": "843577117",
       "name": "@RHS_USAF",
       "server": "false"
-    },
-    {
-      "app": "735566597",
-      "name": "@PRJ_OPF",
+	},
+	{
+      "app": "843593391",
+      "name": "@RHS_GREF",
       "server": "false"
-    },
-    {
+	},
+	{
+      "app": "773131200",
+      "name": "@ACE_COMPAT_AFRF",
+      "server": "false"
+	},
+	{
+      "app": "773125288",
+      "name": "@ACE_COMPAT_USAF",
+      "server": "false"
+	},
+	{
+      "app": "884966711",
+      "name": "@ACE_COMPAT_GREF",
+      "server": "false"
+	},
+	{
+      "app": "1224892496",
+      "name": "@GRAD_TRENCHES",
+      "server": "false"
+	},
+	{
+      "app": "498740884",
+      "name": "@SHACTAC_UI",
+      "server": "false"
+	},
+	{
       "app": "366425329",
       "name": "@FIR_AWS",
       "server": "false"
-    },
-    {
+	},
+	{
       "app": "787892271",
-      "name": "@FIR_A10",
+      "name": "@A10",
       "server": "false"
-    },
-    {
+	},
+	{
       "app": "582478120",
-      "name": "@FIR_F15",
+      "name": "@F15_E",
       "server": "false"
-    },
-    {
+	},
+	{
       "app": "366423278",
-      "name": "@FIR_F16",
+      "name": "@F16_FF",
       "server": "false"
-    },
-    {
+	},
+	{
+      "app": "735566597",
+      "name": "@PROJECT_OPFOR",
+      "server": "false"
+	},
+	{
       "app": "583496184",
       "name": "@CUP_CORE",
       "server": "false"
-    },
-    {
+	},
+	{
+      "app": "583544987",
+      "name": "@CUP_MAPS",
+      "server": "false"
+	},
+	{
       "app": "648172507",
-      "name": "@Al_Rayak",
+      "name": "@GOS_AL_RAYAK",
       "server": "false"
-    },
-    {
-      "app": "1224892496",
-      "name": "@GRAD",
-      "server": "false"
-    },
-    {
+	},
+	{
       "app": "714149065",
-      "name": "@Isla_Duala",
+      "name": "@ISLA_DUALA",
       "server": "false"
-    },
-    {
+	},
+	{
       "app": "718649903",
-      "name": "@Lingor_Dingor",
+      "name": "@LINGOR",
       "server": "false"
-    },
-    {
+	},
+	{
       "app": "1252091296",
-      "name": "@Tembelan",
+      "name": "@TEMBELAN_ISLAND",
       "server": "false"
-    },
-    {
-      "app": "1926513010",
-      "name": "@Virolahti",
-      "server": "false"
-    },
-    {
+	},
+	{
       "app": "",
-      "name": "@CavPackv3_9_Dev",
+      "name": "@CAVPACK_3_9_DEV",
       "server": "false"
-    },
-    {
+	},
+	{
+      "app": "1926513010",
+      "name": "@VIROLAHTI",
+      "server": "true"
+	},
+	{
       "app": "723217262",
       "name": "@ACHILLES",
       "server": "true"
-    },
-    {
-      "app": "1858075458",
-      "name": "@LAMBS",
+	},
+	{
+      "app": "861133494",
+      "name": "@JSRS",
       "server": "true"
-    },
+	},
+	{
+      "app": "945476727",
+      "name": "@JSRS_COMPAT_AFRF",
+      "server": "true"
+	},
+	{
+      "app": "1180533757",
+      "name": "@JSRS_COMPAT_USAF",
+      "server": "true"
+	},
+	{
+      "app": "1180534892",
+      "name": "@JSRS_COMPAT_GREF",
+      "server": "true"
+	},
+	{
+      "app": "1858075458",
+      "name": "@LAMBS_DANGER",
+      "server": "true"
+	},
     {
       "app": "",
       "name": "@CavMetrics",
