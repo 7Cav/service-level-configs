@@ -167,6 +167,11 @@
       "server": "false"
     },
     {
+      "app": "1858075458",
+      "name": "@LMBS_DNGR",
+      "server": "false"
+    },
+    {
       "app": "1926513010",
       "name": "@VIROLAHTI",
       "server": "true"
@@ -194,11 +199,6 @@
     {
       "app": "1180534892",
       "name": "@JSRS_GREF",
-      "server": "true"
-    },
-    {
-      "app": "1858075458",
-      "name": "@LMBS_DGR",
       "server": "true"
     },
     {
