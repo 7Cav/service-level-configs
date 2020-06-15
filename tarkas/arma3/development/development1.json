@@ -17,8 +17,8 @@
   },
   "mods": [
     {
-      "app": "2039615238",
-      "name": "@CAV_EXP",
+      "app": "1696706969",
+      "name": "@CAVADDON",
       "server": "false"
     },
     {
@@ -163,7 +163,12 @@
     },
     {
       "app": "",
-      "name": "@CAVPACK_3_9_DEV",
+      "name": "@CAVPACK_3_9",
+      "server": "false"
+    },
+    {
+      "app": "1858075458",
+      "name": "@LMBS_DNGR",
       "server": "false"
     },
     {
@@ -194,11 +199,6 @@
     {
       "app": "1180534892",
       "name": "@JSRS_GREF",
-      "server": "true"
-    },
-    {
-      "app": "1858075458",
-      "name": "@LMBS_DGR",
       "server": "true"
     },
     {
