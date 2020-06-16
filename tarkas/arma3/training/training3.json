@@ -142,18 +142,8 @@
       "server": "false"
     },
     {
-      "app": "836147398",
-      "name": "@XCAM",
-      "server": "false"
-    },
-    {
       "app": "524622628",
       "name": "@BOZCAADA",
-      "server": "false"
-    },
-    {
-      "app": "761349672",
-      "name": "@CLAFGHAN",
       "server": "false"
     },
     {
@@ -169,6 +159,11 @@
     {
       "app": "1858075458",
       "name": "@LMBS_DGR",
+      "server": "false"
+    },
+    {
+      "app": "708278910",
+      "name": "@PANTHERA",
       "server": "false"
     },
     {
