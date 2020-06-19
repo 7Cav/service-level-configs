@@ -12,7 +12,7 @@ $Game += '/'
 $Type += '/'
 $Config += '.json'
 #
-$configPath = 'https://raw.githubusercontent.com/7Cav/service-level-configs/master/' + $Server + $Game + $Type + $Config
+$configPath = 'https://raw.githubusercontent.com/7Cav/service-level-configs/develop/' + $Server + $Game + $Type + $Config
 #
 $locpath = (Get-Location).ToString()
 Set-Location -Path $locpath
