@@ -1,8 +1,8 @@
 {
   "server": {
     "env": {
-      "SERVER_ID": "Arma3Tact1",
-      "SERVER_NAME": "tacticalrealism1",
+      "SERVER_ID": "Arma3Tact2",
+      "SERVER_NAME": "tacticalrealism2",
       "IP_ADDRESS": "144.217.11.41",
       "PORT": "2302",
       "PARAMETERS": "-noSound",
@@ -44,6 +44,26 @@
     {
       "app": "825181638",
       "name": "@DynaSound2",
+      "server": "true"
+    },
+    {
+      "app": "861133494",
+      "name": "@JSRS",
+      "server": "true"
+    },
+    {
+      "app": "1180533757",
+      "name": "@JSRSUSAF",
+      "server": "true"
+    },
+    {
+      "app": "945476727",
+      "name": "@JSRSAFRF",
+      "server": "true"
+    },
+    {
+      "app": "1180534892",
+      "name": "@JSRSGREF",
       "server": "true"
     },
     {

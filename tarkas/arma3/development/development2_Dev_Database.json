@@ -1,24 +1,24 @@
 {
   "server": {
     "env": {
-      "SERVER_ID": "Arma3Training3",
-      "SERVER_NAME": "training3",
+      "SERVER_ID": "Arma3Dev2",
+      "SERVER_NAME": "development2",
       "IP_ADDRESS": "144.217.11.41",
-      "PORT": "2332",
-      "PARAMETERS": "-noSound -noLogs",
+      "PORT": "2352",
+      "PARAMETERS": "-noSound",
       "STEAM_BASE_PATH": "D:\\steam\\",
       "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
       "STORE_PATH": "D:\\store\\arma3\\",
       "SCRIPTS_REL_PATH": "serverscripts",
       "ARMA_CONFIG_PATH": "D:\\config",
       "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
-      "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\training3"
+      "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development2"
     }
   },
   "mods": [
     {
-      "app": "1696706969",
-      "name": "@CAVADDON",
+      "app": "2039615238",
+      "name": "@CAV_EXP",
       "server": "false"
     },
     {
@@ -37,8 +37,48 @@
       "server": "false"
     },
     {
+      "app": "620260972",
+      "name": "@ALIVE",
+      "server": "false"
+    },
+    {
       "app": "450814997",
       "name": "@CBA_A3",
+      "server": "false"
+    },
+    {
+      "app": "820924072",
+      "name": "@BOC",
+      "server": "false"
+    },
+    {
+      "app": "1224892496",
+      "name": "@GRD_TRNCH",
+      "server": "false"
+    },
+    {
+      "app": "498740884",
+      "name": "@SHK_UI",
+      "server": "false"
+    },
+    {
+      "app": "366425329",
+      "name": "@FIR_AWS",
+      "server": "false"
+    },
+    {
+      "app": "366423278",
+      "name": "@F16_FF",
+      "server": "false"
+    },
+    {
+      "app": "787892271",
+      "name": "@A10",
+      "server": "false"
+    },
+    {
+      "app": "735566597",
+      "name": "@PRJOF",
       "server": "false"
     },
     {
@@ -72,53 +112,8 @@
       "server": "false"
     },
     {
-      "app": "1224892496",
-      "name": "@GRD_TRNCH",
-      "server": "false"
-    },
-    {
-      "app": "498740884",
-      "name": "@SHK_UI",
-      "server": "false"
-    },
-    {
-      "app": "366425329",
-      "name": "@FIR_AWS",
-      "server": "false"
-    },
-    {
-      "app": "787892271",
-      "name": "@A10",
-      "server": "false"
-    },
-    {
-      "app": "582478120",
-      "name": "@F15_E",
-      "server": "false"
-    },
-    {
-      "app": "366423278",
-      "name": "@F16_FF",
-      "server": "false"
-    },
-    {
-      "app": "735566597",
-      "name": "@PROJOF",
-      "server": "false"
-    },
-    {
       "app": "583496184",
       "name": "@CUP_CORE",
-      "server": "false"
-    },
-    {
-      "app": "583544987",
-      "name": "@CUP_MAPS",
-      "server": "false"
-    },
-    {
-      "app": "648172507",
-      "name": "@ALRAYAK",
       "server": "false"
     },
     {
@@ -132,48 +127,23 @@
       "server": "false"
     },
     {
-      "app": "1252091296",
-      "name": "@TEMBELAN_ISLAND",
-      "server": "false"
-    },
-    {
       "app": "761349672",
-      "name": "@CLAFGHAN",
-      "server": "false"
-    },
-    {
-      "app": "524622628",
-      "name": "@BOZCAADA",
-      "server": "false"
-    },
-    {
-      "app": "761349672",
-      "name": "@CLAFGHAN",
-      "server": "false"
-    },
-    {
-      "app": "708278910",
-      "name": "@PANTHERA",
-      "server": "false"
-    },
-    {
-      "app": "",
-      "name": "@CavPack-3.9.1",
+      "name": "@CLAFGAHN",
       "server": "false"
     },
     {
       "app": "1858075458",
-      "name": "@LMBS_DGR",
+      "name": "@LMBS_DNGR",
       "server": "false"
-    },
-    {
-      "app": "1926513010",
-      "name": "@VIROLAHTI",
-      "server": "true"
     },
     {
       "app": "723217262",
       "name": "@ACHILLES",
+      "server": "true"
+    },
+    {
+      "app": "333310405",
+      "name": "@ENH",
       "server": "true"
     },
     {
@@ -182,13 +152,13 @@
       "server": "true"
     },
     {
-      "app": "945476727",
-      "name": "@JSRS_AFRF",
+      "app": "1180533757",
+      "name": "@JSRS_USAF",
       "server": "true"
     },
     {
-      "app": "1180533757",
-      "name": "@JSRS_USAF",
+      "app": "945476727",
+      "name": "@JSRS_AFRF",
       "server": "true"
     },
     {
@@ -198,7 +168,12 @@
     },
     {
       "app": "",
-      "name": "@CavMetrics",
+      "name": "@extDB3",
+      "server": "true"
+    },
+    {
+      "app": "",
+      "name": "@AliveServer",
       "server": "true"
     }
   ]
