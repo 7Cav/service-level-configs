@@ -42,41 +42,6 @@
       "server": "false"
     },
     {
-      "app": "820924072",
-      "name": "@BOC",
-      "server": "false"
-    },
-    {
-      "app": "1224892496",
-      "name": "@GRD_TRNCH",
-      "server": "false"
-    },
-    {
-      "app": "498740884",
-      "name": "@SHK_UI",
-      "server": "false"
-    },
-    {
-      "app": "366425329",
-      "name": "@FIR_AWS",
-      "server": "false"
-    },
-    {
-      "app": "366423278",
-      "name": "@F16_FF",
-      "server": "false"
-    },
-    {
-      "app": "787892271",
-      "name": "@A10",
-      "server": "false"
-    },
-    {
-      "app": "735566597",
-      "name": "@PRJOF",
-      "server": "false"
-    },
-    {
       "app": "843425103",
       "name": "@RHS_AFRF",
       "server": "false"
@@ -107,8 +72,53 @@
       "server": "false"
     },
     {
+      "app": "1224892496",
+      "name": "@GRD_TRNCH",
+      "server": "false"
+    },
+    {
+      "app": "498740884",
+      "name": "@SHK_UI",
+      "server": "false"
+    },
+    {
+      "app": "366425329",
+      "name": "@FIR_AWS",
+      "server": "false"
+    },
+    {
+      "app": "787892271",
+      "name": "@A10",
+      "server": "false"
+    },
+    {
+      "app": "582478120",
+      "name": "@F15_E",
+      "server": "false"
+    },
+    {
+      "app": "366423278",
+      "name": "@F16_FF",
+      "server": "false"
+    },
+    {
+      "app": "735566597",
+      "name": "@PROJOF",
+      "server": "false"
+    },
+    {
       "app": "583496184",
       "name": "@CUP_CORE",
+      "server": "false"
+    },
+    {
+      "app": "583544987",
+      "name": "@CUP_MAPS",
+      "server": "false"
+    },
+    {
+      "app": "648172507",
+      "name": "@ALRAYAK",
       "server": "false"
     },
     {
@@ -122,18 +132,43 @@
       "server": "false"
     },
     {
-      "app": "761349672",
-      "name": "@CLAFGAHN",
+      "app": "1252091296",
+      "name": "@TEMBELAN_ISLAND",
       "server": "false"
+    },
+    {
+      "app": "761349672",
+      "name": "@CLAFGHAN",
+      "server": "false"
+    },
+    {
+      "app": "524622628",
+      "name": "@BOZCAADA",
+      "server": "false"
+    },
+    {
+      "app": "",
+      "name": "@CavPack-3.9.1",
+      "server": "false"
+    },
+    {
+      "app": "1858075458",
+      "name": "@LMBS_DGR",
+      "server": "false"
+    },
+    {
+      "app": "708278910",
+      "name": "@PANTHERA",
+      "server": "false"
+    },
+    {
+      "app": "1926513010",
+      "name": "@VIROLAHTI",
+      "server": "true"
     },
     {
       "app": "723217262",
       "name": "@ACHILLES",
-      "server": "true"
-    },
-    {
-      "app": "333310405",
-      "name": "@ENH",
       "server": "true"
     },
     {
@@ -142,33 +177,18 @@
       "server": "true"
     },
     {
-      "app": "1180533757",
-      "name": "@JSRS_USAF",
-      "server": "true"
-    },
-    {
       "app": "945476727",
       "name": "@JSRS_AFRF",
       "server": "true"
     },
     {
+      "app": "1180533757",
+      "name": "@JSRS_USAF",
+      "server": "true"
+    },
+    {
       "app": "1180534892",
       "name": "@JSRS_GREF",
-      "server": "true"
-    },
-    {
-      "app": "1858075458",
-      "name": "@LMBS_DNGR",
-      "server": "true"
-    },
-    {
-      "app": "750186990",
-      "name": "@ZECCUP",
-      "server": "true"
-    },
-    {
-      "app": "1251859358",
-      "name": "@ZEI",
       "server": "true"
     },
     {
