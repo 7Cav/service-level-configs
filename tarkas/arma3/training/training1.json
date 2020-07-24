@@ -75,6 +75,11 @@
       "app": "333310405",
       "name": "@ENH_MOVE",
       "server": "true"
+    },	
+	{
+      "app": "583496184",
+      "name": "@CUP_CORE",
+      "server": "false"
     },
     {
       "app": "",
