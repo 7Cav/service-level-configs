@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/7Cav/service-level-configs/blob/master/media/S6_SLC_Logo.png"></p>
+<p align="center"><img src="https://github.com/7Cav/service-level-configs/blob/develop/media/S6_SLC_Logo.png"></p>
 
 # About
 
