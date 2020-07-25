@@ -11,7 +11,7 @@
       "STORE_PATH": "D:\\store\\arma3\\",
       "SCRIPTS_REL_PATH": "serverscripts",
       "ARMA_CONFIG_PATH": "D:\\config",
-      "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
+      "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods-dev",
       "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development2"
     }
   },
