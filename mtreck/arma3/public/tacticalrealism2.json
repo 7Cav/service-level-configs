@@ -208,6 +208,11 @@
       "app": "",
       "name": "@extDB3",
       "server": "true"
+    },
+    {
+      "app": "",
+      "name": "@CavMetrics",
+      "server": "true"
     }
   ]
 }
