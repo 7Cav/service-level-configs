@@ -5,7 +5,7 @@
       "SERVER_NAME": "tacticalrealism2",
       "IP_ADDRESS": "142.44.143.136",
       "PORT": "2322",
-      "PARAMETERS": "-nologs -hugepages -malloc=tbb4malloc_bi_x64 -noSound -limitFPS=30",
+      "PARAMETERS": "-hugepages -malloc=tbb4malloc_bi_x64 -noSound -limitFPS=50",
       "STEAM_BASE_PATH": "D:\\steam\\",
       "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
       "STORE_PATH": "D:\\store\\arma3\\",
