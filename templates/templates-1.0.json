@@ -5,6 +5,8 @@
       "type": 1,
       "title": "Squad Event Server",
       "description": "Squad Game Server",
+      "interactive": true,
+      "restart_policy": "unless-stopped",
       "logo": "https://joinsquad.com/wp-content/themes/squad/img/logo.png",
       "image": "cm2network/squad",
       "ports": [
@@ -19,7 +21,8 @@
       "volumes": [
         {
           "container": "/home/steam/squad-dedicated/",
-          "bind": "/opt/7cav/squad/event"
+          "bind": "/opt/7cav/squad/event",
+          "readonly": "false"
         }
       ],
       "env": [
@@ -148,6 +151,8 @@
       "type": 1,
       "title": "Squad Training Server",
       "description": "Squad Game Server",
+      "interactive": true,
+      "restart_policy": "unless-stopped",
       "logo": "https://joinsquad.com/wp-content/themes/squad/img/logo.png",
       "image": "cm2network/squad",
       "ports": [
@@ -162,7 +167,8 @@
       "volumes": [
         {
           "container": "/home/steam/squad-dedicated/",
-          "bind": "/opt/7cav/squad/training"
+          "bind": "/opt/7cav/squad/event",
+          "readonly": "false"
         }
       ],
       "env": [
@@ -291,6 +297,8 @@
       "type": 1,
       "title": "Squad Tactical Realism Server",
       "description": "Squad Game Server",
+      "interactive": true,
+      "restart_policy": "unless-stopped",
       "logo": "https://joinsquad.com/wp-content/themes/squad/img/logo.png",
       "image": "cm2network/squad",
       "ports": [
@@ -305,7 +313,8 @@
       "volumes": [
         {
           "container": "/home/steam/squad-dedicated/",
-          "bind": "/opt/7cav/squad/tact1"
+          "bind": "/opt/7cav/squad/event",
+          "readonly": "false"
         }
       ],
       "env": [
