@@ -16,13 +16,11 @@
         "27165:27465/udp"
       ],
 
-      "network": "bridge",
+      "network": "host",
 
       "volumes": [
         {
-          "container": "/home/steam/squad-dedicated/",
-          "bind": "/opt/7cav/squad/event",
-          "readonly": "false"
+          "container": "/home/steam/squad-dedicated/"
         }
       ],
       "env": [
@@ -162,13 +160,11 @@
         "27165:27465/udp"
       ],
 
-      "network": "bridge",
+      "network": "host",
 
       "volumes": [
         {
-          "container": "/home/steam/squad-dedicated/",
-          "bind": "/opt/7cav/squad/event",
-          "readonly": "false"
+          "container": "/home/steam/squad-dedicated/"
         }
       ],
       "env": [
@@ -312,9 +308,7 @@
 
       "volumes": [
         {
-          "container": "/home/steam/squad-dedicated/",
-          "bind": "/opt/7cav/squad/event",
-          "readonly": "false"
+          "container": "/home/steam/squad-dedicated/"
         }
       ],
       "env": [
