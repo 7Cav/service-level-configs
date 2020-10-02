@@ -58,11 +58,6 @@
     },
     {
       "app": "",
-      "name": "@CavMetrics",
-      "server": "true"
-    },
-    {
-      "app": "",
       "name": "@inidbi2",
       "server": "true"
     }

@@ -3,15 +3,15 @@
     "env": {
       "SERVER_ID": "Arma3Dev2",
       "SERVER_NAME": "development2",
-      "IP_ADDRESS": "144.217.11.41",
-      "PORT": "2352",
+      "IP_ADDRESS": "142.44.143.136",
+      "PORT": "2342",
       "PARAMETERS": "-noSound -profilerAdapter Tracy -profilerEnableFAlloc -profilerEngineDoMem -profilerEnableInstruction",
       "STEAM_BASE_PATH": "D:\\steam\\",
       "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
       "STORE_PATH": "D:\\store\\arma3\\",
       "SCRIPTS_REL_PATH": "serverscripts",
       "ARMA_CONFIG_PATH": "D:\\config",
-      "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
+      "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods-dev",
       "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development2"
     }
   },
