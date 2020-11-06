@@ -15,7 +15,12 @@
       "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\training3"
     }
   },
-  "mods": [
+   "mods": [
+    {
+      "app": "1696706969",
+      "name": "@CAVADDON",
+      "server": "false"
+    },
     {
       "app": "463939057",
       "name": "@ACE",
@@ -28,17 +33,77 @@
     },
     {
       "app": "751965892",
-      "name": "@ACRE2",
+      "name": "@ACRE",
       "server": "false"
     },
     {
       "app": "450814997",
-      "name": "@CBA",
+      "name": "@CBA_A3",
       "server": "false"
     },
     {
-      "app": "1724884525",
-      "name": "@AGC",
+      "app": "843425103",
+      "name": "@RHS_AFRF",
+      "server": "false"
+    },
+    {
+      "app": "843577117",
+      "name": "@RHS_USAF",
+      "server": "false"
+    },
+    {
+      "app": "843593391",
+      "name": "@RHS_GREF",
+      "server": "false"
+    },
+    {
+      "app": "773131200",
+      "name": "@ACE_AFRF",
+      "server": "false"
+    },
+    {
+      "app": "773125288",
+      "name": "@ACE_USAF",
+      "server": "false"
+    },
+    {
+      "app": "884966711",
+      "name": "@ACE_GREF",
+      "server": "false"
+    },
+    {
+      "app": "1224892496",
+      "name": "@GRD_TRNCH",
+      "server": "false"
+    },
+    {
+      "app": "498740884",
+      "name": "@SHK_UI",
+      "server": "false"
+    },
+    {
+      "app": "366425329",
+      "name": "@FIR_AWS",
+      "server": "false"
+    },
+    {
+      "app": "787892271",
+      "name": "@A10",
+      "server": "false"
+    },
+    {
+      "app": "582478120",
+      "name": "@F15_E",
+      "server": "false"
+    },
+    {
+      "app": "366423278",
+      "name": "@F16_FF",
+      "server": "false"
+    },
+    {
+      "app": "735566597",
+      "name": "@PROJOF",
       "server": "false"
     },
     {
@@ -47,53 +112,88 @@
       "server": "false"
     },
     {
-      "app": "660460283",
-      "name": "@IFA3",
+      "app": "583544987",
+      "name": "@CUP_MAPS",
       "server": "false"
     },
     {
-      "app": "773759919",
-      "name": "@IFA3_COMPAT_ACE",
+      "app": "648172507",
+      "name": "@ALRAYAK",
       "server": "false"
     },
     {
-      "app": "891433622",
-      "name": "@FOW",
+      "app": "714149065",
+      "name": "@ISLA_DUALA",
       "server": "false"
     },
     {
-      "app": "333310405",
-      "name": "@ENH",
+      "app": "718649903",
+      "name": "@LINGOR",
       "server": "false"
     },
     {
-      "app": "1539492953",
-      "name": "@IFA3_COMPAT_ACRE",
+      "app": "1252091296",
+      "name": "@TEMBELAN_ISLAND",
       "server": "false"
     },
     {
-      "app": "756352410",
-      "name": "@SAB_SW",
+      "app": "761349672",
+      "name": "@CLAFGHAN",
       "server": "false"
     },
     {
-      "app": "1638341685",
-      "name": "@DUI",
+      "app": "524622628",
+      "name": "@BOZCAADA",
       "server": "false"
     },
     {
-      "app": "2244693511",
-      "name": "@7CAV_SE_HWW2",
+      "app": "",
+      "name": "@CavPack-3.9.1",
       "server": "false"
+    },
+    {
+      "app": "1858075458",
+      "name": "@LMBS_DGR",
+      "server": "false"
+    },
+    {
+      "app": "708278910",
+      "name": "@PANTHERA",
+      "server": "false"
+    },
+    {
+      "app": "1926513010",
+      "name": "@VIROLAHTI",
+      "server": "true"
     },
     {
       "app": "723217262",
-      "name": "@ACHILLIES",
-      "server": "false"
+      "name": "@ACHILLES",
+      "server": "true"
     },
     {
-      "app": "1251859358",
-      "name": "@ZEI",
+      "app": "861133494",
+      "name": "@JSRS",
+      "server": "true"
+    },
+    {
+      "app": "945476727",
+      "name": "@JSRS_AFRF",
+      "server": "true"
+    },
+    {
+      "app": "1180533757",
+      "name": "@JSRS_USAF",
+      "server": "true"
+    },
+    {
+      "app": "1180534892",
+      "name": "@JSRS_GREF",
+      "server": "true"
+    },
+    {
+      "app": "",
+      "name": "@CavMetrics",
       "server": "true"
     }
   ]
