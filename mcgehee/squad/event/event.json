@@ -18,7 +18,8 @@
             "SQUAD_CONFIG_PATH": "D:\\config",
             "SQUAD_BASE_PATH": "D:\\gameservers\\squad\\event1"
         },
-        "mods": {
+        "mods": [ 
+        {
             "app": "12345",
             "name": "name1"
         },
@@ -30,5 +31,6 @@
             "app": "weeks/save/me",
             "name": "test"
         }
+        ]
     }
 }
