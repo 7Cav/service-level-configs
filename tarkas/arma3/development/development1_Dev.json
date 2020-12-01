@@ -1,18 +1,18 @@
 {
   "server": {
     "env": {
-      "SERVER_ID": "Arma3Dev2",
-      "SERVER_NAME": "development2",
-      "IP_ADDRESS": "142.44.143.136",
-      "PORT": "2342",
-      "PARAMETERS": "-noSound -profilerAdapter Tracy -profilerEnableFAlloc -profilerEngineDoMem -profilerEnableInstruction",
+      "SERVER_ID": "Arma3Dev1",
+      "SERVER_NAME": "development1",
+      "IP_ADDRESS": "144.217.11.41",
+      "PORT": "2372",
+      "PARAMETERS": "-noSound",
       "STEAM_BASE_PATH": "D:\\steam\\",
       "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
       "STORE_PATH": "D:\\store\\arma3\\",
       "SCRIPTS_REL_PATH": "serverscripts",
       "ARMA_CONFIG_PATH": "D:\\config",
-      "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods-dev",
-      "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development2"
+      "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
+      "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development1"
     }
   },
   "mods": [
@@ -32,6 +32,11 @@
       "server": "false"
     },
     {
+      "app": "843593391",
+      "name": "@RHSGREF",
+      "server": "false"
+    },
+    {
       "app": "861133494",
       "name": "@JSRS",
       "server": "false"
@@ -42,18 +47,8 @@
       "server": "false"
     },
     {
-      "app": "843593391",
-      "name": "@RHSGREF",
-      "server": "false"
-    },
-    {
       "app": "333310405",
       "name": "@EM",
-      "server": "false"
-    },
-    {
-      "app": "945476727",
-      "name": "@JSRSAFRF",
       "server": "false"
     },
     {
@@ -62,8 +57,13 @@
       "server": "false"
     },
     {
-      "app": "1696706969",
-      "name": "@CAVADDON",
+      "app": "945476727",
+      "name": "@7CAVADDON",
+      "server": "false"
+    },
+    {
+      "app": "945476727",
+      "name": "@JSRSAFRF",
       "server": "false"
     },
     {
@@ -77,14 +77,9 @@
       "server": "false"
     },
     {
-      "app": "582478120",
-      "name": "@F15E",
-      "server": "false"
-    },
-    {
       "app": "2041057379",
       "name": "@A3TI",
-      "server": "true"
+      "server": "false"
     },
     {
       "app": "773131200",
@@ -112,16 +107,6 @@
       "server": "false"
     },
     {
-      "app": "620260972",
-      "name": "@ALIVE",
-      "server": "false"
-    },
-    {
-      "app": "820924072",
-      "name": "@BOC",
-      "server": "false"
-    },
-    {
       "app": "2260572637",
       "name": "@BETTIR",
       "server": "false"
@@ -132,23 +117,48 @@
       "server": "false"
     },
     {
-      "app": "1638341685",
-      "name": "@DUI",
-      "server": "true"
-    },
-    {
-      "app": "2034363662",
-      "name": "@EMR",
+      "app": "583544987",
+      "name": "@CUP_MAPS",
       "server": "false"
     },
     {
-      "app": "701535490",
-      "name": "@DARIYAH",
+      "app": "1638341685",
+      "name": "@DUI",
+      "server": "false"
+    },
+    {
+      "app": "2034363662",
+      "name": "@EMREWORK",
+      "server": "false"
+    },
+    {
+      "app": "2018593688",
+      "name": "@ZENACECOMPAT",
+      "server": "false"
+    },
+    {
+      "app": "582478120",
+      "name": "@F15E",
+      "server": "false"
+    },
+    {
+      "app": "366423278",
+      "name": "@F16FF",
+      "server": "false"
+    },
+    {
+      "app": "1628669381",
+      "name": "@FATA",
+      "server": "false"
+    },
+    {
+      "app": "694603075",
+      "name": "@Nziwasogo",
       "server": "false"
     },
     {
       "app": "1224892496",
-      "name": "@GRAD",
+      "name": "@GRAD_Trenches",
       "server": "false"
     },
     {
@@ -168,48 +178,43 @@
     },
     {
       "app": "1858075458",
-      "name": "@LAMBS",
+      "name": "@Lambs_Danger",
       "server": "true"
     },
     {
       "app": "909547724",
-      "name": "@LYTHIUM",
+      "name": "@Lythium",
       "server": "false"
     },
     {
       "app": "1425442364",
-      "name": "@NAPF",
+      "name": "@Napf",
       "server": "false"
     },
     {
       "app": "735566597",
-      "name": "@PROJECTOPFOR",
+      "name": "@ProjectOPFOR",
       "server": "false"
     },
     {
-      "app": "1664288935",
-      "name": "@RCWN",
+      "app": "1926513010",
+      "name": "@Virolahti",
       "server": "false"
     },
     {
-      "app": "2003343816",
-      "name": "@RWR",
+      "app": "501589008",
+      "name": "@Thirsk",
       "server": "false"
     },
     {
-      "app": "2018593688",
-      "name": "@ZENACECOMPAT",
-      "server": "false"
-    },
-    {
-      "app": "1660226023",
-      "name": "@TFC",
+      "app": "761349672",
+      "name": "@CLA_CLAFGHAN",
       "server": "false"
     },
     {
       "app": "",
-      "name": "@extDB3",
-      "server": "true"
+      "name": "@CAVPACK_4_0",
+      "server": "false"
     },
     {
       "app": "",
