@@ -18,9 +18,11 @@
             "SQUAD_CONFIG_PATH": "D:\\config",
             "SQUAD_BASE_PATH": "D:\\gameservers\\squad\\event1"
         },
-        "mods": {
+        "mods": [ 
+        {
             "app": "",
-            "name": ""
+            "name": "promod"
         }
+        ]
     }
 }
