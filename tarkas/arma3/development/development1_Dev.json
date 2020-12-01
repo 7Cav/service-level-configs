@@ -1,18 +1,18 @@
 {
   "server": {
     "env": {
-      "SERVER_ID": "Arma3Training1",
-      "SERVER_NAME": "training1",
+      "SERVER_ID": "Arma3Dev1",
+      "SERVER_NAME": "development1",
       "IP_ADDRESS": "144.217.11.41",
-      "PORT": "2312",
-      "PARAMETERS": "-noSound -noLogs",
+      "PORT": "2372",
+      "PARAMETERS": "-noSound",
       "STEAM_BASE_PATH": "D:\\steam\\",
       "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
       "STORE_PATH": "D:\\store\\arma3\\",
       "SCRIPTS_REL_PATH": "serverscripts",
       "ARMA_CONFIG_PATH": "D:\\config",
       "LOCAL_MOD_PATH": "D:\\gameservers\\arma3\\localmods",
-      "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\training1"
+      "ARMA_BASE_PATH": "D:\\gameservers\\arma3\\development1"
     }
   },
   "mods": [
