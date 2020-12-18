@@ -5,7 +5,7 @@
       "SERVER_NAME": "development2",
       "IP_ADDRESS": "142.44.143.136",
       "PORT": "2342",
-      "PARAMETERS": "-noSound",
+      "PARAMETERS": "-noSound -profilerAdapter Tracy -profilerEnableFAlloc -profilerEngineDoMem -profilerEnableInstruction",
       "STEAM_BASE_PATH": "D:\\steam\\",
       "STEAM_WORKSHOP_PATH": "steamapps\\workshop\\content\\107410\\",
       "STORE_PATH": "D:\\store\\arma3\\",
@@ -17,13 +17,88 @@
   },
   "mods": [
     {
-      "app": "2039615238",
-      "name": "@CAV_EXP",
+      "app": "450814997",
+      "name": "@CBA",
+      "server": "false"
+    },
+    {
+      "app": "843577117",
+      "name": "@RHSUSAF",
+      "server": "false"
+    },
+    {
+      "app": "843425103",
+      "name": "@RHSAFRF",
+      "server": "false"
+    },
+    {
+      "app": "861133494",
+      "name": "@JSRS",
       "server": "false"
     },
     {
       "app": "463939057",
-      "name": "@ACE",
+      "name": "@ace",
+      "server": "false"
+    },
+    {
+      "app": "843593391",
+      "name": "@RHSGREF",
+      "server": "false"
+    },
+    {
+      "app": "333310405",
+      "name": "@EM",
+      "server": "false"
+    },
+    {
+      "app": "945476727",
+      "name": "@JSRSAFRF",
+      "server": "false"
+    },
+    {
+      "app": "1779063631",
+      "name": "@ZEN",
+      "server": "false"
+    },
+    {
+      "app": "1696706969",
+      "name": "@CAVADDON",
+      "server": "false"
+    },
+    {
+      "app": "366425329",
+      "name": "@FIRAWS",
+      "server": "false"
+    },
+    {
+      "app": "787892271",
+      "name": "@A10",
+      "server": "false"
+    },
+    {
+      "app": "582478120",
+      "name": "@F15E",
+      "server": "false"
+    },
+    {
+      "app": "2041057379",
+      "name": "@A3TI",
+      "server": "true"
+    },
+    {
+      "app": "773131200",
+      "name": "@ACECOMPATAFRF",
+      "server": "false"
+    },
+    {
+      "app": "773125288",
+      "name": "@ACECOMPATUSAF",
+      "server": "false"
+    },
+    {
+      "app": "884966711",
+      "name": "@ACECOMPATGREF",
       "server": "false"
     },
     {
@@ -33,17 +108,12 @@
     },
     {
       "app": "751965892",
-      "name": "@ACRE",
+      "name": "@ACRE2",
       "server": "false"
     },
     {
-      "app": "620260972",
-      "name": "@ALIVE",
-      "server": "false"
-    },
-    {
-      "app": "450814997",
-      "name": "@CBA_A3",
+      "app": "2127693591",
+      "name": "@RE",
       "server": "false"
     },
     {
@@ -52,63 +122,8 @@
       "server": "false"
     },
     {
-      "app": "1224892496",
-      "name": "@GRD_TRNCH",
-      "server": "false"
-    },
-    {
-      "app": "498740884",
-      "name": "@SHK_UI",
-      "server": "false"
-    },
-    {
-      "app": "366425329",
-      "name": "@FIR_AWS",
-      "server": "false"
-    },
-    {
-      "app": "366423278",
-      "name": "@F16_FF",
-      "server": "false"
-    },
-    {
-      "app": "787892271",
-      "name": "@A10",
-      "server": "false"
-    },
-    {
-      "app": "735566597",
-      "name": "@PRJOF",
-      "server": "false"
-    },
-    {
-      "app": "843425103",
-      "name": "@RHS_AFRF",
-      "server": "false"
-    },
-    {
-      "app": "843577117",
-      "name": "@RHS_USAF",
-      "server": "false"
-    },
-    {
-      "app": "843593391",
-      "name": "@RHS_GREF",
-      "server": "false"
-    },
-    {
-      "app": "773131200",
-      "name": "@ACE_AFRF",
-      "server": "false"
-    },
-    {
-      "app": "773125288",
-      "name": "@ACE_USAF",
-      "server": "false"
-    },
-    {
-      "app": "884966711",
-      "name": "@ACE_GREF",
+      "app": "2260572637",
+      "name": "@BETTIR",
       "server": "false"
     },
     {
@@ -117,54 +132,79 @@
       "server": "false"
     },
     {
-      "app": "714149065",
-      "name": "@ISLA_DUALA",
+      "app": "1638341685",
+      "name": "@DUI",
+      "server": "true"
+    },
+    {
+      "app": "2034363662",
+      "name": "@EMR",
       "server": "false"
     },
     {
-      "app": "718649903",
-      "name": "@LINGOR",
+      "app": "701535490",
+      "name": "@DARIYAH",
       "server": "false"
     },
     {
-      "app": "761349672",
-      "name": "@CLAFGAHN",
+      "app": "1224892496",
+      "name": "@GRAD",
+      "server": "false"
+    },
+    {
+      "app": "520618345",
+      "name": "@Jbad",
+      "server": "false"
+    },
+    {
+      "app": "1180533757",
+      "name": "@JSRSUSAF",
+      "server": "false"
+    },
+    {
+      "app": "1180534892",
+      "name": "@JSRSGREF",
       "server": "false"
     },
     {
       "app": "1858075458",
-      "name": "@LMBS_DNGR",
+      "name": "@LAMBS",
+      "server": "true"
+    },
+    {
+      "app": "909547724",
+      "name": "@LYTHIUM",
       "server": "false"
     },
     {
-      "app": "723217262",
-      "name": "@ACHILLES",
-      "server": "true"
+      "app": "1425442364",
+      "name": "@NAPF",
+      "server": "false"
     },
     {
-      "app": "333310405",
-      "name": "@ENH",
-      "server": "true"
+      "app": "735566597",
+      "name": "@PROJECTOPFOR",
+      "server": "false"
     },
     {
-      "app": "861133494",
-      "name": "@JSRS",
-      "server": "true"
+      "app": "1664288935",
+      "name": "@RCWN",
+      "server": "false"
     },
     {
-      "app": "1180533757",
-      "name": "@JSRS_USAF",
-      "server": "true"
+      "app": "2003343816",
+      "name": "@RWR",
+      "server": "false"
     },
     {
-      "app": "945476727",
-      "name": "@JSRS_AFRF",
-      "server": "true"
+      "app": "2018593688",
+      "name": "@ZENACECOMPAT",
+      "server": "false"
     },
     {
-      "app": "1180534892",
-      "name": "@JSRS_GREF",
-      "server": "true"
+      "app": "1660226023",
+      "name": "@TFC",
+      "server": "false"
     },
     {
       "app": "",
