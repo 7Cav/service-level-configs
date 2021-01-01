@@ -72,7 +72,7 @@
       {
         "app": "861133494",
         "name": "@JSRS",
-        "server": "false"
+        "server": "true"
       },
       {
         "app": "463939057",
@@ -92,7 +92,7 @@
       {
         "app": "945476727",
         "name": "@JSRSAFRF",
-        "server": "false"
+        "server": "true"
       },
       {
         "app": "1779063631",
@@ -122,7 +122,7 @@
       {
         "app": "2041057379",
         "name": "@A3TI",
-        "server": "true"
+        "server": "false"
       },
       {
         "app": "773131200",
@@ -172,7 +172,7 @@
       {
         "app": "1638341685",
         "name": "@DUI",
-        "server": "true"
+        "server": "false"
       },
       {
         "app": "2034363662",
@@ -202,7 +202,7 @@
       {
         "app": "1180534892",
         "name": "@JSRSGREF",
-        "server": "false"
+        "server": "true"
       },
       {
         "app": "1858075458",
