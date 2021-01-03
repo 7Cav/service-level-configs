@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/7Cav/service-level-configs/blob/develop/media/S6_SLC_Logo_2.png"></p>
 
-<p align="center"> # Service Level Configs </p>
+<p align="center"> <h1><b>Service Level Configs </b></h1></p>
 
 # About
 
