@@ -29,7 +29,7 @@
       "localclient": "\"127.0.0.1\",\"142.44.143.136\"",
       "filepatching": "0",
       "battleye": "1",
-      "verifysig": "0",
+      "verifysig": "1",
       "logfile": "a3master.log",
       "motd": "",
       "motdint": "5",
