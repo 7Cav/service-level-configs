@@ -70,11 +70,6 @@
         "server": "false"
       },
       {
-        "app": "861133494",
-        "name": "@JSRS",
-        "server": "true"
-      },
-      {
         "app": "463939057",
         "name": "@ace",
         "server": "false"
@@ -88,11 +83,6 @@
         "app": "333310405",
         "name": "@EM",
         "server": "false"
-      },
-      {
-        "app": "945476727",
-        "name": "@JSRSAFRF",
-        "server": "true"
       },
       {
         "app": "1779063631",
@@ -193,16 +183,6 @@
         "app": "520618345",
         "name": "@Jbad",
         "server": "false"
-      },
-      {
-        "app": "1180533757",
-        "name": "@JSRSUSAF",
-        "server": "true"
-      },
-      {
-        "app": "1180534892",
-        "name": "@JSRSGREF",
-        "server": "true"
       },
       {
         "app": "1858075458",
