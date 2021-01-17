@@ -79,7 +79,7 @@
     {
       "app": "2041057379",
       "name": "@A3TI",
-      "server": "false"
+      "server": "true"
     },
     {
       "app": "773131200",
@@ -204,6 +204,11 @@
     {
       "app": "761349672",
       "name": "@CLA_CLAFGHAN",
+      "server": "false"
+    },
+    {
+      "app": "",
+      "name": "@CAVPACK_4_0",
       "server": "false"
     },
     {
