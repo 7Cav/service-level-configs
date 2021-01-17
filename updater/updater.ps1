@@ -7,6 +7,9 @@ param (
   [switch]$logs = $false,
   [switch]$Nuke = $false 
 )
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls, [Net.SecurityProtocolType]::Tls11, [Net.SecurityProtocolType]::Tls12, [Net.SecurityProtocolType]::Ssl3
+
 $Server += '/'
 $Game += '/'
 $Type += '/'
