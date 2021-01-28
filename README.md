@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/7Cav/service-level-configs/blob/master/media/S6_SLC_Logo.png"></p>
+<p align="center"><img src="https://github.com/7Cav/service-level-configs/blob/develop/media/S6_SLC_Logo_2.png"></p>
 
 # About
 
@@ -105,7 +105,7 @@ You can also note that ``"env":`` is also within the ``"server"`` array. This me
 As shown above you can see that the ``}`` for ``"env":`` has a comma at the end of it as well, but the ``"cfg":`` and its ``}`` does not. You can think of the ``{`` as the start of a array and the ``}`` as the end of an array.
 
 ## Troubleshooting:
-<p align="center"><img width=100% src="https://github.com/7Cav/service-level-configs/blob/master/media/TSS_flow.png"></p>
+<p align="center"><img width=100% src="https://github.com/7Cav/service-level-configs/blob/develop/media/TSS_flow.png"></p>
 
 ## Further Documentation
 For more detailed information, Check the [Service-Level-Configs Wiki](https://github.com/7Cav/service-level-configs/wiki)

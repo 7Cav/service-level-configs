@@ -1,0 +1,437 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 1,
+      "title": "Squad Event Server",
+      "description": "Squad Game Server",
+      "interactive": true,
+      "restart_policy": "unless-stopped",
+      "logo": "https://joinsquad.com/wp-content/themes/squad/img/logo.png",
+      "image": "cm2network/squad",
+      "ports": [
+        "7087:7987/udp",
+        "7087:7987/tcp",
+        "21114:21144/udp",
+        "27165:27465/udp"
+      ],
+
+      "network": "host",
+
+      "volumes": [
+        {
+          "container": "/home/steam/squad-dedicated/"
+        }
+      ],
+      "env": [
+        {
+          "name": "PORT",
+          "label": "Game Port",
+          "select": [
+            {
+              "text": "7087",
+              "value": "7087"
+            },
+            {
+              "text": "7187",
+              "value": "7187"
+            },
+            {
+              "text": "7287",
+              "value": "7287"
+            },
+            {
+              "text": "7387",
+              "value": "7387"
+            },
+            {
+              "text": "7487",
+              "value": "7487"
+            },
+            {
+              "text": "7587",
+              "value": "7587"
+            },
+            {
+              "text": "7687",
+              "value": "7687"
+            },
+            {
+              "text": "7787",
+              "value": "7787",
+              "default": true
+            },
+            {
+              "text": "7887",
+              "value": "7887"
+            },
+            {
+              "text": "7987",
+              "value": "7987"
+            }
+          ]
+        },
+        {
+          "name": "QUERYPORT",
+          "label": "Steam Query Port",
+          "select": [
+            {
+              "text": "27165",
+              "value": "27165"
+            },
+            {
+              "text": "27265",
+              "value": "27265"
+            },
+            {
+              "text": "27365",
+              "value": "27365"
+            },
+            {
+              "text": "27465",
+              "value": "27465"
+            }
+          ]
+        },
+        {
+          "name": "RCONPORT",
+          "label": "RCON Port",
+          "select": [
+            {
+              "text": "21114",
+              "value": "21114"
+            },
+            {
+              "text": "21124",
+              "value": "21124"
+            },
+            {
+              "text": "21134",
+              "value": "21134"
+            },
+            {
+              "text": "21144",
+              "value": "21144"
+            }
+          ]
+        },
+        {
+          "name": "FIXEDMAXPLAYERS",
+          "label": "Player Slots",
+          "description": "Maximum of 100 slots per server"
+        },
+        {
+          "name": "FIXEDMAXTICKRATE",
+          "label": "Max Tickrate",
+          "description": "Should not exceed 60 for tickrate"
+        },
+        {
+          "name": "RANDOM",
+          "label": "Random Rotation",
+          "select": [
+            {
+              "text": "ALWAYS",
+              "value": "ALWAYS"
+            },
+            {
+              "text": "FIRST",
+              "value": "FIRST"
+            },
+            {
+              "text": "NONE",
+              "value": "NONE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Squad Training Server",
+      "description": "Squad Game Server",
+      "interactive": true,
+      "restart_policy": "unless-stopped",
+      "logo": "https://joinsquad.com/wp-content/themes/squad/img/logo.png",
+      "image": "cm2network/squad",
+      "ports": [
+        "7087:7987/udp",
+        "7087:7987/tcp",
+        "21114:21144/udp",
+        "27165:27465/udp"
+      ],
+
+      "network": "host",
+
+      "volumes": [
+        {
+          "container": "/home/steam/squad-dedicated/"
+        }
+      ],
+      "env": [
+        {
+          "name": "PORT",
+          "label": "Game Port",
+          "select": [
+            {
+              "text": "7087",
+              "value": "7087"
+            },
+            {
+              "text": "7187",
+              "value": "7187"
+            },
+            {
+              "text": "7287",
+              "value": "7287"
+            },
+            {
+              "text": "7387",
+              "value": "7387"
+            },
+            {
+              "text": "7487",
+              "value": "7487"
+            },
+            {
+              "text": "7587",
+              "value": "7587"
+            },
+            {
+              "text": "7687",
+              "value": "7687"
+            },
+            {
+              "text": "7787",
+              "value": "7787",
+              "default": true
+            },
+            {
+              "text": "7887",
+              "value": "7887"
+            },
+            {
+              "text": "7987",
+              "value": "7987"
+            }
+          ]
+        },
+        {
+          "name": "QUERYPORT",
+          "label": "Steam Query Port",
+          "select": [
+            {
+              "text": "27165",
+              "value": "27165"
+            },
+            {
+              "text": "27265",
+              "value": "27265"
+            },
+            {
+              "text": "27365",
+              "value": "27365"
+            },
+            {
+              "text": "27465",
+              "value": "27465"
+            }
+          ]
+        },
+        {
+          "name": "RCONPORT",
+          "label": "RCON Port",
+          "select": [
+            {
+              "text": "21114",
+              "value": "21114"
+            },
+            {
+              "text": "21124",
+              "value": "21124"
+            },
+            {
+              "text": "21134",
+              "value": "21134"
+            },
+            {
+              "text": "21144",
+              "value": "21144"
+            }
+          ]
+        },
+        {
+          "name": "FIXEDMAXPLAYERS",
+          "label": "Player Slots",
+          "description": "Maximum of 100 slots per server"
+        },
+        {
+          "name": "FIXEDMAXTICKRATE",
+          "label": "Max Tickrate",
+          "description": "Should not exceed 60 for tickrate"
+        },
+        {
+          "name": "RANDOM",
+          "label": "Random Rotation",
+          "select": [
+            {
+              "text": "ALWAYS",
+              "value": "ALWAYS"
+            },
+            {
+              "text": "FIRST",
+              "value": "FIRST"
+            },
+            {
+              "text": "NONE",
+              "value": "NONE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Squad Tactical Realism Server",
+      "description": "Squad Game Server",
+      "interactive": true,
+      "restart_policy": "unless-stopped",
+      "logo": "https://joinsquad.com/wp-content/themes/squad/img/logo.png",
+      "image": "cm2network/squad",
+      "ports": [
+        "7087:7987/udp",
+        "7087:7987/tcp",
+        "21114:21144/udp",
+        "27165:27465/udp"
+      ],
+
+      "network": "bridge",
+
+      "volumes": [
+        {
+          "container": "/home/steam/squad-dedicated/"
+        }
+      ],
+      "env": [
+        {
+          "name": "PORT",
+          "label": "Game Port",
+          "select": [
+            {
+              "text": "7087",
+              "value": "7087"
+            },
+            {
+              "text": "7187",
+              "value": "7187"
+            },
+            {
+              "text": "7287",
+              "value": "7287"
+            },
+            {
+              "text": "7387",
+              "value": "7387"
+            },
+            {
+              "text": "7487",
+              "value": "7487"
+            },
+            {
+              "text": "7587",
+              "value": "7587"
+            },
+            {
+              "text": "7687",
+              "value": "7687"
+            },
+            {
+              "text": "7787",
+              "value": "7787",
+              "default": true
+            },
+            {
+              "text": "7887",
+              "value": "7887"
+            },
+            {
+              "text": "7987",
+              "value": "7987"
+            }
+          ]
+        },
+        {
+          "name": "QUERYPORT",
+          "label": "Steam Query Port",
+          "select": [
+            {
+              "text": "27165",
+              "value": "27165"
+            },
+            {
+              "text": "27265",
+              "value": "27265"
+            },
+            {
+              "text": "27365",
+              "value": "27365"
+            },
+            {
+              "text": "27465",
+              "value": "27465"
+            }
+          ]
+        },
+        {
+          "name": "RCONPORT",
+          "label": "RCON Port",
+          "select": [
+            {
+              "text": "21114",
+              "value": "21114"
+            },
+            {
+              "text": "21124",
+              "value": "21124"
+            },
+            {
+              "text": "21134",
+              "value": "21134"
+            },
+            {
+              "text": "21144",
+              "value": "21144"
+            }
+          ]
+        },
+        {
+          "name": "FIXEDMAXPLAYERS",
+          "label": "Player Slots",
+          "description": "Maximum of 100 slots per server"
+        },
+        {
+          "name": "FIXEDMAXTICKRATE",
+          "label": "Max Tickrate",
+          "description": "Should not exceed 60 for tickrate"
+        },
+        {
+          "name": "RANDOM",
+          "label": "Random Rotation",
+          "select": [
+            {
+              "text": "ALWAYS",
+              "value": "ALWAYS"
+            },
+            {
+              "text": "FIRST",
+              "value": "FIRST"
+            },
+            {
+              "text": "NONE",
+              "value": "NONE"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1"
+    },
+    "exported_at": "2020-12-29T22:00:04+00:00",
+    "name": "Squad",
+    "author": "brycea@terrahost.cloud",
+    "description": "Squad is a 50 vs 50 multiplayer first-person shooter that aims to capture combat realism through communication and teamplay. Major features include vehicle-based combined arms gameplay, large scale environments, base building, and integrated positional VoIP for proximity talking & radio.",
+    "features": null,
+    "image": "quay.io\/pterodactyl\/core:source",
+    "startup": "\/home\/container\/SquadGame\/Binaries\/Linux\/SquadGameServer SquadGame Port={{SERVER_PORT}} QueryPort={{QUERY_PORT}}",
+    "config": {
+        "files": "{\r\n    \"SquadGame\/ServerConfig\/Server.cfg\": {\r\n        \"parser\": \"file\",\r\n        \"find\": {\r\n            \"ServerName\": \"ServerName=\\\"{{server.build.env.servername}}\\\"\",\r\n            \"MaxPlayers\": \"MaxPlayers={{server.build.env.maxplayers}}\",\r\n            \"AllowTeamChanges\": \"AllowTeamChanges={{server.build.env.allowteamchange}}\",\r\n            \"ShouldAdvertise\": \"ShouldAdvertise={{server.build.env.advertise}}\",\r\n            \"NumReservedSlots\": \"NumReservedSlots={{server.build.env.reservedslots}}\",\r\n            \"PreventTeamChangeIfUnbalanced\": \"PreventTeamChangeIfUnbalanced={{server.build.env.ptciu}}\",\r\n            \"EnforceTeamBalance\": \"EnforceTeamBalance={{server.build.env.teambal}}\",\r\n            \"RecordDemos\": \"RecordDemos={{server.build.env.recorddemos}}\"\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \"Engine Initialization\",\r\n    \"userInteraction\": []\r\n}",
+        "logs": "{\r\n    \"custom\": false,\r\n    \"location\": \"latest.log\"\r\n}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n## install required packages to install squad\r\napt update\r\napt -y --no-install-recommends install curl unzip libstdc++6 lib32gcc1 ca-certificates jq\r\n\r\n## install steamcmd\r\ncd \/tmp\r\ncurl -sSL -o steamcmd.tar.gz http:\/\/media.steampowered.com\/installer\/steamcmd_linux.tar.gz\r\nmkdir -p \/mnt\/server\/steam\r\ntar -xzvf steamcmd.tar.gz -C \/mnt\/server\/steam\r\ncd \/mnt\/server\/steam\r\n\r\n## needs to be used for steamcmd to operate correctly\r\nchown -R root:root \/mnt\r\nexport HOME=\/mnt\/server\r\n\r\n## install squad\r\n.\/steamcmd.sh +login anonymous +force_install_dir \/mnt\/server +app_update ${SRCDS_APPID} +quit\r\nmkdir -p \/mnt\/server\/.steam\/sdk32\r\n\r\n## steam logins\r\nSTEAMLOGIN=${AUTH_STEAM_LOGIN}\r\nSTEAMPASS=${AUTH_STEAM_PASS}\r\n\r\n## remove and install mods\r\nSCRDS_WRKID=${SWMC}\r\nSERVERAPP_ID=${SRCDS_SID}\r\nif [ \"$SCRDS_WRKID=\" = \"\" ]\r\nthen\r\necho \"No Steam Workshop Configuration Provided\"\r\nelse\r\necho \"Steam Workshop Configuration Provided...\"\r\necho \"app ID $SCRDS_WRKID\"\r\necho \"server id $SERVERAPP_ID\"\r\nfor MOD in $SCRDS_WRKID\r\ndo\r\necho \"downloading workshop item $MOD ...\"\r\n.\/steamcmd.sh +login anonymous +workshop_download_item $SERVERAPP_ID $MOD +quit\r\nrm -rf \/mnt\/server\/SquadGame\/Plugins\/Mods\/$MOD\r\nmv \/mnt\/server\/steam\/steamapps\/workshop\/content\/$SERVERAPP_ID\/$MOD\/* \/mnt\/server\/SquadGame\/Plugins\/Mods\/$MOD\r\necho \"setup of $MOD complete\"\r\ndone\r\nfi\r\n\r\ncp -v \/mnt\/server\/steam\/linux32\/steamclient.so \/mnt\/server\/.steam\/sdk32\/steamclient.so\r\n\r\nchmod +x \/mnt\/server\/SquadGame\/Binaries\/Linux\/SquadGameServer",
+            "container": "ubuntu:18.04",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Query Port",
+            "description": "Query port for your Squad server.",
+            "env_variable": "QUERY_PORT",
+            "default_value": "27165",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|numeric"
+        },
+        {
+            "name": "ld lib path",
+            "description": "this is needed for some reason",
+            "env_variable": "LD_LIBRARY_PATH",
+            "default_value": "\/home\/container\/linux64\/",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string"
+        },
+        {
+            "name": "Game ID",
+            "description": "The ID corresponding to the game to download and run using SRCDS.",
+            "env_variable": "SRCDS_APPID",
+            "default_value": "403240",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "Server Name",
+            "description": "The name for the server in the server list",
+            "env_variable": "servername",
+            "default_value": "Squad Server",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:60"
+        },
+        {
+            "name": "Max Players",
+            "description": "Sets the maximum number of players.",
+            "env_variable": "maxplayers",
+            "default_value": "80",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required"
+        },
+        {
+            "name": "Allow Team Change",
+            "description": "Allow players to change teams ( true \/ false )",
+            "env_variable": "allowteamchange",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Advertise Server",
+            "description": "Have the server report to the public server list ( true \/ false )",
+            "env_variable": "advertise",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Reserved Slots",
+            "description": "The number of reserved slots for admins \/ mods",
+            "env_variable": "reservedslots",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Prevent Team Change If Unbalanced",
+            "description": "This will prevent players from changing teams if they're already unbalanced ( true \/ false )",
+            "env_variable": "ptciu",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Enforce Team Balance",
+            "description": "This will FORCE team balance if the teams are too uneven ( true \/ false )",
+            "env_variable": "teambal",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Record Demos",
+            "description": "This will record demos of the players ( true \/ false )",
+            "env_variable": "recorddemos",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Steam Workshop Mod IDs",
+            "description": "Add the mod ids with spaces separating them\r\nexample: 138994021 263117508 174697663",
+            "env_variable": "SWMC",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable"
+        },
+        {
+            "name": "Steam Login",
+            "description": "Login for steam workshop",
+            "env_variable": "AUTH_STEAM_LOGIN",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|max:75"
+        },
+        {
+            "name": "Steam Password",
+            "description": "Steam Password for Workshop",
+            "env_variable": "AUTH_STEAM_PASS",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|max:75"
+        },
+        {
+            "name": "Server ID",
+            "description": "The ID for the Game as provided for Workshop downloads",
+            "env_variable": "SRCDS_SID",
+            "default_value": "393380",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:70"
+        }
+    ]
+}

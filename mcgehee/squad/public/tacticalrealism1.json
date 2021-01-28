@@ -3,12 +3,12 @@
         "env": {
             "SERVER_ID": "SquadTact1",
             "SERVER_NAME": "tacticalrealism1",
-            "IP_ADDRESS": "142.44.143.136",
-            "PORT": "7889",
-            "QUERY_PORT": "",
+            "IP_ADDRESS": "149.56.106.84",
+            "PORT": "7789",
+            "QUERY_PORT": "27166",
             "PARAMETERS": "-log",
             "MAX_PLAYERS": "80",
-            "FIXEDTICKRATE": "15",
+            "FIXEDTICKRATE": "60",
             "RANDOM": "NONE",
             "CPU_AFFINITY": "FF",
             "STEAM_BASE_PATH": "D:\\steam\\",
@@ -17,11 +17,10 @@
             "SCRIPTS_REL_PATH": "",
             "SQUAD_CONFIG_PATH": "D:\\config",
             "SQUAD_BASE_PATH": "D:\\gameservers\\squad\\tacticalrealism1"
-            },
+        },
         "mods": {
             "app": "",
             "name": ""
         }
-        }
+    }
 }
-

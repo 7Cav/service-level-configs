@@ -45,10 +45,9 @@ net stop $instanceId
 Start-Sleep -s 5
 Write-Output "[Notice] Starting File Removal in \Mods Directory"
 $dirp = Get-Item $installDirSquaddirectory\SquadGame\Plugins\Mods\*
-foreach($item in $dirp)
-{
-Remove-Item -Recurse -Force $item
-Write-Output "Removing $item from \Mods"
+foreach ($item in $dirp) {
+    Remove-Item -Recurse -Force $item
+    Write-Output "Removing $item from \Mods"
 }
 
 if ($Nuke -eq $True) {
@@ -56,34 +55,31 @@ if ($Nuke -eq $True) {
     Write-Output "[Warning] -Nuke Parameter was used. all files related to this server instance will be wiped"
     Write-Output "###"
     $dirp = Get-Item $installDirSquaddirectory\*
-    foreach ($item in $dirp)
-    {
-    Remove-Item -Recurse -Force $item
-    Write-Output "Removing from Installation Directory: $item"
+    foreach ($item in $dirp) {
+        Remove-Item -Recurse -Force $item
+        Write-Output "Removing from Installation Directory: $item"
     }
     $dirS = Get-Item $installDirWorkshop
-    foreach ($item in $dirS)
-    {
-    Remove-Item -Recurse -Force $item
-    Write-Output "Removing from Store Directory: $item"
+    foreach ($item in $dirS) {
+        Remove-Item -Recurse -Force $item
+        Write-Output "Removing from Store Directory: $item"
     }
 }
 Write-Output "###"
 Write-Output "[Notice] Starting SteamCMD Download and Validate Base Installation"
 Write-Output "###"
 #login to steamcmd using env variables
-$argumentListArray = "+login $steamUser $steamPass +force_install_dir "+$storePath+" "
+$argumentListArray = "+login $steamUser $steamPass +force_install_dir " + $storePath + " "
 
-foreach($item in $modListJson) 
-{
+foreach ($item in $modListJson) {
     $id = $item.app
     $name = $item.name
-    if ($id -ne "")
-    {
-    $argumentListArray += "+workshop_download_item 393380 $id "
-    Write-Output "Found Item_ID: $id ($name)"
-    } else {
-    Write-Output "Blank Workshop Item ID, Skipping"
+    if ($id -ne "") {
+        $argumentListArray += "+workshop_download_item 393380 $id "
+        Write-Output "Found Item_ID: $id ($name)"
+    }
+    else {
+        Write-Output "Blank Workshop Item ID, Skipping"
     }
 }
 $argumentListArray += "+quit"
@@ -97,14 +93,12 @@ Start-Process -FilePath $steamCMDdir -ArgumentList $argumentListArray -NoNewWind
 Write-Output "###"
 Write-Output "[Notice] End of Base Installation Process"
 Write-Output "###"
-foreach($item in $modListJson) 
-{
-   $id = $item.app
-   $name = $item.name
-   if ($id -ne "")
-   {
-      New-Item -ItemType Junction -Path "$installDirSquaddirectory\SquadGame\Plugins\Mods\$name" -Target $installDirWorkshop\$id     
-      Write-Output "App ID $id added to plugins/mods"
+foreach ($item in $modListJson) {
+    $id = $item.app
+    $name = $item.name
+    if ($id -ne "") {
+        New-Item -ItemType Junction -Path "$installDirSquaddirectory\SquadGame\Plugins\Mods\$name" -Target $installDirWorkshop\$id     
+        Write-Output "App ID $id added to plugins/mods"
     }
 }
 #download each item in steamcmd using the app id in the mod list array
@@ -113,9 +107,8 @@ if ($Logs -ne $True) {
     Write-Output "[Notice] -logs is being used"
     Write-Output "[Notice] log file management is not currently setup"
 }
-else 
-    {
-Write-Output "[Notice] log file management is not currently setup"
+else {
+    Write-Output "[Notice] log file management is not currently setup"
 }
 # Instance parameters
 $ipaddrparam = "MULTIHOME=$ipaddr"
@@ -136,11 +129,10 @@ if ($AutoStart -eq $True) {
     net start $instanceId
     Write-Output "[Notice] -AutoStart is being used"
     Write-Output "[Notice] Starting $instanceId"
-    }
-    else 
-        {
+}
+else {
     Write-Output "[Notice] -AutoStart was not set, exiting without starting server instance"
-    }
+}
 #Stop myself if service Firedaemon Service
 Write-Output "End of Script"
 net stop $ServiceName
