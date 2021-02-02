@@ -212,6 +212,11 @@
       "server": "false"
     },
     {
+      "app": "1745501106",
+      "name": "@HatchetFramework",
+      "server": "false"
+    },
+    {
       "app": "",
       "name": "@CAVPACK_4_0",
       "server": "false"
