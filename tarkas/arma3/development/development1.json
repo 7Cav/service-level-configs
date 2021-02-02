@@ -216,5 +216,15 @@
       "name": "@CavMetrics",
       "server": "true"
     }
+    {
+      "app": "1745501605",
+      "name": "@H_60",
+      "server": "false"
+    },
+    {
+      "app": "1745501106",
+      "name": "@HatchetFramework",
+      "server": "false"
+    },
   ]
 }
