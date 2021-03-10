@@ -215,6 +215,11 @@
       "app": "",
       "name": "@CavMetrics",
       "server": "true"
+    },
+    {
+      "app": "2020940806",
+      "name": "@KAT_Med",
+      "server": "false"
     }
   ]
 }
