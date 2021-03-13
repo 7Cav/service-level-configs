@@ -220,6 +220,31 @@
       "app": "2020940806",
       "name": "@KAT_Med",
       "server": "false"
+    },
+    {
+      "app": "1745501605",
+      "name": "@H_60",
+      "server": "false"
+    },
+    {
+      "app": "2131302796",
+      "name": "@Hornet2020",
+      "server": "false"
+    },
+    {
+      "app": "1745501106",
+      "name": "@HatchetFramework",
+      "server": "false"
+    },
+    {
+      "app": "1713801249",
+      "name": "@dzn_Tripod",
+      "server": "false"
+    },
+    {
+      "app": "1947836596",
+      "name": "@dzn_Tripod_RHS",
+      "server": "false"
     }
   ]
 }
