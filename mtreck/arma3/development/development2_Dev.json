@@ -22,8 +22,18 @@
         "server": "false"
       },
       {
+        "app": "463939057",
+        "name": "@ace",
+        "server": "false"
+      },
+      {
         "app": "843577117",
         "name": "@RHSUSAF",
+        "server": "false"
+      },
+      {
+        "app": "773125288",
+        "name": "@ACECOMPATUSAF",
         "server": "false"
       },
       {
@@ -32,8 +42,8 @@
         "server": "false"
       },
       {
-        "app": "463939057",
-        "name": "@ace",
+        "app": "773131200",
+        "name": "@ACECOMPATAFRF",
         "server": "false"
       },
       {
@@ -42,18 +52,8 @@
         "server": "false"
       },
       {
-        "app": "333310405",
-        "name": "@EM",
-        "server": "false"
-      },
-      {
-        "app": "1779063631",
-        "name": "@ZEN",
-        "server": "false"
-      },
-      {
-        "app": "1696706969",
-        "name": "@CAVADDON",
+        "app": "884966711",
+        "name": "@ACECOMPATGREF",
         "server": "false"
       },
       {
@@ -67,108 +67,13 @@
         "server": "false"
       },
       {
-        "app": "582478120",
-        "name": "@F15E",
-        "server": "false"
-      },
-      {
-        "app": "773131200",
-        "name": "@ACECOMPATAFRF",
-        "server": "false"
-      },
-      {
-        "app": "773125288",
-        "name": "@ACECOMPATUSAF",
-        "server": "false"
-      },
-      {
-        "app": "884966711",
-        "name": "@ACECOMPATGREF",
-        "server": "false"
-      },
-      {
-        "app": "708250744",
-        "name": "@ACEX",
-        "server": "false"
-      },
-      {
         "app": "751965892",
         "name": "@ACRE2",
         "server": "false"
       },
       {
-        "app": "2127693591",
-        "name": "@RE",
-        "server": "false"
-      },
-      {
-        "app": "820924072",
-        "name": "@BOC",
-        "server": "false"
-      },
-      {
-        "app": "2260572637",
-        "name": "@BETTIR",
-        "server": "false"
-      },
-      {
-        "app": "583496184",
-        "name": "@CUP_CORE",
-        "server": "false"
-      },
-      {
-        "app": "1638341685",
-        "name": "@DUI",
-        "server": "false"
-      },
-      {
-        "app": "2034363662",
-        "name": "@EMR",
-        "server": "false"
-      },
-      {
-        "app": "701535490",
-        "name": "@DARIYAH",
-        "server": "false"
-      },
-      {
-        "app": "1224892496",
-        "name": "@GRAD",
-        "server": "false"
-      },
-      {
-        "app": "520618345",
-        "name": "@Jbad",
-        "server": "false"
-      },
-      {
-        "app": "1858075458",
-        "name": "@LAMBS",
-        "server": "true"
-      },
-      {
-        "app": "909547724",
-        "name": "@LYTHIUM",
-        "server": "false"
-      },
-      {
-        "app": "1425442364",
-        "name": "@NAPF",
-        "server": "false"
-      },
-      {
-        "app": "735566597",
-        "name": "@PROJECTOPFOR",
-        "server": "false"
-      },
-      {
-        "app": "1664288935",
-        "name": "@RCWN",
-        "server": "false"
-      },
-      {
-        "app": "2003343816",
-        "name": "@RWR",
+        "app": "1779063631",
+        "name": "@ZEN",
         "server": "false"
       },
       {
@@ -177,9 +82,84 @@
         "server": "false"
       },
       {
-        "app": "1660226023",
-        "name": "@TFC",
+        "app": "583496184",
+        "name": "@CUP_CORE",
         "server": "false"
+      },
+      {
+        "app": "583544987",
+        "name": "@CUP_Map",
+        "server": "false"
+      },
+      {
+        "app": "853743366",
+        "name": "@CUP_CWA",
+        "server": "false"
+      },
+      {
+        "app": "2041057379",
+        "name": "@A3TI",
+        "server": "true"
+      },
+      {
+        "app": "2260572637",
+        "name": "@BETTIR",
+        "server": "true"
+      },
+      {
+        "app": "1643720957",
+        "name": "@CTab",
+        "server": "true"
+      },
+      {
+        "app": "1638341685",
+        "name": "@DUI",
+        "server": "true"
+      },
+      {
+        "app": "333310405",
+        "name": "@EM",
+        "server": "true"
+      },
+      {
+        "app": "2034363662",
+        "name": "@EMR",
+        "server": "true"
+      },
+      {
+        "app": "1481341874",
+        "name": "@RadioAnim",
+        "server": "true"
+      },
+      {
+        "app": "2013446344",
+        "name": "@SimpleMapTools",
+        "server": "true"
+      },
+      {
+        "app": "1858075458",
+        "name": "@LAMBS",
+        "server": "true"
+      },
+      {
+        "app": "861133494",
+        "name": "@JSRS",
+        "server": "true"
+      },
+      {
+        "app": "1180533757",
+        "name": "@JSRSUSAF",
+        "server": "true"
+      },
+      {
+        "app": "945476727",
+        "name": "@JSRSAFRF",
+        "server": "true"
+      },
+      {
+        "app": "1180534892",
+        "name": "@JSRSGREF",
+        "server": "true"
       },
       {
         "app": "",
