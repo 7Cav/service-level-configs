@@ -1,0 +1,15 @@
+  sinusbot:
+    image: sinusbot/docker
+    restart: always
+    env_file:
+      - "env.sinusbot"
+    ports:
+      - 8087:8087
+    volumes:
+      - /opt/sinusbot/scripts:/opt/sinusbot/scripts
+      - /opt/sinusbot/data:/opt/sinusbot/data
+    networks:
+     - edge
+networks:
+  edge:
+    external: true
