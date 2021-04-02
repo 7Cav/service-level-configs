@@ -218,6 +218,16 @@
         "app": "",
         "name": "@CavMetrics",
         "server": "true"
+      },
+      {
+        "app": "520618345",
+        "name": "@Jbad",
+        "server": "false"
+      },
+      {
+        "app": "909547724",
+        "name": "@LYTHIUM",
+        "server": "false"
       }
   ]
 }
