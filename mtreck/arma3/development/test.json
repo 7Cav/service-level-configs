@@ -1,0 +1,18 @@
+{
+   "modpack_name":"cavpack4.2",
+   "mods":{
+      "@mod1":"1029393",
+      "@mod2":"2029394"
+   },
+   "server_mods":{
+      "@smod1":"3039945",
+      "@smod4":"4304959"
+   },
+   "optional_mods":{
+      "@mod1":"1029393",
+      "@mod2":"2029394"
+   },
+   "dlc":{
+      "Global Mobilization":"1042220"
+   }
+}
