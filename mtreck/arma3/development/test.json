@@ -1,5 +1,5 @@
 {
-   "modpack_name": "cavpack4.2",
+   "modpack_name":"cavpack4.2",
    "mods":{
       "@mod1":"1029393",
       "@mod2":"2029394"
@@ -13,6 +13,6 @@
       "@mod2":"2029394"
    },
    "dlc":{
-      "Global Mobilization": "1042220"
+      "Global Mobilization":"1042220"
    }
 }
