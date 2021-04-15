@@ -375,7 +375,11 @@ def print_launch_params():
     print(params)
 
 log("Updating mods")
-update_mods()
+
+try:
+    update_mods()
+except:
+    print('error on mod update!!')
 
 log("Converting uppercase files/folders to lowercase...")
 lowercase_workshop_dir()
@@ -386,8 +390,11 @@ create_mod_symlinks()
 log("Copying server keys...")
 copy_keys()
 
-# log("Generating modpack .html file...")
-# generate_preset()
+log("Generating modpack .html file...")
+try:
+    generate_preset()
+except:
+    print('error on generating preset file!!')
 #log('Generating parameters')
 #print_launch_params()
 
