@@ -39,12 +39,12 @@ STEAM_USER = ""
 STEAM_PASS = ""
 
 A3_SERVER_ID = "233780"
-A3_SERVER_DIR = "/mnt/server/"
+A3_SERVER_DIR = "/mnt/server"
 A3_WORKSHOP_ID = "107410"
 
 A3_WORKSHOP_DIR = "{}/steamapps/workshop/content/{}".format(A3_SERVER_DIR, A3_WORKSHOP_ID)
-A3_MODS_DIR = "/mnt/server/mods"
-A3_KEYS_DIR = "/mnt/server/mods/keys"
+A3_MODS_DIR = "/mnt/server"
+A3_KEYS_DIR = "/mnt/server/keys"
 
 # MODPACK_NAME = "Modpack"
 MODPACK_PATH = "/mnt/server/modpack.html"
@@ -160,9 +160,9 @@ def create_mod_symlinks():
         real_path = "{}/{}".format(A3_WORKSHOP_DIR, mod_id)
 
         if os.path.isdir(real_path):
-            if not os.path.islink(link_path):
-                os.symlink(real_path, link_path)
-                print("Creating symlink '{}'...".format(link_path))
+            if not os.path.exists(link_path):
+                shutil.copytree(real_path, link_path)
+                print("Creating copy '{}'...".format(link_path))
         else:
             print("Mod '{}' does not exist! ({})".format(mod_name, real_path))
 
@@ -176,7 +176,7 @@ def copy_keys():
         key_path = "{}/{}".format(A3_KEYS_DIR, key)
         if os.path.islink(key_path) and not os.path.exists(key_path):
             print("Removing outdated server key '{}'".format(key))
-            os.unlink(key_path)
+            os.remove(key_path)
     # Update/add new key symlinks
     for mod_name, mod_id in MODS.items():
         if mod_name not in SERVER_MODS:
@@ -194,16 +194,16 @@ def copy_keys():
                         key = keyDir
                         key_path = os.path.join(A3_KEYS_DIR, key)
                         if not os.path.exists(key_path):
-                            print("Creating symlink to key for mod '{}' ({})".format(mod_name, key))
-                            os.symlink(os.path.join(real_path, key), key_path)
+                            print("Creating copy to key for mod '{}' ({})".format(mod_name, key))
+                            shutil.copyfile(os.path.join(real_path, key), key_path)
                     else:
                         # Key is in a folder
                         for key in os.listdir(os.path.join(real_path, keyDir)):
                             real_key_path = os.path.join(real_path, keyDir, key)
                             key_path = os.path.join(A3_KEYS_DIR, key)
                             if not os.path.exists(key_path):
-                                print("Creating symlink to key for mod '{}' ({})".format(mod_name, key))
-                                os.symlink(real_key_path, key_path)
+                                print("Creating copy to key for mod '{}' ({})".format(mod_name, key))
+                                shutil.copyfile(real_key_path, key_path)
                 else:
                     print("!! Couldn't find key folder for mod {} !!".format(mod_name))
 
@@ -388,5 +388,7 @@ copy_keys()
 
 # log("Generating modpack .html file...")
 # generate_preset()
+#log('Generating parameters')
+#print_launch_params()
 
 log("Done!")
