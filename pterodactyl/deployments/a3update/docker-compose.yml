@@ -1,0 +1,8 @@
+version: "3.2"
+services:
+    armaupdater:
+        container_name: a3updater
+        image: debian:buster-slim
+        volumes:
+            - /opt/mods:/mnt/server/mods
+            - ./src:/mnt/server/
