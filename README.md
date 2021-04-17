@@ -1,5 +1,7 @@
 <p align="center"><img src="https://github.com/7Cav/service-level-configs/blob/develop/media/S6_SLC_Logo_2.png"></p>
 
+[![Lint Code Base](https://github.com/7Cav/service-level-configs/actions/workflows/linter.yml/badge.svg)](https://github.com/7Cav/service-level-configs/actions/workflows/linter.yml)
+
 # About
 
 Service Level Configs is a framework for configuration files and scripts that are in use to manage the 7th Cavalry gameservers.
