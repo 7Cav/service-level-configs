@@ -1,13 +1,15 @@
+
+/* Changes these to change the colors of the panel!!! */
+
 :root {
-  --main-bg-color: #101010 !important;
-  --secondary-bg-color: #2f2f2f !important;
-  --secondary-bg-color-alt: #1b1b1b !important;
-  --accent-color: #ebc8297e !important;
-  --accent-secondary-color: #ebc8297e !important;
-  --text-color: #fafafa !important;
-  --border-radius: 1px !important;
-  --accent-light: #fff1b5 !important;
-}
+	--main-bg-color: #3b3b3b !important;
+	--secondary-bg-color: #2b2b2b!important;
+	--secondary-bg-color-alt: #1b1b1b !important;
+	--accent-color: #dbc920 !important;
+	--accent-secondary-color: #7c7219 !important;
+	--text-color: #fafafa !important;
+	--border-radius: 15px !important;
+  }
 
 /* Changes Background */
 
@@ -63,7 +65,6 @@ body, .content-wrapper {
 
 /* Changes Text Color */
 
-.dlUeSf,
 .fNmetC,
 .hcJQtJ,
 .ToRTP,
@@ -89,18 +90,10 @@ body, .content-wrapper {
 .iZqkRd,
 .chAlWS,
 .iTwxpv,
-.skin-blue .main-header .logo,
-.jVPRyV,
-.cvDOmk,
-.dRhlIo .icon,
-.hmodKy,
-.beRAKh {
+.skin-blue .main-header .logo {
 	color: var(--text-color) !important;
 }
 
-.gqmhN {
-	display: none !important;
-}
 
 /* Changes disabled switch */
 
@@ -154,7 +147,7 @@ body, .content-wrapper {
 .jqQFoq .status-bar,
 .bEKRkc .status-bar,
 .dRhlIo .status-bar {
-	height: 100vw !important;
+	height: 7vw !important;
 	right: -.25vw !important;
 }
 
@@ -230,13 +223,11 @@ code,
 .btn-primary,
 .btn-warning,
 .btn-success,
-.btn-danger,
 .alert-danger,
+pre,
 .input-group .input-group-addon,
 .select2-container--default .select2-selection--single,
-.select2-container--default .select2-selection--multiple,
-.content-header>.breadcrumb,
-body > div > div > section.content > div:nth-child(3) > div.col-sm-8 > div > div:nth-child(2) > div > div.box-body.table-responsive > pre {
+.select2-container--default .select2-selection--multiple {
 	border-color: var(--accent-secondary-color) !important;
 	background-color: var(--secondary-bg-color-alt) !important;
 	border-radius: var(--border-radius) !important;
@@ -330,7 +321,7 @@ body > div > div > section.content > div:nth-child(3) > div.col-sm-8 > div > div
 }
 
 ::-webkit-scrollbar {
-	background: var(--main-bg-color) !important;
+	background: var(--secondary-bg-color) !important;
 
 }
 
@@ -343,7 +334,7 @@ body > div > div > section.content > div:nth-child(3) > div.col-sm-8 > div > div
 	background-color: var(--secondary-bg-color-alt) !important;
 	border-radius: var(--border-radius) !important;
 	transform: scale(0.95) !important;
-   	margin-top: .25vw !important;
+    margin-top: .25vw !important;
 }
 
 
@@ -503,7 +494,7 @@ hr {
 
 /* Removes port bubble */
 
-.cxwlaX, .bceLDp {
+.cxwlaX {
 	background: var(--secondary-bg-color-alt) !important;
 }
 
@@ -513,211 +504,3 @@ hr {
 	background: var(--secondary-bg-color-alt) !important;
 }
 
-/* Fixes login page */
-
-.eWTBmo, .kZiVrb, .kZiVrb:hover, .kdZiuU, .fMOYf, .fMOYf:hover {
-	color: var(--text-color) !important;
-}
-
-.dVhqhq {
-	background-color: var(--secondary-bg-color) !important;
-	border-color: transparent !important;
-	box-shadow: none !important;
-}
-
-.fPcGHZ:not([type="checkbox"]):not([type="radio"]) {
-	border-color: var(--accent-color) !important;
-	background-color: var(--secondary-bg-color-alt) !important;
-	border-radius: var(--border-radius) !important;	
-}
-
-/* Fixes search button */
-
-.btn-default {
-	border-color: var(--accent-secondary-color) !important;
-	background-color: var(--secondary-bg-color-alt) !important;
-	border-radius: var(--border-radius) !important;	
-}
-
-.btn-default {
-	margin-right: .25vw !important;
-}
-
-.input-group .form-control {
-	margin-right: .25vw !important;
-}
-
-.bg-red,
-.bg-yellow,
-.bg-aqua,
-.bg-blue,
-.bg-light-blue,
-.bg-green,
-.bg-navy,
-.bg-teal,
-.bg-olive,
-.bg-lime,
-.bg-orange,
-.bg-fuchsia,
-.bg-purple,
-.bg-maroon,
-.bg-black,
-.bg-red-active,
-.bg-yellow-active,
-.bg-aqua-active,
-.bg-blue-active,
-.bg-light-blue-active,
-.bg-green-active,
-.bg-navy-active,
-.bg-teal-active,
-.bg-olive-active,
-.bg-lime-active,
-.bg-orange-active,
-.bg-fuchsia-active,
-.bg-purple-active,
-.bg-maroon-active,
-.bg-black-active,
-.callout.callout-danger,
-.callout.callout-warning,
-.callout.callout-info,
-.callout.callout-success,
-.alert-success,
-.alert-danger,
-.alert-error,
-.alert-warning,
-.alert-info,
-.label-danger,
-.label-info,
-.label-warning,
-.label-primary,
-.label-success,
-.modal-primary .modal-body,
-.modal-primary .modal-header,
-.modal-primary .modal-footer,
-.modal-warning .modal-body,
-.modal-warning .modal-header,
-.modal-warning .modal-footer,
-.modal-info .modal-body,
-.modal-info .modal-header,
-.modal-info .modal-footer,
-.modal-success .modal-body,
-.modal-success .modal-header,
-.modal-success .modal-footer,
-.modal-danger .modal-body,
-.modal-danger .modal-header,
-.modal-danger .modal-footer {
-	border-radius: var(--border-radius) !important;
-
-}
-
-/* Fixes server list number */
-
-.xkLPZ {
-	border-radius: 100% !important;
-}
-
-.gKREGI:not(:disabled) {
-	background-color: var(--accent-light) !important;
-	border-color: var(--accent-light) !important;
-}
-
-.gKREGI:hover:not(:disabled) {
-	background-color: var(--accent-color) !important;
-	border-color: var(--accent-color) !important;	
-}
-
-.bRKaoy:hover:not(:disabled) {
-	background-color: var(--accent-color) !important;
-	border-color: var(--accent-color) !important;	
-}
-
-/* Fixes file editor */
-
-.CodeMirror-scroll,
-.CodeMirror-sizer,
-.CodeMirror-gutter,
-.CodeMirror-gutters,
-.CodeMirror-linenumber {
-	border-color: var(--accent-color) !important;
-	background-color: var(--secondary-bg-color) !important;
-	color: var(--text-color) !important;
-}
-
-/* Fixes Admin areas. */
-
-.box-body {
-	transform: scale(.98) !important;
-}
-
-.ifNwiE,
-.LdCMD,
-.fIhPZJ,
-.cFegvH,
-.box-body {
-	transform: scale(.98) !important;
-}
-
-.info-box,
-.info-box-icon {
-	border-radius: 15px !important;
-}
-
-body > div > div > section.content > div:nth-child(3) > div.col-sm-8 > div > div.box-body > pre, textarea.form-control, input.form-control, body > div > div > section.content > div:nth-child(3) > div.col-sm-8 > div > div.box-body > pre {
-	border-color: var(--accent-secondary-color) !important;
-	background-color: var(--secondary-bg-color-alt) !important;
-	border-radius: var(--border-radius) !important;
-}
-
-.hNrKxe, .dMZZHB, .dHRxAp, .epSLdr, .bsrsDD, .ffSVrP, .fZqvbJ, .fLfaAY, .bsSkeI, .jIIIrT, .EwfIk, .izAmwE, code, .select2-container--default .select2-selection--multiple .select2-selection__choice, .select2-search--inline .select2-search__field:focus, .select2-container--default .select2-search--inline .select2-search__field {
-	background: transparent !important;
-	color: #fafafa !important;
-}
-
-/* Fixes nest, eggs, and mounts */
-
-.modal-body, .modal-header, .modal-footer {
-	background-color: var(--secondary-bg-color) !important;
-	border-color: var(--secondary-bg-color-alt) !important;
-}
-
-textarea.form-control, input.form-control {
-	border-color: var(--accent-secondary-color) !important;
-	background-color: var(--secondary-bg-color-alt) !important;
-	border-radius: var(--border-radius) !important;
-}
-
-/* Fixes selection for admin pages. */
-
-.select2-results__option {
-	color: #fafafa !important;
-	background: #282a36  !important;
-}
-
-.select2-container--open .select2-dropdown--below {
-	margin-top: .25vw !important; 
-	border: none !important;
-	border-radius: 15px !important;
-}
-
-.select2-container--default .select2-results>.select2-results__options {
-	border-radius: 15px !important;
-}
-
-.select2-dropdown {
-	border-radius: 15px !important;
-	background: transparent !important;
-	border: none !important;
-}
-
-.select2-results__options::-webkit-scrollbar, .select2-results::-webkit-scrollbar {
-	display: none !important;
-}
-/* Fix issues with login page on dark bg*/
-.dlUeSf {
-	background-color:#2f2f2f !important;
-	color: #fff !important; 
-}
-.fNecyQ {
-	margin-right: 20px !important;
-	margin-left: 20px !important;
-}
