@@ -63,6 +63,7 @@ body, .content-wrapper {
 
 /* Changes Text Color */
 
+.dlUeSf,
 .fNmetC,
 .hcJQtJ,
 .ToRTP,
@@ -710,4 +711,9 @@ textarea.form-control, input.form-control {
 
 .select2-results__options::-webkit-scrollbar, .select2-results::-webkit-scrollbar {
 	display: none !important;
+}
+/* Fix issues with login page on dark bg*/
+.dlUeSf {
+	background-color:#2f2f2f !important;
+	color: #fff !important; 
 }
