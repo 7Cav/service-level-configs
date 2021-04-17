@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/7Cav/service-level-configs/blob/develop/media/S6_SLC_Logo_2.png"></p>
 
-![json lint](https://github.com/7Cav/service-level-configs/develop/.github/workflows/linter.yml/badge.svg?event=pull_request)
+[![Lint Code Base](https://github.com/7Cav/service-level-configs/actions/workflows/linter.yml/badge.svg)](https://github.com/7Cav/service-level-configs/actions/workflows/linter.yml)
 
 # About
 
