@@ -34,21 +34,21 @@ from datetime import datetime
 from urllib import request
 
 # region Configuration / ENV
-STEAM_CMD = "/mnt/server/steamcmd/steamcmd.sh"  # Alternatively "steamcmd" if package is installed
+STEAM_CMD = "/home/container/steamcmd/steamcmd.sh"  # Alternatively "steamcmd" if package is installed
 STEAM_USER = os.getenv('STEAM_USER')
 STEAM_PASS = os.getenv('STEAM_PASS')
 GITHUB_MODS = os.getenv('GITHUB_MODS_URL')
 
 A3_SERVER_ID = "233780"
-A3_SERVER_DIR = "/mnt/server"
+A3_SERVER_DIR = "/home/container"
 A3_WORKSHOP_ID = "107410"
 
 A3_WORKSHOP_DIR = "{}/steamapps/workshop/content/{}".format(A3_SERVER_DIR, A3_WORKSHOP_ID)
-A3_MODS_DIR = "/mnt/server"
-A3_KEYS_DIR = "/mnt/server/keys"
+A3_MODS_DIR = "/home/container"
+A3_KEYS_DIR = "/home/container/keys"
 
 # MODPACK_NAME = "Modpack"
-MODPACK_PATH = "/mnt/server/modpack.html"
+MODPACK_PATH = "/home/container/modpack.html"
 
 UPDATE_PATTERN = re.compile(r"workshopAnnouncement.*?<p id=\"(\d+)\">", re.DOTALL)
 TITLE_PATTERN = re.compile(r"(?<=<div class=\"workshopItemTitle\">)(.*?)(?=<\/div>)", re.DOTALL)

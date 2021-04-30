@@ -21,31 +21,9 @@ sleep 1
 echo -e "\t${CYAN}Sweetwater.I was here${NC}"
 
 # Exports
-export GITHUB_MODS_URL='${GITHUB_JSON}'
-export STEAM_USER='${STEAM_USER}'
-export STEAM_PASS='${STEAM_PASS}'
-
-# Check all the files
-if [[ ${GITHUB_UPDATER_URL} == "github_url"]];
-then
-	echo -e "\n${RED}Github Error: Please contact your administrator for support, and give them the following message:${NC}\n"
-	echo -e "\t${CYAN}No valid url was provided for the updater script${NC}"
-	exit 1
-fi
-
-if [[ ${GITHUB_CONFIG_URL} == "github_config_url"]];
-then
-	echo -e "\n${RED}Github Error: Please contact your administrator for support, and give them the following message:${NC}\n"
-	echo -e "\t${CYAN}No valid url was provided for the server.cfg file${NC}"
-	exit 1
-fi
-
-if [[ ${GITHUB_BASIC_URL} == "github_config_url"]];
-then
-	echo -e "\n${RED}Github Error: Please contact your administrator for support, and give them the following message:${NC}\n"
-	echo -e "\t${CYAN}No valid url was provided for the basic.cfg file${NC}"
-	exit 1
-fi
+export GITHUB_MODS_URL=${GITHUB_JSON}
+export STEAM_USER=${STEAM_USER}
+export STEAM_PASS=${STEAM_PASS}
 
 # Download Github File(s)
 #
@@ -60,7 +38,7 @@ if [[ -n ${UPDATER} ]] && [[ ! -f ./${UPDATER} ]];
 then
 	echo -e "\n${YELLOW}STARTUP: Specified UPDATER file \"${CYAN}${UPDATER}${YELLOW}\" is missing!${NC}"
 	echo -e "\t${YELLOW}Downloading default UPDATER file for use instead...${NC}"
-	curl -sSL ${GITHUB_BASIC_URL} -o ./${UPDATER}
+	curl -sSL ${GITHUB_UPDATER_URL} -o ./${UPDATER}
 fi
 
 if [[ -n ${CONFIG} ]] && [[ ! -f ./${CONFIG} ]];
@@ -122,7 +100,6 @@ if [[ ${UPDATE_WORKSHOP} == "1" ]];
 then
 	echo -e "\n${GREEN}STARTUP:${NC} Starting ARMA 3 Updater ${CYAN}$i${NC}...\n"
 	python3 ${UPDATER}
-	done
 	echo -e "\n${GREEN}STARTUP: END OF UPDATER RUNTIME ${NC}\n"
 fi
 
