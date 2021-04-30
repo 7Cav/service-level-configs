@@ -5,7 +5,7 @@ ENV         DEBIAN_FRONTEND noninteractive
 ENV         USER_NAME container
 ENV         NSS_WRAPPER_PASSWD /tmp/passwd 
 ENV         NSS_WRAPPER_GROUP /tmp/group
-
+COPY        ./requirements.txt /requirements.txt
 # Install Dependencies
 RUN         dpkg --add-architecture i386 \
             && apt-get update \
@@ -17,7 +17,8 @@ RUN         dpkg --add-architecture i386 \
             && useradd -m -d /home/container -s /bin/bash container \
             && touch ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} \
             && chgrp 0 ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} \
-            && chmod g+rw ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP}
+            && chmod g+rw ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} \
+            && pip3 install -r /requirements.txt
 
 ADD         passwd.template /passwd.template
 

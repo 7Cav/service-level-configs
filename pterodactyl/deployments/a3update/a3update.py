@@ -33,10 +33,11 @@ import json
 from datetime import datetime
 from urllib import request
 
-# region Configuration
+# region Configuration / ENV
 STEAM_CMD = "/mnt/server/steamcmd/steamcmd.sh"  # Alternatively "steamcmd" if package is installed
-STEAM_USER = ""
-STEAM_PASS = ""
+STEAM_USER = os.getenv('STEAM_USER')
+STEAM_PASS = os.getenv('STEAM_PASS')
+GITHUB_MODS = os.getenv('GITHUB_MODS_URL')
 
 A3_SERVER_ID = "233780"
 A3_SERVER_DIR = "/mnt/server"
@@ -55,7 +56,7 @@ WORKSHOP_CHANGELOG_URL = "https://steamcommunity.com/sharedfiles/filedetails/cha
 
 # endregion
 # Grab json from github
-response = requests.get("https://raw.githubusercontent.com/7Cav/service-level-configs/develop/mtreck/arma3/development/test.json")
+response = requests.get(GITHUB_MODS)
 jsdata = json.loads(response.text)
 MODPACK_NAME = jsdata.get('modpack_name')
 MODS = jsdata.get('mods')
@@ -390,12 +391,13 @@ create_mod_symlinks()
 log("Copying server keys...")
 copy_keys()
 
-log("Generating modpack .html file...")
-try:
-    generate_preset()
-except:
-    print('error on generating preset file!!')
-#log('Generating parameters')
-#print_launch_params()
+#log("Generating modpack .html file...")
+#try:
+#    generate_preset()
+#except:
+#    print('error on generating preset file!!')
+
+log('Generating parameters')
+print_launch_params()
 
 log("Done!")

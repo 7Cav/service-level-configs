@@ -20,6 +20,56 @@ sleep 1
 # useless propaganda
 echo -e "\t${CYAN}Sweetwater.I was here${NC}"
 
+# Exports
+export GITHUB_MODS_URL='${GITHUB_JSON}'
+export STEAM_USER='${STEAM_USER}'
+export STEAM_PASS='${STEAM_PASS}'
+
+# Check all the files
+if [[ ${GITHUB_UPDATER_URL} == "github_url"]];
+then
+	echo -e "\n${RED}Github Error: Please contact your administrator for support, and give them the following message:${NC}\n"
+	echo -e "\t${CYAN}No valid url was provided for the updater script${NC}"
+	exit 1
+fi
+
+if [[ ${GITHUB_CONFIG_URL} == "github_config_url"]];
+then
+	echo -e "\n${RED}Github Error: Please contact your administrator for support, and give them the following message:${NC}\n"
+	echo -e "\t${CYAN}No valid url was provided for the server.cfg file${NC}"
+	exit 1
+fi
+
+if [[ ${GITHUB_BASIC_URL} == "github_config_url"]];
+then
+	echo -e "\n${RED}Github Error: Please contact your administrator for support, and give them the following message:${NC}\n"
+	echo -e "\t${CYAN}No valid url was provided for the basic.cfg file${NC}"
+	exit 1
+fi
+
+# Download Github File(s)
+#
+if [[ -n ${BASIC} ]] && [[ ! -f ./${BASIC} ]];
+then
+	echo -e "\n${YELLOW}STARTUP: Specified Basic Network Configuration file \"${CYAN}${BASIC}${YELLOW}\" is missing!${NC}"
+	echo -e "\t${YELLOW}Downloading default file for use instead...${NC}"
+	curl -sSL ${GITHUB_BASIC_URL} -o ./${BASIC}
+fi
+
+if [[ -n ${UPDATER} ]] && [[ ! -f ./${UPDATER} ]];
+then
+	echo -e "\n${YELLOW}STARTUP: Specified UPDATER file \"${CYAN}${UPDATER}${YELLOW}\" is missing!${NC}"
+	echo -e "\t${YELLOW}Downloading default UPDATER file for use instead...${NC}"
+	curl -sSL ${GITHUB_BASIC_URL} -o ./${UPDATER}
+fi
+
+if [[ -n ${CONFIG} ]] && [[ ! -f ./${CONFIG} ]];
+then
+	echo -e "\n${YELLOW}STARTUP: Specified UPDATER file \"${CYAN}${CONFIG}${YELLOW}\" is missing!${NC}"
+	echo -e "\t${YELLOW}Downloading default UPDATER file for use instead...${NC}"
+	curl -sSL ${GITHUB_SERVER_CFG_URL} -o ./${CONFIG}
+fi
+#
 # Define make mods lowercase function
 ModsLowercase () {
 	echo -e "\n${GREEN}STARTUP:${NC} Making mod ${CYAN}$1${NC} files/folders lowercase..."
@@ -68,24 +118,12 @@ then
 fi
 
 # Download/Update specified Steam Workshop mods, if specified
-if [[ -n ${UPDATE_WORKSHOP} ]];
+if [[ ${UPDATE_WORKSHOP} == "1" ]];
 then
-	for i in $(echo -e ${UPDATE_WORKSHOP} | sed "s/,/ /g")
-	do
-		echo -e "\n${GREEN}STARTUP:${NC} Downloading/Updating Steam Workshop mod ID: ${CYAN}$i${NC}...\n"
-		./steamcmd/steamcmd.sh +login ${STEAM_USER} ${STEAM_PASS} +workshop_download_item $armaGameID $i validate +quit
-		# Move the downloaded mod to the root directory, and replace existing mod if needed
-		mkdir -p ./@$i
-		rm -rf ./@$i/*
-		mv -f ./Steam/steamapps/workshop/content/$armaGameID/$i/* ./@$i
-		rm -d ./Steam/steamapps/workshop/content/$armaGameID/$i
-		# Make the mods contents all lowercase
-		ModsLowercase @$i
-		# Move any .bikey's to the keys directory
-		echo -e "\n${GREEN}STARTUP:${NC} Moving any mod .bikey files to the ~/keys/ folder...\n"
-		find ./@$i -name "*.bikey" -type f -exec cp {} ./keys \;
+	echo -e "\n${GREEN}STARTUP:${NC} Starting ARMA 3 Updater ${CYAN}$i${NC}...\n"
+	python3 ${UPDATER}
 	done
-	echo -e "\n${GREEN}STARTUP: Download/Update Steam Workshop mods complete!${NC}\n"
+	echo -e "\n${GREEN}STARTUP: END OF UPDATER RUNTIME ${NC}\n"
 fi
 
 # Make mods lowercase, if specified
@@ -109,14 +147,6 @@ then
 	exit 1
 fi
 
-# Check if basic.cfg exists, and download if not (Arma really doesn't like it missing for some reason)
-if [[ -n ${BASIC} ]] && [[ ! -f ./${BASIC} ]];
-then
-	echo -e "\n${YELLOW}STARTUP: Specified Basic Network Configuration file \"${CYAN}${BASIC}${YELLOW}\" is missing!${NC}"
-	echo -e "\t${YELLOW}Downloading default file for use instead...${NC}"
-	curl -sSL https://raw.githubusercontent.com/parkervcp/eggs/master/steamcmd_servers/arma/arma3/egg-arma3-config/basic.cfg -o ./${BASIC}
-fi
-
 # $NSS_WRAPPER_PASSWD and $NSS_WRAPPER_GROUP have been set by the Dockerfile
 export USER_ID=$(id -u)
 export GROUP_ID=$(id -g)
@@ -128,8 +158,7 @@ then
 else
 	export LD_PRELOAD=/libnss_wrapper.so
 fi
-# Sweetwater - github variable for json files.
-export jsongit='${GIT_JSON}'
+
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 
@@ -147,7 +176,7 @@ fi
 # Start the Server
 echo -e "\n${GREEN}STARTUP:${NC} Starting server with the following startup command:"
 echo -e "${CYAN}${MODIFIED_STARTUP}${NC}\n"
-${MODIFIED_STARTUP} >>RPT.`date +%Y%m%d%H%M%S`.log 2>&1
+${MODIFIED_STARTUP} >> RPT.`date +%Y%m%d%H%M%S`.log 2>&1
 
 if [ $? -ne 0 ];
 then
