@@ -153,7 +153,7 @@ fi
 # Start the Server
 echo -e "\n${GREEN}STARTUP:${NC} Starting server with the following startup command:"
 echo -e "${CYAN}${MODIFIED_STARTUP}${NC}\n"
-${MODIFIED_STARTUP} >> RPT.`date +%Y%m%d%H%M%S`.log 2>&1
+${MODIFIED_STARTUP} >>RPT.`date +%Y%m%d%H%M%S`.log 2>&1
 
 if [ $? -ne 0 ];
 then
