@@ -4,4 +4,9 @@ Training:
 @cba;@ace;@rhsusaf;@acecompatusaf;@rhsafrf;@acecompatafrf;@rhsgref;@acecompatgref;@firaws;@acre2;@zen;@zenacecompat;@cup_core;@cup_map;@cup_cwa;@a10;@f16;@f18;@prjopfor;@dznmtrhs;@tembelan;@napfisland;@lythium;@jbad;@kunduz;@kujari;@khoramshar;@grad;@cavaddon;@dznmt;@atv6x6;
 
 #servermod
-@a3ti;@bettir;@ctab;@dui;@em;@emr;@radioanim;@simplemaptools;@lambs;@jsrs;@jsrsusaf;@jsrsafrf;@jsrsgref;
+@lambs;
+
+#Keys only
+@a3ti;@bettir;@ctab;@dui;@em;@emr;@radioanim;@simplemaptools;@jsrs;@jsrsusaf;@jsrsafrf;@jsrsgref;
+
+
