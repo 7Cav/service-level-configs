@@ -17,9 +17,27 @@ NC='\033[0m' # No Color
 cd /home/container
 sleep 1
 
-# useless propaganda
-echo -e "\t${CYAN}Sweetwater.I was here${NC}"
+# Propaganda
+#
+echo -e "\t${CYAN}Sweetwater.I Presents${NC}"
+echo -e "${YELLOW}77777777777777777777      CCCCCCCCCCCCC               AAA   VVVVVVVV           VVVVVVVV";
+echo -e "7::::::::::::::::::7   CCC::::::::::::C              A:::A  V::::::V           V::::::V";
+echo -e "7::::::::::::::::::7 CC:::::::::::::::C             A:::::A V::::::V           V::::::V";
+echo -e "777777777777:::::::7C:::::CCCCCCCC::::C            A:::::::AV::::::V           V::::::V";
+echo -e "           7::::::7C:::::C       CCCCCC           A:::::::::AV:::::V           V:::::V ";
+echo -e "          7::::::7C:::::C                        A:::::A:::::AV:::::V         V:::::V  ";
+echo -e "         7::::::7 C:::::C                       A:::::A A:::::AV:::::V       V:::::V   ";
+echo -e "        7::::::7  C:::::C                      A:::::A   A:::::AV:::::V     V:::::V    ";
+echo -e "       7::::::7   C:::::C                     A:::::A     A:::::AV:::::V   V:::::V     ";
+echo -e "      7::::::7    C:::::C                    A:::::AAAAAAAAA:::::AV:::::V V:::::V      ";
+echo -e "     7::::::7     C:::::C                   A:::::::::::::::::::::AV:::::V:::::V       ";
+echo -e "    7::::::7       C:::::C       CCCCCC    A:::::AAAAAAAAAAAAA:::::AV:::::::::V        ";
+echo -e "   7::::::7         C:::::CCCCCCCC::::C   A:::::A             A:::::AV:::::::V         ";
+echo -e "  7::::::7           CC:::::::::::::::C  A:::::A               A:::::AV:::::V          ";
+echo -e " 7::::::7              CCC::::::::::::C A:::::A                 A:::::AV:::V           ";
+echo -e "77777777                  CCCCCCCCCCCCCAAAAAAA                   AAAAAAAVVV            ${NC}";
 
+#
 # Exports
 export GITHUB_MODS_URL=${GITHUB_JSON}
 export STEAM_USER=${STEAM_USER}
