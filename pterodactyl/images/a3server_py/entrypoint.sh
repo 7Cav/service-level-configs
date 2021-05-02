@@ -20,23 +20,23 @@ sleep 1
 # Propaganda
 #
 echo -e "\t${CYAN}Sweetwater.I Presents${NC}"
-echo -e "${YELLOW}77777777777777777777      CCCCCCCCCCCCC               AAA   VVVVVVVV           VVVVVVVV";
-echo -e "7::::::::::::::::::7   CCC::::::::::::C              A:::A  V::::::V           V::::::V";
-echo -e "7::::::::::::::::::7 CC:::::::::::::::C             A:::::A V::::::V           V::::::V";
-echo -e "777777777777:::::::7C:::::CCCCCCCC::::C            A:::::::AV::::::V           V::::::V";
-echo -e "           7::::::7C:::::C       CCCCCC           A:::::::::AV:::::V           V:::::V ";
-echo -e "          7::::::7C:::::C                        A:::::A:::::AV:::::V         V:::::V  ";
-echo -e "         7::::::7 C:::::C                       A:::::A A:::::AV:::::V       V:::::V   ";
-echo -e "        7::::::7  C:::::C                      A:::::A   A:::::AV:::::V     V:::::V    ";
-echo -e "       7::::::7   C:::::C                     A:::::A     A:::::AV:::::V   V:::::V     ";
-echo -e "      7::::::7    C:::::C                    A:::::AAAAAAAAA:::::AV:::::V V:::::V      ";
-echo -e "     7::::::7     C:::::C                   A:::::::::::::::::::::AV:::::V:::::V       ";
-echo -e "    7::::::7       C:::::C       CCCCCC    A:::::AAAAAAAAAAAAA:::::AV:::::::::V        ";
-echo -e "   7::::::7         C:::::CCCCCCCC::::C   A:::::A             A:::::AV:::::::V         ";
-echo -e "  7::::::7           CC:::::::::::::::C  A:::::A               A:::::AV:::::V          ";
-echo -e " 7::::::7              CCC::::::::::::C A:::::A                 A:::::AV:::V           ";
-echo -e "77777777                  CCCCCCCCCCCCCAAAAAAA                   AAAAAAAVVV            ${NC}";
-
+echo -e "${YELLOW}77777777777777777777      CCCCCCCCCCCCC               AAA   VVVVVVVV           VVVVVVVV${NC}";
+echo -e "${YELLOW}7::::::::::::::::::7   CCC::::::::::::C              A:::A  V::::::V           V::::::V${NC}";
+echo -e "${YELLOW}7::::::::::::::::::7 CC:::::::::::::::C             A:::::A V::::::V           V::::::V${NC}";
+echo -e "${YELLOW}777777777777:::::::7C:::::CCCCCCCC::::C            A:::::::AV::::::V           V::::::V${NC}";
+echo -e "${YELLOW}           7::::::7C:::::C       CCCCCC           A:::::::::AV:::::V           V:::::V ${NC}";
+echo -e "${YELLOW}          7::::::7C:::::C                        A:::::A:::::AV:::::V         V:::::V  ${NC}";
+echo -e "${YELLOW}         7::::::7 C:::::C                       A:::::A A:::::AV:::::V       V:::::V   ${NC}";
+echo -e "${YELLOW}        7::::::7  C:::::C                      A:::::A   A:::::AV:::::V     V:::::V    ${NC}";
+echo -e "${YELLOW}       7::::::7   C:::::C                     A:::::A     A:::::AV:::::V   V:::::V     ${NC}";
+echo -e "${YELLOW}      7::::::7    C:::::C                    A:::::AAAAAAAAA:::::AV:::::V V:::::V      ${NC}";
+echo -e "${YELLOW}     7::::::7     C:::::C                   A:::::::::::::::::::::AV:::::V:::::V       ${NC}";
+echo -e "${YELLOW}    7::::::7       C:::::C       CCCCCC    A:::::AAAAAAAAAAAAA:::::AV:::::::::V        ${NC}";
+echo -e "${YELLOW}   7::::::7         C:::::CCCCCCCC::::C   A:::::A             A:::::AV:::::::V         ${NC}";
+echo -e "${YELLOW}  7::::::7           CC:::::::::::::::C  A:::::A               A:::::AV:::::V          ${NC}";
+echo -e "${YELLOW} 7::::::7              CCC::::::::::::C A:::::A                 A:::::AV:::V           ${NC}";
+echo -e "${YELLOW}77777777                  CCCCCCCCCCCCCAAAAAAA                   AAAAAAAVVV            ${NC}";
+echo -e "\n${CYAN}ARMA 3 PTERODACTYL EDITION - With Python Script${NC}";
 #
 # Exports
 export GITHUB_MODS_URL=${GITHUB_JSON}
