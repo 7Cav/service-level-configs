@@ -126,6 +126,11 @@
       "name": "@CUP_Maps",
       "server": "false"
     },
+     {
+      "app": "853743366",
+      "name": "@CUP_CWA",
+      "server": "false"
+    },
     {
       "app": "520618345",
       "name": "@JBAD",
