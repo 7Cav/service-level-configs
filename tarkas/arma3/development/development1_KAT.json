@@ -208,11 +208,6 @@
     },
     {
       "app": "",
-      "name": "@CAVPACK_4_0",
-      "server": "false"
-    },
-    {
-      "app": "",
       "name": "@CavMetrics",
       "server": "true"
     },
