@@ -1,23 +1,21 @@
 {
-   "modpack_name":"development_server",
-   "mods":{
-      "@cba":"450814997",
-      "@tfar":"894678801",
-      "@ace":"463939057",
-      "@acre2":"751965892",
-      "@dui":"1638341685",
-      "@em":"333310405",
-      "@emr":"2034363662",
-      "@achilles":"723217262"
-   },
-   "server_mods":{
-   },
-   "optional_mods":{
-      "@dui":"1638341685",
-      "@em":"333310405",
-      "@emr":"2034363662",
-      "@achilles":"723217262"
-   },
-   "dlc":{
-   }
-}
+    "modpack_name":"dev2",
+    "mods":{
+       "@cba":"450814997",
+       "@cup_core":"583496184",
+       "@cup_maps":"583544987",
+	   "@cup_cwa":"853743366",
+	   "@cup_weapons":"497660133",
+	   "@cup_vehicles":"497661914",
+	   "@cup_units":"541888371"
+    },
+    "server_mods":{
+       
+    },
+    "optional_mods":{
+       
+    },
+    "dlc":{
+    }
+ }
+ 
