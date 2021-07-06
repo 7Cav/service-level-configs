@@ -1,6 +1,8 @@
 {
     "modpack_name":"tac3",
     "mods":{
+        "@cba":"450814997",
+        "@stargate":"1100647027"
     },
     "server_mods":{
     },
