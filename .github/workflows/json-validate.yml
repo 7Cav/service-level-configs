@@ -1,4 +1,4 @@
-# https://github.com/snapcart/json-schema-validator
+# https://github.com/nhalstead/validate-json-action
 on: [pull_request]
 name: PR Json Validator
 jobs:
