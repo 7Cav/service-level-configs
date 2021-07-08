@@ -1,4 +1,4 @@
-# https://github.com/snapcart/json-schema-validator
+# https://github.com/nhalstead/validate-json-action
 on: [pull_request]
 name: PR Json Validator
 jobs:
@@ -6,12 +6,9 @@ jobs:
     name: Validate configurations
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Validate Server Config Files (Json Files)
-        uses: snapcart/json-schema-validator@v1.0.0
+      - uses: actions/checkout@v1
+      - name: Validate JSON with Glob
+        uses: nhalstead/validate-json-action@0.1.3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          json_schema: /schema.json
-          json_path_pattern: .*.json$
-          send_comment: true
-          clear_comments: true
+          schema: ./schema.json
+          jsons: '*.json'
