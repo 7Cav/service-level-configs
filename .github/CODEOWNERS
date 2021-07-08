@@ -1,0 +1,7 @@
+# S6 for base case
+@7Cav/s6-gameclerks
+
+# S3 Admins
+/novak/* @7Cav/s3-admins
+/traycer/* @7Cav/s3-admins
+/tarkas/* @7Cav/s3-admins
