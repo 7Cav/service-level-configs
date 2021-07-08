@@ -10,7 +10,7 @@ jobs:
       - name: Validate Server Config Files (Json Files)
         uses: snapcart/json-schema-validator@v1.0.0
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TEST_TOKEN }}
           json_schema: ${{ github.workspace }}/schema.json
           json_path_pattern: .*.json$
           send_comment: true
