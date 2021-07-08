@@ -10,5 +10,5 @@ jobs:
       - name: Validate JSON with Glob
         uses: nhalstead/validate-json-action@0.1.3
         with:
-          schema: ${{ github.workspace }}/schema.json
+          schema: ./schema.json
           jsons: '*.json'
