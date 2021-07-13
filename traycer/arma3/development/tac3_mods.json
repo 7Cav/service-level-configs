@@ -1,0 +1,14 @@
+{
+    "modpack_name":"tac3",
+    "mods":{
+        "@ace":"463939057",
+        "@cba":"450814997",
+        "@stargate":"1100647027"
+    },
+    "server_mods":{
+    },
+    "optional_mods":{
+    },
+    "dlc":{
+    }
+ }
