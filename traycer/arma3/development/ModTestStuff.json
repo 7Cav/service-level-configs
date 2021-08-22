@@ -1,0 +1,56 @@
+ {
+   "modpack_name":"development_server",
+   "mods":{
+      "RHSUSAF":"843577117",
+      "RHSAFRF":"843425103",
+      "RHSGREF":"843593391",
+      "Project OPFOR":"735566597",
+      "FIR AWS(AirWeaponSystem)":"366425329",
+      "Hatchet Framework - Development Version":"1745501106",
+      "Hatchet H-60 pack - Development Version":"1745501605",
+      "F/A-18E/F Super Hornet 2020":"2131302796",
+      "CBA_A3":"450814997",
+      "ace":"463939057",
+      "ACE Compat - RHS United States Armed Forces":"773125288",
+      "ACE Compat - RHS Armed Forces of the Russian Federation":"773131200",
+      "ACE Compat - RHS: GREF":"884966711",
+      "ACRE2":"751965892",
+      "Zeus Enhanced":"1779063631",
+      "Zeus Enhanced - ACE3 Compatibility":"2018593688",
+      "CUP Terrains - Core":"583496184",
+      "CUP Terrains - Maps":"583544987",
+      "Enhanced Movement":"333310405",
+      "Rosche, Germany":"1527410521",
+      "G.O.S Al Rayak":"648172507",
+      "G.O.S Gunkizli":"693153082",
+      "Kujari":"1726494027",
+      "A3 Thermal Improvement":"2041057379",
+      "BettIR (Development/Alpha)":"2260572637",
+      "CTab Blufor Tracker v2.2.3":"1643720957",
+      "DUI - Squad Radar":"1638341685",
+      "JSRS SOUNDMOD":"861133494",
+      "JSRS SOUNDMOD - RHS USAF Mod Pack Sound Support":"1180533757",
+      "JSRS SOUNDMOD - RHS AFRF Mod Pack Sound Support":"945476727",
+      "JSRS SOUNDMOD - RHS GREF Mod Pack Sound Support":"1180534892",
+      "Radio Animations for Advanced Combat Radio Enviroment 2":"1481341874",
+      "Simple MapTools":"2013446344",
+      "LAMBS_Danger.fsm":"1858075458"
+   },
+   "server_mods":{
+      "LAMBS_Danger.fsm":"1858075458"
+   },
+   "optional_mods":{
+      "A3 Thermal Improvement":"2041057379",
+      "BettIR (Development/Alpha)":"2260572637",
+      "CTab Blufor Tracker v2.2.3":"1643720957",
+      "DUI - Squad Radar":"1638341685",
+      "JSRS SOUNDMOD":"861133494",
+      "JSRS SOUNDMOD - RHS USAF Mod Pack Sound Support":"1180533757",
+      "JSRS SOUNDMOD - RHS AFRF Mod Pack Sound Support":"945476727",
+      "JSRS SOUNDMOD - RHS GREF Mod Pack Sound Support":"1180534892",
+      "Radio Animations for Advanced Combat Radio Enviroment 2":"1481341874",
+      "Simple MapTools":"2013446344"
+   },
+   "dlc":{
+   }
+}
