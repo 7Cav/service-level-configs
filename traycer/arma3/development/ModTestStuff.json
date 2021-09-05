@@ -1,5 +1,5 @@
 {
-   "modpack_name":"tac1",
+   "modpack_name":"development_server",
    "mods":{
       "@7cav_addon":"1696706969",
       "@rhs_usaf":"843577117",
@@ -34,12 +34,10 @@
       "@jsrs_gref":"1180534892",
       "@acre_anim":"1481341874",
       "@simple_mt":"2013446344",
-      "@lambs":"1858075458",
-      "@zhc":"2450921295"
+      "@lambs":"1858075458"
    },
    "server_mods":{
-      "@lambs":"1858075458",
-      "@zhc":"2450921295"
+      "@lambs":"1858075458"
    },
    "optional_mods":{
       "@bettir":"2260572637",
