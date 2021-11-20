@@ -18,7 +18,10 @@
        "@fow":"891433622"
     },
     "server_mods":{
-       "@lambs":"1858075458"
+       "@lambs":"1858075458",
+       "@afrfcompat":"773131200",
+       "@usafcompat":"884966711",
+       "@grefcompat":"773125288"
     },
     "optional_mods":{
     },
