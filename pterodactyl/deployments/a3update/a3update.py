@@ -29,9 +29,15 @@ import shutil
 import time
 import requests
 import json
+import threading
+import concurrent.futures
+
 
 from datetime import datetime
 from urllib import request
+
+
+thread_local = threading.local()
 
 # region Configuration / ENV
 STEAM_CMD = "/home/container/steamcmd/steamcmd.sh"  # Alternatively "steamcmd" if package is installed
@@ -53,6 +59,17 @@ MODPACK_PATH = "/home/container/modpack.html"
 UPDATE_PATTERN = re.compile(r"workshopAnnouncement.*?<p id=\"(\d+)\">", re.DOTALL)
 TITLE_PATTERN = re.compile(r"(?<=<div class=\"workshopItemTitle\">)(.*?)(?=<\/div>)", re.DOTALL)
 WORKSHOP_CHANGELOG_URL = "https://steamcommunity.com/sharedfiles/filedetails/changelog"
+
+try:
+    os.remove("/home/container/serverprofile/DataCache/cache_lock")
+except:
+    pass
+
+# Thread Testing:
+def get_session():
+    if not hasattr(thread_local, "session"):
+        thread_local.session = requests.Session()
+    return thread_local.session
 
 # endregion
 # Grab json from github
@@ -97,26 +114,30 @@ def mod_needs_update(mod_id, path):
 
         if match:
             updated_at = datetime.fromtimestamp(int(match.group(1)))
-            created_at = datetime.fromtimestamp(os.path.getctime(path))
-
+            created_at = datetime.fromtimestamp(os.path.getmtime(path))
+            print ('[DEBUG] Workshop date', datetime.fromtimestamp(int(match.group(1))))
+            print ('[DEBUG] Modified date', datetime.fromtimestamp(os.path.getmtime(path)))
             return updated_at >= created_at
 
     return False
 
-
 def update_mods():
+
     for mod_name, mod_id in MODS.items():
         path = "{}/{}".format(A3_WORKSHOP_DIR, mod_id)
+        targetpath = "{}/{}".format(A3_SERVER_DIR, mod_name)
 
         # Check if mod needs to be updated
         if os.path.isdir(path):
-
+            
             if mod_needs_update(mod_id, path):
                 # Delete existing folder so that we can verify whether the
                 # download succeeded
                 shutil.rmtree(path)
+                if os.path.islink(targetpath):
+                    os.unlink(targetpath)
             else:
-                print("No update required for \"{}\" ({})... SKIPPING".format(mod_name, mod_id))
+                print("No update required for \"{}\" ({})... SKIPPING".format(mod_name, mod_id, path))
                 continue
 
         # Keep trying until the download actually succeeded
@@ -162,8 +183,9 @@ def create_mod_symlinks():
 
         if os.path.isdir(real_path):
             if not os.path.exists(link_path):
-                shutil.copytree(real_path, link_path)
-                print("Creating copy '{}'...".format(link_path))
+                #shutil.copytree(real_path, link_path)
+                os.symlink(real_path, link_path)
+                print("Creating symlink '{}'...".format(link_path))
         else:
             print("Mod '{}' does not exist! ({})".format(mod_name, real_path))
 
@@ -208,164 +230,6 @@ def copy_keys():
                 else:
                     print("!! Couldn't find key folder for mod {} !!".format(mod_name))
 
-
-def generate_preset():
-    f = open(MODPACK_PATH, "w")
-    f.write(('<?xml version="1.0" encoding="utf-8"?>\n'
-             '<html>\n\n'
-             '<!--Created using a3update.py: https://gist.github.com/Freddo3000/a5cd0494f649db75e43611122c9c3f15-->\n'
-             '<head>\n'
-             '<meta name="arma:Type" content="{}" />\n'
-             '<meta name="arma:PresetName" content="{}" />\n'
-             '<meta name="generator" content="a3update.py https://gist.github.com/Freddo3000/a5cd0494f649db75e43611122c9c3f15"/>\n'
-             ' <title>Arma 3</title>\n'
-             '<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />\n'
-             '<style>\n'
-             'body {{\n'
-             'margin: 0;\n'
-             'padding: 0;\n'
-             'color: #fff;\n'
-             'background: #000;\n'
-             '}}\n'
-             'body, th, td {{\n'
-             'font: 95%/1.3 Roboto, Segoe UI, Tahoma, Arial, Helvetica, sans-serif;\n'
-             '}}\n'
-             'td {{\n'
-             'padding: 3px 30px 3px 0;\n'
-             '}}\n'
-             'h1 {{\n'
-             'padding: 20px 20px 0 20px;\n'
-             'color: white;\n'
-             'font-weight: 200;\n'
-             'font-family: segoe ui;\n'
-             'font-size: 3em;\n'
-             'margin: 0;\n'
-             '}}\n'
-             'h2 {{'
-             'color: white;'
-             'padding: 20px 20px 0 20px;'
-             'margin: 0;'
-             '}}'
-             'em {{\n'
-             'font-variant: italic;\n'
-             'color:silver;\n'
-             '}}\n'
-             '.before-list {{\n'
-             'padding: 5px 20px 10px 20px;\n'
-             '}}\n'
-             '.mod-list {{\n'
-             'background: #282828;\n'
-             'padding: 20px;\n'
-             '}}\n'
-             '.optional-list {{\n'
-             'background: #222222;\n'
-             'padding: 20px;\n'
-             '}}\n'
-             '.dlc-list {{\n'
-             'background: #222222;\n'
-             'padding: 20px;\n'
-             '}}\n'
-             '.footer {{\n'
-             'padding: 20px;\n'
-             'color:gray;\n'
-             '}}\n'
-             '.whups {{\n'
-             'color:gray;\n'
-             '}}\n'
-             'a {{\n'
-             'color: #D18F21;\n'
-             'text-decoration: underline;\n'
-             '}}\n'
-             'a:hover {{\n'
-             'color:#F1AF41;\n'
-             'text-decoration: none;\n'
-             '}}\n'
-             '.from-steam {{\n'
-             'color: #449EBD;\n'
-             '}}\n'
-             '.from-local {{\n'
-             'color: gray;\n'
-             '}}\n'
-             ).format("Modpack", MODPACK_NAME))
-
-    f.write(('</style>\n'
-             '</head>\n'
-             '<body>\n'
-             '<h1>Arma 3  - {} <strong>{}</strong></h1>\n'
-             '<p class="before-list">\n'
-             '<em>Drag this file or link to it to Arma 3 Launcher or open it Mods / Preset / Import.</em>\n'
-             '</p>\n'
-             '<h2 class="list-heading">Required Mods</h2>'
-             '<div class="mod-list">\n'
-             '<table>\n'
-             ).format("Modpack", MODPACK_NAME))
-
-    for mod_name, mod_id in MODS.items():
-        if not (mod_name in OPTIONAL_MODS or mod_name in SERVER_MODS):
-            mod_url = "http://steamcommunity.com/sharedfiles/filedetails/?id={}".format(mod_id)
-            response = request.urlopen(mod_url).read()
-            response = response.decode("utf-8")
-            match = TITLE_PATTERN.search(response)
-            if match:
-                mod_title = match.group(1)
-                f.write(('<tr data-type="ModContainer">\n'
-                         '<td data-type="DisplayName">{}</td>\n'
-                         '<td>\n'
-                         '<span class="from-steam">Steam</span>\n'
-                         '</td>\n'
-                         '<td>\n'
-                         '<a href="{}" data-type="Link">{}</a>\n'
-                         '</td>\n'
-                         '</tr>\n'
-                         ).format(mod_title, mod_url, mod_url))
-    f.write('</table>\n'
-            '</div>\n'
-            '<h2 class="list-heading">Optional Mods</h2>'
-            '<div class="optional-list">\n'
-            '<table>\n'
-            )
-
-    for mod_name, mod_id in MODS.items():
-        if mod_name in OPTIONAL_MODS:
-            mod_url = "http://steamcommunity.com/sharedfiles/filedetails/?id={}".format(mod_id)
-            response = request.urlopen(mod_url).read()
-            response = response.decode("utf-8")
-            match = TITLE_PATTERN.search(response)
-            if match:
-                mod_title = match.group(1)
-                f.write(('<tr data-type="OptionalContainer">\n'
-                         '<td data-type="DisplayName">{}</td>\n'
-                         '<td>\n'
-                         '<span class="from-steam">Steam</span>\n'
-                         '</td>\n'
-                         '<td>\n'
-                         '<a href="{}" data-type="Link">{}</a>\n'
-                         '</td>\n'
-                         '</tr>\n'
-                         ).format(mod_title, mod_url, mod_url))
-    f.write('</table>\n'
-            '</div>\n'
-            '<h2 class="list-heading">DLC</h2>\n'
-            '<div class="dlc-list">\n'
-            '<table>\n'
-            )
-    for dlc_name, mod_id in DLC.items():
-        mod_url = "https://store.steampowered.com/app/{}".format(mod_id)
-        f.write(('<tr data-type="DlcContainer">\n'
-                 '<td data-type="DisplayName">{}</td>\n'
-                 '<td>\n'
-                 '<a href="{}" data-type="Link">{}</a>\n'
-                 '</td>\n'
-                 '</tr>\n'
-                 ).format(dlc_name, mod_url, mod_url))
-    f.write('</table>\n'
-            '</div>\n'
-            '<div class="footer">\n'
-            '<span>Created using a3update.py by marceldev89; forked by Freddo3000.</span>\n'
-            '</div>\n'
-            '</body>\n'
-            '</html>\n'
-            )
 # endregion
 def print_launch_params():
     rel_path = os.path.relpath(A3_MODS_DIR, A3_SERVER_DIR)
@@ -387,6 +251,7 @@ lowercase_workshop_dir()
 
 log("Creating symlinks...")
 create_mod_symlinks()
+
 
 log("Copying server keys...")
 copy_keys()
