@@ -163,7 +163,7 @@ then
 	echo -e "\n${GREEN}STARTUP:${NC} Starting ${CYAN}${HC_NUM}${NC} Headless Client(s)."
 	for i in $(seq ${HC_NUM})
 	do
-		./${SERVER_BINARY} -client -connect=${HC_PORT} -port=${SERVER_PORT} -password="${HC_PASSWORD}" -profiles=./serverprofile -bepath=./battleye -mod="${MODIFICATIONS}${HC_OPTIONAL_MODS}" ${STARTUP_PARAMS} > /dev/null 2>&1 &
+		./${SERVER_BINARY} -client -connect=${HC_PORT} -port=${SERVER_PORT} -password="${HC_PASSWORD}" -profiles=./hcprofile -bepath=./battleye -mod="${MODIFICATIONS}${HC_OPTIONAL_MODS}" ${STARTUP_PARAMS} > /dev/null 2>&1 &
 		echo -e "${GREEN}STARTUP:${CYAN} Headless Client $i${NC} launched."
 	done
 fi
