@@ -1,5 +1,4 @@
 {
-   "modpack_name":"training_server",
    "mods":{
       "@3cb_fact":"1673456286",
       "@6x6":"1190934425",
@@ -47,12 +46,5 @@
       "@rosche":"1527410521",
       "@tembelan":"1252091296",
       "@vinjesvingen":"1757672655"
-   },
-   "server_mods":{
-      "@lambs":"1858075458"
-   },
-   "optional_mods":{
-   },
-   "dlc":{
    }
 }
