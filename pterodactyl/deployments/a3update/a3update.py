@@ -75,11 +75,11 @@ def get_session():
 # Grab json from github
 response = requests.get(GITHUB_MODS)
 jsdata = json.loads(response.text)
-MODPACK_NAME = jsdata.get('modpack_name')
+#MODPACK_NAME = jsdata.get('modpack_name')
 MODS = jsdata.get('mods')
-SERVER_MODS = jsdata.get('server_mods')
-OPTIONAL_MODS = jsdata.get('optional_mods')
-DLC = jsdata.get('dlc')
+#SERVER_MODS = jsdata.get('server_mods')
+#OPTIONAL_MODS = jsdata.get('optional_mods')
+#DLC = jsdata.get('dlc')
 
 #end json grab
 
@@ -202,7 +202,7 @@ def copy_keys():
             os.remove(key_path)
     # Update/add new key symlinks
     for mod_name, mod_id in MODS.items():
-        if mod_name not in SERVER_MODS:
+        #if mod_name not in SERVER_MODS:
             real_path = "{}/{}".format(A3_WORKSHOP_DIR, mod_id)
             if not os.path.isdir(real_path):
                 print("Couldn't copy key for mod '{}', directory doesn't exist.".format(mod_name))
