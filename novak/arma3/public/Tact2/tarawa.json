@@ -1,5 +1,4 @@
 {
-    "modpack_name":"public_server",
     "mods":{
        "@cba":"450814997",
        "@phar":"2558422366",
@@ -16,15 +15,5 @@
        "@tools":"2013446344",
        "@jsrs":"861133494",
        "@fow":"891433622"
-    },
-    "server_mods":{
-       "@lambs":"1858075458",
-       "@afrfcompat":"773131200",
-       "@usafcompat":"884966711",
-       "@grefcompat":"773125288"
-    },
-    "optional_mods":{
-    },
-    "dlc":{
     }
  }

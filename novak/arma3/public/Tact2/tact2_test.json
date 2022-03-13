@@ -1,16 +1,9 @@
 {
-   "modpack_name":"development_server",
    "mods":{
       "@ace":"463939057",
       "@acre2":"751965892",
       "@cba":"450814997",
       "@aux":"2667735789",
       "@pharma":"2558422366"
-   },
-   "server_mods":{
-   },
-   "optional_mods":{
-   },
-   "dlc":{
    }
 }

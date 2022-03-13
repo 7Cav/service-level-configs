@@ -1,5 +1,4 @@
 {
-   "modpack_name":"development_server",
    "mods":{
       "@3cb_fact":"1673456286",
       "@fa_18":"2131302796",
@@ -31,20 +30,6 @@
       "@acre_anim":"1481341874",
       "@simple_mt":"2013446344",
       "@packtest":"2667735789"
-   },
-   "server_mods":{
-      "@lambs":"1858075458"
-   },
-   "optional_mods":{
-      "@jsrs":"861133494",
-      "@jsrs_afrf":"945476727",
-      "@jsrs_gref":"1180534892",
-      "@jsrs_usaf":"1180533757",
-      "@lambs":"1858075458",
-      "@acre_anim":"1481341874",
-      "@simple_mt":"2013446344"
-   },
-   "dlc":{
    }
 }
 
