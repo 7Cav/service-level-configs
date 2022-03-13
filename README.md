@@ -8,10 +8,11 @@ Service Level Configs is a framework for configuration files and scripts that ar
 This is specifically for S3 and S6 Staff within the 7cav.us community to use for any modifications such as but not limited to,<br></br> 
 
 * Gameserver startup parameters,
-* Mods and or DLC's installed
+* Mods and or DLCs installed
 * Miscellaneous configuration files
+* Updater scripts
 <br></br>
-This is currently Work-In-Progress, Expect features to change.
+This is constantly a Work-In-Progress, expect features to change.
 
 ## Getting Started
 To utilize this framework, If you do not have your own tools for working with github and json files we encourage you to download [Github desktop](https://desktop.github.com/) and [VScode](https://code.visualstudio.com/)<br></br>
@@ -20,34 +21,31 @@ For changes to Game Configurations the following is required.
 1. You must be in a approved S3 or S6 Billet
 2. Are apart of the 7Cav github organization
 
+If you feel you should have access but currently do not, contact your CoC for information.
+
 ## JSON
 Configurations are managed by using JSON.<br></br> 
 *JavaScript Object Notation* (JSON) is our way of storing the configurations for each server instance.<br></br>
 For more information about these types of files [Click Here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
 
-## Where is the JSON?
-To change the configuration of a given gameserver you will need to find the JSON file for it.<br></br>
-The current convention is ``/<Server Name>/<Game Name>/<Gameserver Type>/<Gameserver Name .json>``<br></br>
-*example:* ``service-level-configs/mtreck/arma3/public/tacticalrealism2.json``<br></br>
+## Where is the modlist JSON?
+To change the configuration of a given gameserver's modlist you will need to find the JSON file for it.<br></br>
+The current convention is ``/<Server Name>/<Game Name>/<Gameserver Type>/<Gameserver Name/Modlist Name.json>``<br></br>
+*example:* ``service-level-configs/novak/arma3/public/tacticalrealism2.json``<br></br>
 Once you have located the json configuration file, you will need to either clone the repository or make changes via the github website.
 
-## Editing JSON configs
-JSON configurations will have the following formatting:
+## Editing JSON modlists
+JSON modlists will have the following formatting:
 
 ```js
 {
-    "server": {
-        "env": {
-            "SERVER_ID": "GameServer1",
-            "SERVER_NAME": "DefaultGameServer",
-            "IP_ADDRESS": "192.168.0.1",
-            "PORT": "8080"
-           }
-         }
+  "mods":{
+        "@mod_name":"workshop_id",
+        "@mod_name":"workshop_id"
+    }
 }
 ```
-When editing our JSON configurations, keep in mind that there are Keys and Values. You will only be needed to edit values unless 
-otherwise noted.
+When editing our JSON configurations, keep in mind that there are Keys and Values. The items on the left of the colon are keys, the items to the right are values
 
 Keys:
 ```js
@@ -107,7 +105,8 @@ You can also note that ``"env":`` is also within the ``"server"`` array. This me
 As shown above you can see that the ``}`` for ``"env":`` has a comma at the end of it as well, but the ``"cfg":`` and its ``}`` does not. You can think of the ``{`` as the start of a array and the ``}`` as the end of an array.
 
 ## Troubleshooting:
-<p align="center"><img width=100% src="https://github.com/7Cav/service-level-configs/blob/develop/media/TSS_flow.png"></p>
+Contact S6 with any issues regarding changing or creating new modsets
+
 
 ## Further Documentation
 For more detailed information, Check the [Service-Level-Configs Wiki](https://github.com/7Cav/service-level-configs/wiki)
