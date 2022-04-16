@@ -1,1 +1,4 @@
-{    "cav_whitelisted_steamids":{|};}
+{
+	"cav_whitelisted_steamids":{ Steam ID
+	}
+}
