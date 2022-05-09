@@ -97,13 +97,13 @@ def call_steamcmd(params):
     print("")
 
 
-#def update_server():
-#    steam_cmd_params = " +login {} {}".format(STEAM_USER, STEAM_PASS)
-#    steam_cmd_params += " +force_install_dir {}".format(A3_SERVER_DIR)
-#    steam_cmd_params += " +app_update {} validate".format(A3_SERVER_ID)
-#    steam_cmd_params += " +quit"
-#
-#    call_steamcmd(steam_cmd_params)
+def update_server():
+	steam_cmd_params = " +login {} {}".format(STEAM_USER, STEAM_PASS)
+	steam_cmd_params += " +force_install_dir {}".format(A3_SERVER_DIR)
+	steam_cmd_params += " +app_update {} validate".format(A3_SERVER_ID)
+	steam_cmd_params += " +quit"
+
+	call_steamcmd(steam_cmd_params)
 
 
 def mod_needs_update(mod_id, path):
@@ -238,6 +238,10 @@ def print_launch_params():
         params += "{}/{}\;".format(rel_path, mod_name)
         
     print(params)
+
+log("Updating A3 server ({})".format(A3_SERVER_ID))
+
+update_server()
 
 log("Updating mods")
 
