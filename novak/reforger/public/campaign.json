@@ -1,0 +1,24 @@
+{
+	"dedicatedServerId": "",
+	"region": "US",
+	"gameHostBindAddress": "",
+	"gameHostBindPort": 2001,
+	"gameHostRegisterBindAddress": "",
+	"gameHostRegisterPort": 2001,
+	"game": {
+		"name": "=7Cav= Arma Reforger Tactical Realism",
+		"password": "",
+		"scenarioId": "{ECC61978EDCC2B5A}Missions/23_Campaign.conf",
+		"playerCountLimit": 64,
+		"visible": true,
+		"gameProperties": {
+			"serverMaxViewDistance": 3000,
+			"serverMinGrassDistance": 50,
+			"networkViewDistance": 1000,
+			"disableThirdPerson": true,
+			"fastValidation": true,
+			"battlEye": true
+		},
+		"mods": []
+	}
+}
