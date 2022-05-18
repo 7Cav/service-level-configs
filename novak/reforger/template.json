@@ -1,0 +1,24 @@
+{
+	"dedicatedServerId": "",
+	"region": "",
+	"gameHostBindAddress": "",
+	"gameHostBindPort": 0,
+	"gameHostRegisterBindAddress": "",
+	"gameHostRegisterPort": 0,
+	"game": {
+		"name": "",
+		"password": "",
+		"scenarioId": "",
+		"playerCountLimit": 0,
+		"visible": true,
+		"gameProperties": {
+			"serverMaxViewDistance": 0,
+			"serverMinGrassDistance": 0,
+			"networkViewDistance": 0,
+			"disableThirdPerson": false,
+			"fastValidation": true,
+			"battlEye": true
+		},
+		"mods": []
+	}
+}
