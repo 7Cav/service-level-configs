@@ -5,6 +5,7 @@
 	"gameHostBindPort": 2001,
 	"gameHostRegisterBindAddress": "",
 	"gameHostRegisterPort": 2001,
+	"adminPassword" : "meridian",
 	"game": {
 		"name": "=7Cav= Arma Reforger Tactical Realism",
 		"password": "",
@@ -13,8 +14,6 @@
 		"visible": true,
 		"gameProperties": {
 			"serverMaxViewDistance": 3000,
-			"serverMinGrassDistance": 50,
-			"networkViewDistance": 1000,
 			"disableThirdPerson": true,
 			"fastValidation": true,
 			"battlEye": true
