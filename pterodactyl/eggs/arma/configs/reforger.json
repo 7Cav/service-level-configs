@@ -1,0 +1,34 @@
+{
+	"dedicatedServerId": "",
+	"region": "US-IL",
+	"gameHostBindAddress": "",
+	"gameHostBindPort": 2003,
+	"gameHostRegisterBindAddress": "xxx.xxx.xxx.xxx",
+	"gameHostRegisterPort": 2003,
+	"adminPassword": "xxxxxxx",
+	"game": {
+		"name": "ARMA Reforger Server",
+		"password": "",
+		"scenarioId": "{ECC61978EDCC2B5A}Missions/23_Campaign.conf",
+		"playerCountLimit": 32,
+		"autoJoinable": false,
+		"visible": true,
+        "supportedGameClientTypes": [
+            "PLATFORM_PC"
+            ],
+		"gameProperties": {
+			"serverMaxViewDistance": 2500,
+			"serverMinGrassDistance": 50,
+			"networkViewDistance": 500,
+			"disableThirdPerson": true,
+			"fastValidation": true,
+			"battlEye": true,
+			"missionHeader": {
+				"m_iPlayerCount": 32,
+				"m_eEditableGameFlags": 6,
+				"m_eDefaultGameFlags": 6
+			}
+		},
+		"mods": []
+	}
+}
