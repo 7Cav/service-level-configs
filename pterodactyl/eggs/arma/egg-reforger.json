@@ -10,7 +10,7 @@
     "description": "Egg for ARMA Reforger",
     "features": null,
     "images": [
-        "uaon\/reforger:0.2"
+        "uaon\/reforger:0.3"
     ],
     "file_denylist": [],
     "startup": ".\/{{SERVER_BINARY}} -gproj .\/addons\/data\/ArmaReforger.gproj -config .\/{{CONFIG_FILE}} -backendlog -nothrow -profile \/home\/container\/profile",
