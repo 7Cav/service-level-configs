@@ -1,0 +1,95 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
+    },
+    "exported_at": "2022-05-20T15:21:54+00:00",
+    "name": "reforger",
+    "author": "noreply@7cav.us",
+    "description": "Egg for ARMA Reforger",
+    "features": null,
+    "images": [
+        "uaon\/reforger:0.2"
+    ],
+    "file_denylist": [],
+    "startup": ".\/{{SERVER_BINARY}} -gproj .\/addons\/data\/ArmaReforger.gproj -config .\/{{CONFIG_FILE}} -backendlog -nothrow -profile \/home\/container\/profile",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"Enfusion engine successfully created\"\r\n}",
+        "logs": "{\r\n    \"custom\": true,\r\n    \"location\": \"latest.log\"\r\n}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\napt -y update\r\napt -y --no-install-recommends install curl lib32gcc1 ca-certificates\r\n\r\n## download and install steamcmd\r\ncd \/tmp\r\nmkdir -p \/mnt\/server\/steamcmd\r\ncurl -sSL -o steamcmd.tar.gz https:\/\/steamcdn-a.akamaihd.net\/client\/installer\/steamcmd_linux.tar.gz\r\ntar -xzvf steamcmd.tar.gz -C \/mnt\/server\/steamcmd\r\ncd \/mnt\/server\/steamcmd\r\n\r\n# SteamCMD fails otherwise for some reason, even running as root.\r\n# This is changed at the end of the install process anyways.\r\nchown -R root:root \/mnt\r\nexport HOME=\/mnt\/server\r\n\r\n## install game using steamcmd\r\n.\/steamcmd.sh +login ${STEAM_USER} ${STEAM_PASS} +force_install_dir \/mnt\/server +app_update ${STEAMCMD_APPID} ${STEAMCMD_EXTRA_FLAGS} validate +quit\r\n\r\n## setup configuration file\r\nmkdir -p \/mnt\/server\/config\r\n[[ -f .\/config\/config.json ]] || curl -sSLO https:\/\/raw.githubusercontent.com\/7Cav\/service-level-configs\/develop\/pterodactyl\/eggs\/arma\/configs\/reforger.json\r\n\r\n## set up 32 bit libraries\r\nmkdir -p \/mnt\/server\/.steam\/sdk32\r\ncp -v linux32\/steamclient.so ..\/.steam\/sdk32\/steamclient.so\r\n\r\n## set up 64 bit libraries\r\nmkdir -p \/mnt\/server\/.steam\/sdk64\r\ncp -v linux64\/steamclient.so ..\/.steam\/sdk64\/steamclient.so\r\n\r\ncd \/mnt\/server\/",
+            "container": "debian:buster-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "APPID",
+            "description": "",
+            "env_variable": "STEAMCMD_APPID",
+            "default_value": "1874900",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|integer"
+        },
+        {
+            "name": "Steam Username",
+            "description": "",
+            "env_variable": "STEAM_USER",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string"
+        },
+        {
+            "name": "Steam Password",
+            "description": "",
+            "env_variable": "STEAM_PASS",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string"
+        },
+        {
+            "name": "SteamCMD",
+            "description": "additional flags",
+            "env_variable": "STEAMCMD_EXTRA_FLAGS",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string"
+        },
+        {
+            "name": "Server Binary",
+            "description": "",
+            "env_variable": "SERVER_BINARY",
+            "default_value": "ArmaReforgerServer",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string"
+        },
+        {
+            "name": "Update on startup",
+            "description": "",
+            "env_variable": "UPDATE_SERVER",
+            "default_value": "1",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "boolean"
+        },
+        {
+            "name": "Server Config",
+            "description": "json file for server configuration",
+            "env_variable": "CONFIG_FILE",
+            "default_value": ".\/config\/config.json",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string"
+        }
+    ]
+}
