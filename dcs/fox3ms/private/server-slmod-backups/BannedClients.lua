@@ -11,6 +11,5 @@ slmod_banned_ucids =
     ["1f2374b777f5faa252785977e9e612df"] = "JazzHands",
     ["80360a1cbaaad5ec927ecc9c0a2df4cf"] = "AMERICA 6-9",
     ["69e6e7490e5ea5a7895f78f25e4a14f3"] = "Xbox360",
+    ["2d386a8eecc070dd235fd707de8ddca5"] = "Nuke 1-1 | Trumdum",
 } -- end of slmod_banned_ucids
-
--- TODO: Add player "Nuke 1-1 | Trumdum" to banned ips + ucids.
