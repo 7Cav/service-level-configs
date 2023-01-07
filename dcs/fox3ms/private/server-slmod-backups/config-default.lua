@@ -14,8 +14,8 @@
 
 -- Slmod admin tools options
 ]]
---[[    Set to true to enable Slmod admin tools menu to allow server admins to kick, ban, unban, add admins, remove admins, 
-    pause/unpause missions, restart the mission, and load a different mission from a specific folder (this folder is by 
+--[[Set to true to enable Slmod admin tools menu to allow server admins to kick, ban, unban, add admins, remove admins,
+    pause/unpause missions, restart the mission, and load a different mission from a specific folder (this folder is by
     default <Windows Install Drive>\Users\<Your User Account Name>\Saved Games\DCS\Slmod\Missions\).
 ]]
 admin_tools = true
@@ -29,55 +29,55 @@ admin_tools = true
 --[[Adjust the display time of the admin menu here.]]
     admin_display_time = 30
 
---[=[If the admin tools are enabled, then this variable matters.  
+--[=[If the admin tools are enabled, then this variable matters.
 	The Slmod Admin tools allows server admins to load any mission from a specific folder.
 	By default, this folder is <Windows Install Drive>\Users\<Your User Account Name>\Saved Games\DCS\Slmod\Missions\.
 	You can specify an alternate folder to use by setting this variable.
-	
-	For example, if you have multiple servers utilizing the same Dropbox folder for all your missions, your windows 
+
+	For example, if you have multiple servers utilizing the same Dropbox folder for all your missions, your windows
 	install drive is C:, and your user account name is "John", then you could set this variable like this:
-	
+
 
 	admin_tools_mission_folder = [[C:\Users\John\Dropbox\Dedicated Servers\Slmod\Missions\]]
     ------------------
     -- Note can also be formatted as a string. However escape chracters will need to be used for each \.
-    
+
         admin_tools_mission_folder = "C:\\Users\\John\\Dropbox\\Dedicated Servers\\Slmod\\Missions\\"
     -----------------
-	
+
 	LEAVE THIS VARIABLE AS nil IF YOU WANT TO USE THE DEFAULT FOLDER!]=]
     admin_tools_mission_folder = nil
 
---[[If the admin tools are enabled, then this variable matters.  
+--[[If the admin tools are enabled, then this variable matters.
 	Using the "admin_register_password" variable below allows you to specify a password that will allow people
 	to register themselves as server admins.  If you specify a password below, then whenever someone says "-reg"
 	in chat, their NEXT chat message will be a password entry, and not shown to the rest of the players.  If their
 	password entry matches the password below, they will be registered as admins to the server.
-	
+
 	For example, if you set the variable below like this:
-	
+
 	admin_register_password = "dcs123"
-	
+
 	then whenever someone types:
-	
+
 	-reg
-	
+
 	in chat, Slmod will say back to them:
 	"Please enter the password to register you as a server admin (your next chat message in this mission will not be publicly displayed)."
-	
+
 	Next, if they type in chat:
-	
+
 	dcs123
-	
+
 	they will be added to the list of admins.]]
     admin_register_password = "PingooPower"
 
 --[[----------------------------------------------------------------------------------------------------------------------
-   SlmodStats  
+   SlmodStats
 ----------------------------------------------------------------------------------------------------------------------
-    
-If you set the value below to false, then SlmodStats will start disabled when you start the game.  It can be enabled at any 
-time by a server admin by using the "-admin toggle stats" option in the Admin menu.  
+
+If you set the value below to false, then SlmodStats will start disabled when you start the game.  It can be enabled at any
+time by a server admin by using the "-admin toggle stats" option in the Admin menu.
 ]]
 enable_slmod_stats = true
 
@@ -85,23 +85,23 @@ enable_slmod_stats = true
 	stats menu.]]
     enable_mission_stats = true
 
---[[        If mission-specific stats are enabled, then set this variable to true to save these mission stats to a file.  By default, 
+--[[        If mission-specific stats are enabled, then set this variable to true to save these mission stats to a file.  By default,
 		these files are located in Saved Games/DCS/Slmod/Mission Stats.
 ]]
         write_mission_stats_files = true
 
---[[If you don't want mission stats files saving in Saved Games/DCS/Slmod/Mission Stats, then specify an alternate file 
+--[[If you don't want mission stats files saving in Saved Games/DCS/Slmod/Mission Stats, then specify an alternate file
 		directory here
 ]]
         mission_stats_files_dir = nil
 
---[[If you don't want campaign stats files saving in Saved Games/DCS/Slmod/Campaign Stats, then specify an alternate file 
+--[[If you don't want campaign stats files saving in Saved Games/DCS/Slmod/Campaign Stats, then specify an alternate file
 		directory here. ]]
         campaign_stats_files_dir = nil
 
 --[[    In order for the host computer to get credit in the SlmodStats system, you must enter the UCID of the host computer below.
-	The UCID must be in quotes, like this: 
-	host_ucid = "a29fb043d814a012452f043dc" 
+	The UCID must be in quotes, like this:
+	host_ucid = "a29fb043d814a012452f043dc"
 ]]
     host_ucid = nil
 
@@ -115,36 +115,36 @@ enable_slmod_stats = true
 ]]
     stats_dir = nil
 
---[[How detailed the stat information will be tracked for weapon usage, kills and deaths. 
-    0: Common. All stats will be tallied into a common table entry. For instance dropping a Mk-82 in an A-10C, F-18C, F-16, or M-2000 adds all of those stats to the same entry. 
-    1: Aircraft Kills + Aircraft Weapon Usage. Dropping an Mk-82 and getting kills will add those entries to that aircraft's stats. 
+--[[How detailed the stat information will be tracked for weapon usage, kills and deaths.
+    0: Common. All stats will be tallied into a common table entry. For instance dropping a Mk-82 in an A-10C, F-18C, F-16, or M-2000 adds all of those stats to the same entry.
+    1: Aircraft Kills + Aircraft Weapon Usage. Dropping an Mk-82 and getting kills will add those entries to that aircraft's stats.
     2: Aircraft Weapon usage > Aircraft Weapon Kills
 
          == Sample Table ==
-    0: All kills, weapons, and deaths get added to the same tables. You will know all of the total values, but nothing specific. 
+    0: All kills, weapons, and deaths get added to the same tables. You will know all of the total values, but nothing specific.
     player>Kills
     player>Weapons
     player>AircraftData
-    
-    1: Each aircraft has its own table of kills, deaths, and weapon usage. You will have data on specific aircraft kills and weapon usage. 
+
+    1: Each aircraft has its own table of kills, deaths, and weapon usage. You will have data on specific aircraft kills and weapon usage.
     player>AircraftData>Kills
     player>AircraftData>Weapons
     player>AircraftData>actions>losses>lossCategory
-    
-    2: Within each aircraft table there is a list of weapons and then what each weapon has destroyed. You will have data on 
+
+    2: Within each aircraft table there is a list of weapons and then what each weapon has destroyed. You will have data on
     player>AircraftData>Weapons>Kills
     player>AircraftData>actions>losses>lossCategory>weapon
-    
+
     ['A-10C'] = {
         ['CBU-97'] = {kills = 5, shot = 2, hit = 23, numHits = 6, assist = 1, kL = {}, aL = {}},
     }
-    
+
 
 ]]
     stats_level = 1
 
 --[[Whether or not specific information is given for kills and deaths. It is the difference of saving 10x "MBT" vs 5x T-72, 3x T-55, and 2x M1A1 Abrams
-    
+
 ]]
     kd_specifics = false
 
@@ -152,7 +152,7 @@ enable_slmod_stats = true
 ]]
     assists_level = 1
 
---[[Defines whether coalition wide stats will be saved. Creates a simple "red", "blue", etc set of stats. All actions by members of a given team will be added to that counter. 
+--[[Defines whether coalition wide stats will be saved. Creates a simple "red", "blue", etc set of stats. All actions by members of a given team will be added to that counter.
     0: Coalition Stats are disabled
     1: Coalition stats are enabled, but only tracks player actions
     2: Coalition stats are enabled, tracks player and AI actions
@@ -161,11 +161,11 @@ enable_slmod_stats = true
     stats_coa = 1
 
 --[[Defines whether PvP stats will be tracked in its own category. PvP
-    0: PvP stats are not tracked. 
+    0: PvP stats are not tracked.
     1: Kills and losses are tracked as raw numbers. This setting is what PvP stats in slmod have always looked like.
-    2: Specifics are enabled. 
+    2: Specifics are enabled.
         KillSpec Formatting: AircraftYouFlew.WeaponUsed.TargetType
-        LossesSpec Formatting: AircraftYouFlew.AircraftThatKilledYou.WeaponUsed 
+        LossesSpec Formatting: AircraftYouFlew.AircraftThatKilledYou.WeaponUsed
 ]]
     pvp_as_own_stat = 1
 
@@ -176,33 +176,33 @@ enable_slmod_stats = true
 --[[Defines whether or not the stats will save a given players best and current life. Settings are as follows:
     0  ; Setting is disabled
     1  ; Setting is enabled
-    
-    Other settings determine when a death can occur and how multicrew deaths are handled. 
+
+    Other settings determine when a death can occur and how multicrew deaths are handled.
     Note that the server changing missions or crashing will not have any impact on this setting. (It won't give players a death for leaving a slot when the mission changes and moves everyone back to spectator)
 ]]
     save_best_life = 0
 
---[[Defines the type of events/actions that will result in currentLife table being reset and potentially updating the bestLife table. 
-    A pilot dead event is the baseline setting and if the save_best_life setting is enabled will always result in a fresh life. 
-    
-    Note: Leave slot and crash are dependent on whether or not the aircraft is damaged and the rules slmod uses to determine a crash/death. For instance leaving a slot while damaged will assume the pilot failed to eject and give a death. 
-    Both of those settings are more for player actions when not damaged and for more severe enforcement of expected behavior. For instance rewarding players who at least eject or for returning to base in a damaged aircraft.   
-    
-    crash       : If a player aircraft crashes/is shot down regardless if the pilot ejected.    
-    Leave slot  : Player leaves a slot and despawns their aircraft that is currently in air. 
+--[[Defines the type of events/actions that will result in currentLife table being reset and potentially updating the bestLife table.
+    A pilot dead event is the baseline setting and if the save_best_life setting is enabled will always result in a fresh life.
+
+    Note: Leave slot and crash are dependent on whether or not the aircraft is damaged and the rules slmod uses to determine a crash/death. For instance leaving a slot while damaged will assume the pilot failed to eject and give a death.
+    Both of those settings are more for player actions when not damaged and for more severe enforcement of expected behavior. For instance rewarding players who at least eject or for returning to base in a damaged aircraft.
+
+    crash       : If a player aircraft crashes/is shot down regardless if the pilot ejected.
+    Leave slot  : Player leaves a slot and despawns their aircraft that is currently in air.
 
 
 ]]
     endLifeOn = {}
 --[[Multicrew life setting defines how multicrew aircraft with 2 or more players controlling the aircraft will handle pilot life stats due to limited useful information provided from DCS.
-    1: First to leave slot. After a pilot death event occurs the first player to leave a slot on that aircraft will be given a death. 
+    1: First to leave slot. After a pilot death event occurs the first player to leave a slot on that aircraft will be given a death.
     2: Requires "pilot dead" events, will end life off all players occupying the aircraft.
 ]]
     multicrew_life = 1
 
 --[['DO NOT MODIFY THIS']]
 autoAdmin = {}
---[[ DO NOT MODIFY THIS 
+--[[ DO NOT MODIFY THIS
 
 ------------------------------------------------------
 -- Global AutoKick/Autoban settings
@@ -239,7 +239,7 @@ autoAdmin.msgPromptOnKilled = true
 --[[Set autoAdmin.msgPromptOnKilledMode to specify how you want the punish message to be displayed.  ]]
 autoAdmin.msgPromptOnKilledMode = "text"
 
---[[Set autoAdmin.consentEnabled to true below to enable a command that allows players to automatically given consent to being teamkilled. This is useful for training purposes. 
+--[[Set autoAdmin.consentEnabled to true below to enable a command that allows players to automatically given consent to being teamkilled. This is useful for training purposes.
 Teamkill stats will show up in the slmodStats file, however they will be labeled as "forgiven" automatically.]]
 autoAdmin.consentEnabled = false
 
@@ -273,8 +273,8 @@ autoAdmin.punishFirstForgiveLater = false
 --[[Set to show which autoAdmin settings are enabled in the MOTD.]]
 autoAdmin.MOTD_show_settings = false
 
---[[ 
-Describes how penalty points are weighted based on how many flight hours the offender has. Each entry in the table 
+--[[
+Describes how penalty points are weighted based on how many flight hours the offender has. Each entry in the table
 below is a point on a curve.  Each point contains both a time (in HOURS) and a value (weight).
 Past the time specified for the last point on the curve, the value (weight) of the last point is maintained indefinitely.
 
@@ -298,7 +298,7 @@ autoAdmin.reallowLevel = 30
 autoAdmin.teamHit = {}
 --[[
 
-If autokicking and/or autobanning is enabled, allow team hitting to be taken into account by setting 
+If autokicking and/or autobanning is enabled, allow team hitting to be taken into account by setting
 autoAdmin.teamHit.enabled = true below.]]
 autoAdmin.teamHit.enabled = false
 
@@ -320,11 +320,11 @@ autoAdmin.teamHit.decayFunction = {
     [3] = {time = 30, weight = 0.25, },
     [4] = {time = 60, weight = 0, },
 
-}--[[This setting limits how often team hits on AI units can count towards autokicking/autobanning.  At the most, 
+}--[[This setting limits how often team hits on AI units can count towards autokicking/autobanning.  At the most,
 team hits on AI units can only be counted once every autoAdmin.teamHit.minPeriodAI seconds.]]
 autoAdmin.teamHit.minPeriodAI = 30
 
---[[This setting limits how often team hits on human players can count towards autokicking/autobanning.  At the most, 
+--[[This setting limits how often team hits on human players can count towards autokicking/autobanning.  At the most,
 team hits on human players can only be counted once every autoAdmin.teamHit.minPeriodHuman seconds.]]
 autoAdmin.teamHit.minPeriodHuman = 5
 
@@ -338,7 +338,7 @@ autoAdmin.teamHit.minPeriodHuman = 5
 autoAdmin.teamKill = {}
 --[[-- DO NOT MODIFY THIS
 
-If autokicking and/or autobanning is enabled, allow team killing to be taken into account by setting 
+If autokicking and/or autobanning is enabled, allow team killing to be taken into account by setting
 autoAdmin.teamKill.enabled = true below.]]
 autoAdmin.teamKill.enabled = true
 
@@ -360,11 +360,11 @@ autoAdmin.teamKill.decayFunction = {
     [3] = {time = 7, weight = 0.25, },
     [4] = {time = 10, weight = 0, },
 
-}--[[This setting limits how often team kills on AI units can count towards autokicking/autobanning.  At the most, 
+}--[[This setting limits how often team kills on AI units can count towards autokicking/autobanning.  At the most,
 team kills on AI units can only be counted once every autoAdmin.teamKill.minPeriodAI seconds.]]
 autoAdmin.teamKill.minPeriodAI = 20
 
---[[This setting limits how often team kills on human players can count towards autokicking/autobanning.  At the most, 
+--[[This setting limits how often team kills on human players can count towards autokicking/autobanning.  At the most,
 team kills on human players can only be counted once every autoAdmin.teamKill.minPeriodHuman seconds.]]
 autoAdmin.teamKill.minPeriodHuman = 0
 
@@ -379,7 +379,7 @@ autoAdmin.teamCollisionHit = {}
 --[[-- DO NOT MODIFY THIS
 
 
-If autokicking and/or autobanning is enabled, allow team collision hitting to be taken into account by setting 
+If autokicking and/or autobanning is enabled, allow team collision hitting to be taken into account by setting
 autoAdmin.teamCollisionHit.enabled = true below.]]
 autoAdmin.teamCollisionHit.enabled = false
 
@@ -400,11 +400,11 @@ autoAdmin.teamCollisionHit.decayFunction = {
     [2] = {time = 2, weight = 0.75, },
     [3] = {time = 30, weight = 0, },
 
-}--[[This setting limits how often team collision-hitting on AI units can count towards autokicking/autobanning.  At the most, 
+}--[[This setting limits how often team collision-hitting on AI units can count towards autokicking/autobanning.  At the most,
 team collision hits on AI units can only be counted once every autoAdmin.teamCollisionHit.minPeriodAI seconds.]]
 autoAdmin.teamCollisionHit.minPeriodAI = 10
 
---[[This setting limits how often team collision-hitting on human players can count towards autokicking/autobanning.  At the most, 
+--[[This setting limits how often team collision-hitting on human players can count towards autokicking/autobanning.  At the most,
 team collision hits on human players can only be counted once every autoAdmin.teamCollisionHit.minPeriodHuman seconds.]]
 autoAdmin.teamCollisionHit.minPeriodHuman = 10
 
@@ -418,7 +418,7 @@ autoAdmin.teamCollisionKill = {}
 --[[ -- DO NOT MODIFY THIS
 
 
-If autokicking and/or autobanning is enabled, allow team collision killing to be taken into account by setting 
+If autokicking and/or autobanning is enabled, allow team collision killing to be taken into account by setting
 autoAdmin.teamCollisionKill.enabled = true below.]]
 autoAdmin.teamCollisionKill.enabled = true
 
@@ -439,11 +439,11 @@ autoAdmin.teamCollisionKill.decayFunction = {
     [2] = {time = 2, weight = 0.75, },
     [3] = {time = 30, weight = 0, },
 
-}--[[This setting limits how often team collision-killing on AI units can count towards autokicking/autobanning.  At the most, 
+}--[[This setting limits how often team collision-killing on AI units can count towards autokicking/autobanning.  At the most,
 team collision kills on AI units can only be counted once every autoAdmin.teamCollisionKill.minPeriodAI seconds.]]
 autoAdmin.teamCollisionKill.minPeriodAI = 0
 
---[[This setting limits how often team collision-killing on human players can count towards autokicking/autobanning.  At the most, 
+--[[This setting limits how often team collision-killing on human players can count towards autokicking/autobanning.  At the most,
 team collision kills on human players can only be counted once every autoAdmin.teamCollisionKill.minPeriodHuman seconds.]]
 autoAdmin.teamCollisionKill.minPeriodHuman = 0
 
@@ -452,7 +452,7 @@ autoAdmin.teamCollisionKill.minPeriodHuman = 0
 -------------------------------------------------------------------------------
 -- AutoAdmin exemption list
 
-All server administrators registered to the Slmod Admin Menu are naturally exempt from being autokicked/autobanned.  However, if 
+All server administrators registered to the Slmod Admin Menu are naturally exempt from being autokicked/autobanned.  However, if
 you want to add additional players to the exemption list, do so below.
 
 The forumla for an entry in autoAdmin.exemptionList is as follows:
@@ -475,9 +475,9 @@ autoAdmin.exemptionList = {}
 
 -- AutoAdmin kick/ban delay settings
 
-This setting sets a value on how long of a delay in seconds a kick or ban will wait when the autoadmin decides to do either. 
-If set to 0 the delay will be non existent. Value must not be negative, otherwise no delay will be used. 
-Purpose of this function is to let the victim and others know that a specified user is being kicked or banned. 
+This setting sets a value on how long of a delay in seconds a kick or ban will wait when the autoadmin decides to do either.
+If set to 0 the delay will be non existent. Value must not be negative, otherwise no delay will be used.
+Purpose of this function is to let the victim and others know that a specified user is being kicked or banned.
 ]]
 autoAdmin.kickBanDelay = {}
 --[[Delay for kicks]]
@@ -540,7 +540,7 @@ voteConfig.requireAdminVerifyIfPresent = false
 rangeMin: minimum number of players in range
 rangeMax: max range of players in range
 use: which voting type to use
-val: number. Meaning defined by rule used. 
+val: number. Meaning defined by rule used.
     majority: does nothing
     magic: number of votes that must be reached for a mission to win
     ratio: percentage of users that must vote for the mission
@@ -549,11 +549,11 @@ endIf: Optional condition to end the vote before maxVoteTime is reached based on
 0.0-1.0: (example 0.8) ratio of players needed to vote
 1+: number of players needed to vote to end the vote early
 ---
-Default ruleset is defined as follows: 
+Default ruleset is defined as follows:
 
 voteConfig.ruleSets = {
     [1] = {rangeMin = 0, rangeMax = 9, use = 'majority', val = 0, endIf = 1},
-    [2] = {rangeMin = 10, rangeMax = 21, use = 'magic', val = 8, endIf = 17}, 
+    [2] = {rangeMin = 10, rangeMax = 21, use = 'magic', val = 8, endIf = 17},
     [3] = {rangeMin = 22, rangeMax = 999, use = 'ratio', val = 0.6, endIf = 0.8},
 }
 
@@ -566,7 +566,7 @@ voteConfig.ruleSets = {
 
 }--[[In sample ruleSet 0-9 players will use majority rules. If all players vote then the vote will be decided after last vote
 -- 10-21 players use magic number rules with a value of 8 votes. If 17 of possible 21 players vote then the vote will be decided
--- 22-999 players will use a ratio rule requiring 60% of the vote. If 80% of the players on the server vote, the vote will end. 
+-- 22-999 players will use a ratio rule requiring 60% of the vote. If 80% of the players on the server vote, the vote will end.
 
 
 -- if multiple rules overlap in range then the first rule that is valid for the current player count will be used
@@ -589,7 +589,7 @@ voteConfig.rtvVoteTime = 1000
 
 --[[----------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------
--- String of what each map name will be prefixed by on the vote mission list and admin load mission list. 
+-- String of what each map name will be prefixed by on the vote mission list and admin load mission list.
 -- Mission must have been loaded onto the server and populated into the metaStats file. Otherwise the prefix will be blank
 -- Also missions with the word 'miz' in it may not display correctly.]]
 mapStrings = {
@@ -647,7 +647,7 @@ chat_log = true
     -- Chat log gets filled up with MOTD, chat commands, etc. If true only the important messages from slmod will be logged. If false all messages from server will be logged.]]
     log_only_important_server_messages = true
 
---[[Enables server-wide chat messages that announce when players achieve PvP (player-vs-player) kills in SlmodStats.  
+--[[Enables server-wide chat messages that announce when players achieve PvP (player-vs-player) kills in SlmodStats.
 Remember that PvP kills follow their own special rules- see the Slmod manual for more info.
 THIS OPTION REQUIRES THAT SLMODSTATS IS ENABLED!]]
 enable_pvp_kill_messages = true
@@ -682,7 +682,7 @@ MOTD_enabled = true
     MOTD_show_coord = true
 
 --[[In the MOTD, this setting defines the minumum time that must elapse for a player before the MOTD can occur automatically.
-For instance the MOTD appears anytime a player selects a slot, this setting creates a built in delay so that the MOTD will only appear again after the set time in seconds. 
+For instance the MOTD appears anytime a player selects a slot, this setting creates a built in delay so that the MOTD will only appear again after the set time in seconds.
 ]]
     MOTD_timeout = 300
 
@@ -730,12 +730,12 @@ export_world_objs = false
 --[[Defines whther or not the events are written to a file for being saved for later use. You can use this to create your own stats based on the data exported by slmod.
 0   : Event Export is disabled
 1   : Events are exported to a single "slmodEvents" file in the main slmod folder.
-2   : Events are exported on a per mission basis. 
+2   : Events are exported on a per mission basis.
 ]]
 events_output = 0
 
 --[[Defines the format used when exporting events. Note that when exporting as json it has to write the whole file at a time rather than line by line that lua uses.
-As a result with json there may be some data loss in the event of a crash. Simply depends on the time from when it was last written to and when the crash occurred. 
+As a result with json there may be some data loss in the event of a crash. Simply depends on the time from when it was last written to and when the crash occurred.
 0   : lua
 1   : json
 ]]
@@ -751,7 +751,7 @@ debugger = false
 debugger_outfile = "Lua_Syntax_Errors.txt"
 
 --[[Slmod sends data from the mission scripting Lua environment to the net environment through localhost (your own computer) via
-a UDP port.  By default, this UDP port is 52146, which is not a port used by anything known.  However, if you want to change 
+a UDP port.  By default, this UDP port is 52146, which is not a port used by anything known.  However, if you want to change
 it, specify a different port here (note: must be a VALID port!).]]
 udp_port = 52146
 

@@ -1,4 +1,4 @@
-Admins = 
+Admins =
 {
     ["a52988b80c362025eb4060cc2152f216"] = "=7Cav=SPC.MacMillan.M",
     ["25850bb2f3a81c60a205c90acf3c2c6d"] = "=7CAV=CPL.Nehez.J",

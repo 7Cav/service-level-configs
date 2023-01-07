@@ -1,4 +1,4 @@
-slmod_banned_ips = 
+slmod_banned_ips =
 {
     ["65.94.120.110"] = "JazzHands",
     ["96.248.98.48"] = "AMERICA 6-9",
@@ -6,7 +6,7 @@ slmod_banned_ips =
 } -- end of slmod_banned_ips
 
 
-slmod_banned_ucids = 
+slmod_banned_ucids =
 {
     ["1f2374b777f5faa252785977e9e612df"] = "JazzHands",
     ["80360a1cbaaad5ec927ecc9c0a2df4cf"] = "AMERICA 6-9",

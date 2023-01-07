@@ -1,13 +1,13 @@
-metaStats = 
+metaStats =
 {
-    ["mapStats"] = 
+    ["mapStats"] =
     {
-        ["MarianaIslands"] = 
+        ["MarianaIslands"] =
         {
             ["totalFlightHours"] = 35.6488725,
             ["mostRecentPlayed"] = "Dec 10, 2022 at 23 01 31",
             ["firstPlayed"] = "Dec 10, 2022 at 13 01 27",
-            ["missions"] = 
+            ["missions"] =
             {
                 ["Operation_Dawn_Hammer-v1.5"] = "Dec 10, 2022 at 21 02 40",
                 ["Operation_Dawn_Hammer-v1.2"] = "Dec 10, 2022 at 13 01 27",
@@ -16,12 +16,12 @@ metaStats =
             ["timesPlayed"] = 4,
             ["hoursHosted"] = 3.5174722222222,
         }, -- end of ["MarianaIslands"]
-        ["Caucasus"] = 
+        ["Caucasus"] =
         {
             ["totalFlightHours"] = 3094.8118647199,
             ["mostRecentPlayed"] = "Dec 16, 2022 at 17 22 03",
             ["firstPlayed"] = "Sep 04, 2022 at 09 04 15",
-            ["missions"] = 
+            ["missions"] =
             {
                 ["Op Purple Downfall_1.1"] = "Nov 12, 2022 at 20 58 18",
                 ["Op River Rapids_2c_1"] = "Nov 19, 2022 at 21 08 17",
@@ -61,9 +61,9 @@ metaStats =
             ["hoursHosted"] = 2212.4090383335,
         }, -- end of ["Caucasus"]
     }, -- end of ["mapStats"]
-    ["missionStats"] = 
+    ["missionStats"] =
     {
-        ["Op Purple Downfall_1.1"] = 
+        ["Op Purple Downfall_1.1"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 1,
@@ -75,7 +75,7 @@ metaStats =
             ["mostRecentPlayed"] = "Nov 12, 2022 at 20 58 19",
             ["hoursHosted"] = 2.36857,
         }, -- end of ["Op Purple Downfall_1.1"]
-        ["Foothold_1.5.6"] = 
+        ["Foothold_1.5.6"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 50,
@@ -87,7 +87,7 @@ metaStats =
             ["mostRecentPlayed"] = "Dec 05, 2022 at 17 52 15",
             ["hoursHosted"] = 217.11251055556,
         }, -- end of ["Foothold_1.5.6"]
-        ["Op River Rapids_2c_1"] = 
+        ["Op River Rapids_2c_1"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 1,
@@ -99,7 +99,7 @@ metaStats =
             ["mostRecentPlayed"] = "Nov 19, 2022 at 21 08 17",
             ["hoursHosted"] = 1.916835,
         }, -- end of ["Op River Rapids_2c_1"]
-        ["Foothold_1.5.5_TT1"] = 
+        ["Foothold_1.5.5_TT1"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 1,
@@ -111,7 +111,7 @@ metaStats =
             ["mostRecentPlayed"] = "Nov 15, 2022 at 20 59 18",
             ["hoursHosted"] = 3.3174225,
         }, -- end of ["Foothold_1.5.5_TT1"]
-        ["Foothold_1.5.7"] = 
+        ["Foothold_1.5.7"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 52,
@@ -123,7 +123,7 @@ metaStats =
             ["mostRecentPlayed"] = "Dec 16, 2022 at 17 22 03",
             ["hoursHosted"] = 178.05666583332,
         }, -- end of ["Foothold_1.5.7"]
-        ["Foothold_1.4.9"] = 
+        ["Foothold_1.4.9"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 21,
@@ -135,7 +135,7 @@ metaStats =
             ["mostRecentPlayed"] = "Sep 18, 2022 at 23 19 34",
             ["hoursHosted"] = 138.32053805555,
         }, -- end of ["Foothold_1.4.9"]
-        ["SaturdayNightStrike17SEP22"] = 
+        ["SaturdayNightStrike17SEP22"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 6,
@@ -147,7 +147,7 @@ metaStats =
             ["mostRecentPlayed"] = "Oct 24, 2022 at 21 53 07",
             ["hoursHosted"] = 1.9334697222222,
         }, -- end of ["SaturdayNightStrike17SEP22"]
-        ["liberation_nextturn"] = 
+        ["liberation_nextturn"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 5,
@@ -159,7 +159,7 @@ metaStats =
             ["mostRecentPlayed"] = "Oct 09, 2022 at 09 03 36",
             ["hoursHosted"] = 24.270166944444,
         }, -- end of ["liberation_nextturn"]
-        ["Op River Rapids_2c"] = 
+        ["Op River Rapids_2c"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 2,
@@ -171,7 +171,7 @@ metaStats =
             ["mostRecentPlayed"] = "Nov 19, 2022 at 21 05 19",
             ["hoursHosted"] = 0,
         }, -- end of ["Op River Rapids_2c"]
-        ["Foothold_1.5.5_TT"] = 
+        ["Foothold_1.5.5_TT"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 2,
@@ -183,7 +183,7 @@ metaStats =
             ["mostRecentPlayed"] = "Nov 15, 2022 at 20 55 03",
             ["hoursHosted"] = 0.050007777777778,
         }, -- end of ["Foothold_1.5.5_TT"]
-        ["1stDown"] = 
+        ["1stDown"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 2,
@@ -195,7 +195,7 @@ metaStats =
             ["mostRecentPlayed"] = "Nov 26, 2022 at 20 55 47",
             ["hoursHosted"] = 1.8368802777778,
         }, -- end of ["1stDown"]
-        ["Waiting_Room"] = 
+        ["Waiting_Room"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 32,
@@ -207,7 +207,7 @@ metaStats =
             ["mostRecentPlayed"] = "Dec 11, 2022 at 19 37 18",
             ["hoursHosted"] = 7.5003283333332,
         }, -- end of ["Waiting_Room"]
-        ["Op_Asteroid_Invasion"] = 
+        ["Op_Asteroid_Invasion"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 4,
@@ -219,7 +219,7 @@ metaStats =
             ["mostRecentPlayed"] = "Nov 05, 2022 at 21 56 15",
             ["hoursHosted"] = 1.967365,
         }, -- end of ["Op_Asteroid_Invasion"]
-        ["OPERATION TIMBER WOLF"] = 
+        ["OPERATION TIMBER WOLF"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 2,
@@ -231,7 +231,7 @@ metaStats =
             ["mostRecentPlayed"] = "Sep 24, 2022 at 22 19 36",
             ["hoursHosted"] = 0.31669055555556,
         }, -- end of ["OPERATION TIMBER WOLF"]
-        ["Foothold_1.4.8 - BACKUP"] = 
+        ["Foothold_1.4.8 - BACKUP"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 1,
@@ -243,7 +243,7 @@ metaStats =
             ["mostRecentPlayed"] = "Sep 05, 2022 at 06 40 11",
             ["hoursHosted"] = 0,
         }, -- end of ["Foothold_1.4.8 - BACKUP"]
-        ["Early_dawn_raid_client"] = 
+        ["Early_dawn_raid_client"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 3,
@@ -255,7 +255,7 @@ metaStats =
             ["mostRecentPlayed"] = "Nov 08, 2022 at 01 00 05",
             ["hoursHosted"] = 1.2834319444444,
         }, -- end of ["Early_dawn_raid_client"]
-        ["Operation Returning River Rapids"] = 
+        ["Operation Returning River Rapids"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 1,
@@ -267,7 +267,7 @@ metaStats =
             ["mostRecentPlayed"] = "Dec 03, 2022 at 21 14 27",
             ["hoursHosted"] = 2.1336194444444,
         }, -- end of ["Operation Returning River Rapids"]
-        ["Operation_Dawn_Hammer-v1.5"] = 
+        ["Operation_Dawn_Hammer-v1.5"] =
         {
             ["map"] = "MarianaIslands",
             ["timesPlayed"] = 2,
@@ -279,7 +279,7 @@ metaStats =
             ["mostRecentPlayed"] = "Dec 10, 2022 at 23 01 31",
             ["hoursHosted"] = 1.9840372222222,
         }, -- end of ["Operation_Dawn_Hammer-v1.5"]
-        ["Foothold_1.5.3"] = 
+        ["Foothold_1.5.3"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 166,
@@ -291,7 +291,7 @@ metaStats =
             ["mostRecentPlayed"] = "Nov 11, 2022 at 21 04 47",
             ["hoursHosted"] = 847.68116194439,
         }, -- end of ["Foothold_1.5.3"]
-        ["Foothold_1.4.8"] = 
+        ["Foothold_1.4.8"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 21,
@@ -303,7 +303,7 @@ metaStats =
             ["mostRecentPlayed"] = "Sep 11, 2022 at 10 08 41",
             ["hoursHosted"] = 38.35497638889,
         }, -- end of ["Foothold_1.4.8"]
-        ["Foothold_1.5.1"] = 
+        ["Foothold_1.5.1"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 66,
@@ -315,7 +315,7 @@ metaStats =
             ["mostRecentPlayed"] = "Oct 08, 2022 at 01 20 19",
             ["hoursHosted"] = 303.33858722223,
         }, -- end of ["Foothold_1.5.1"]
-        ["Foothold_TT_11_29"] = 
+        ["Foothold_TT_11_29"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 1,
@@ -327,7 +327,7 @@ metaStats =
             ["mostRecentPlayed"] = "Nov 29, 2022 at 20 56 06",
             ["hoursHosted"] = 2.8836763888889,
         }, -- end of ["Foothold_TT_11_29"]
-        ["SaturdayNightStrike27AUG22"] = 
+        ["SaturdayNightStrike27AUG22"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 1,
@@ -339,7 +339,7 @@ metaStats =
             ["mostRecentPlayed"] = "Sep 04, 2022 at 20 34 45",
             ["hoursHosted"] = 0,
         }, -- end of ["SaturdayNightStrike27AUG22"]
-        ["Foothold_1.5.0"] = 
+        ["Foothold_1.5.0"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 54,
@@ -351,7 +351,7 @@ metaStats =
             ["mostRecentPlayed"] = "Oct 01, 2022 at 21 05 04",
             ["hoursHosted"] = 215.41199916668,
         }, -- end of ["Foothold_1.5.0"]
-        ["OPERATION TIMBER WOLF V4"] = 
+        ["OPERATION TIMBER WOLF V4"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 1,
@@ -363,7 +363,7 @@ metaStats =
             ["mostRecentPlayed"] = "Sep 24, 2022 at 22 50 19",
             ["hoursHosted"] = 0.050005277777778,
         }, -- end of ["OPERATION TIMBER WOLF V4"]
-        ["Operation_Dawn_Hammer-v1.2"] = 
+        ["Operation_Dawn_Hammer-v1.2"] =
         {
             ["map"] = "MarianaIslands",
             ["timesPlayed"] = 2,
@@ -375,7 +375,7 @@ metaStats =
             ["mostRecentPlayed"] = "Dec 10, 2022 at 13 04 06",
             ["hoursHosted"] = 1.533435,
         }, -- end of ["Operation_Dawn_Hammer-v1.2"]
-        ["OPERATION TIMBER WOLF V2"] = 
+        ["OPERATION TIMBER WOLF V2"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 2,
@@ -387,7 +387,7 @@ metaStats =
             ["mostRecentPlayed"] = "Sep 24, 2022 at 22 22 07",
             ["hoursHosted"] = 0.083339722222222,
         }, -- end of ["OPERATION TIMBER WOLF V2"]
-        ["OPERATION_BLUE_DEVIL"] = 
+        ["OPERATION_BLUE_DEVIL"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 1,
@@ -399,7 +399,7 @@ metaStats =
             ["mostRecentPlayed"] = "Sep 06, 2022 at 23 38 20",
             ["hoursHosted"] = 0,
         }, -- end of ["OPERATION_BLUE_DEVIL"]
-        ["Foothold_1.5.4"] = 
+        ["Foothold_1.5.4"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 6,
@@ -411,7 +411,7 @@ metaStats =
             ["mostRecentPlayed"] = "Dec 09, 2022 at 13 15 00",
             ["hoursHosted"] = 21.019367222222,
         }, -- end of ["Foothold_1.5.4"]
-        ["OPERATION TIMBER WOLF V3"] = 
+        ["OPERATION TIMBER WOLF V3"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 1,
@@ -423,7 +423,7 @@ metaStats =
             ["mostRecentPlayed"] = "Sep 24, 2022 at 22 27 20",
             ["hoursHosted"] = 0.36668611111111,
         }, -- end of ["OPERATION TIMBER WOLF V3"]
-        ["B_offinseSAM_tactic"] = 
+        ["B_offinseSAM_tactic"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 2,
@@ -435,7 +435,7 @@ metaStats =
             ["mostRecentPlayed"] = "Sep 30, 2022 at 23 28 59",
             ["hoursHosted"] = 0,
         }, -- end of ["B_offinseSAM_tactic"]
-        ["SaturdayNightStrike11SEP22"] = 
+        ["SaturdayNightStrike11SEP22"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 7,
@@ -447,7 +447,7 @@ metaStats =
             ["mostRecentPlayed"] = "Sep 26, 2022 at 16 20 14",
             ["hoursHosted"] = 2.0184524999999,
         }, -- end of ["SaturdayNightStrike11SEP22"]
-        ["Foothold_1.5.5"] = 
+        ["Foothold_1.5.5"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 46,
@@ -459,7 +459,7 @@ metaStats =
             ["mostRecentPlayed"] = "Nov 21, 2022 at 15 04 20",
             ["hoursHosted"] = 196.92495888889,
         }, -- end of ["Foothold_1.5.5"]
-        ["CMPGN Red Sky - Op Yellow Snow"] = 
+        ["CMPGN Red Sky - Op Yellow Snow"] =
         {
             ["map"] = "Caucasus",
             ["timesPlayed"] = 2,
@@ -472,7 +472,7 @@ metaStats =
             ["hoursHosted"] = 1.8913255555556,
         }, -- end of ["CMPGN Red Sky - Op Yellow Snow"]
     }, -- end of ["missionStats"]
-    ["missionStatsFile"] = 
+    ["missionStatsFile"] =
     {
         ["currentMissionFile"] = "Foothold_1.5.7- Dec 16, 2022 at 17 22 03.lua",
         ["previousMissionFile"] = "Foothold_1.5.7- Dec 16, 2022 at 15 35 29.lua",
