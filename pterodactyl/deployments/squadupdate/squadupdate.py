@@ -191,5 +191,7 @@ try:
 except:
     print("Error on mod update!!")
 
+log("Creating symlinks...")
+create_mod_symlinks()
 
 log("Done!")
