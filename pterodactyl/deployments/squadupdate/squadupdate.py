@@ -46,8 +46,8 @@ SQUAD_SERVER_ID = "403240"
 SQUAD_SERVER_DIR = "/home/container"
 SQUAD_WORKSHOP_ID = "393380"
 
-SQUAD_WORKSHOP_DIR = "{}/steamapps/workshop/content/{}".format(
-    SQUAD_SERVER_DIR, SQUAD_WORKSHOP_ID
+SQUAD_WORKSHOP_DIR = (
+    f"{SQUAD_SERVER_DIR}/steamapps/workshop/content/{SQUAD_WORKSHOP_ID}"
 )
 SQUAD_MODS_DIR = "/home/container/SquadGame/Plugins/Mods"
 
@@ -85,28 +85,25 @@ def log(msg):
 
 
 def call_steamcmd(params):
-    os.system("{} {}".format(STEAM_CMD, params))
+    os.system(f"{STEAM_CMD} {params}")
     print("")
 
 
 def update_server():
-    steam_cmd_params = " +force_install_dir {}".format(SQUAD_SERVER_DIR)
-    steam_cmd_params += " +login {} {}".format(STEAM_USER, STEAM_PASS)
-    steam_cmd_params += " +app_update {} validate".format(SQUAD_SERVER_ID)
-    steam_cmd_params += " +quit"
-
+    steam_cmd_params = (
+        f" +force_install_dir {SQUAD_SERVER_DIR}"
+        + f" +login {STEAM_USER} {STEAM_PASS}"
+        + f" +app_update {SQUAD_SERVER_ID} validate"
+        + " +quit"
+    )
     call_steamcmd(steam_cmd_params)
 
 
 def mod_needs_update(mod_id, path):
     if os.path.isdir(path):
-        response = request.urlopen(
-            "{}/{}".format(WORKSHOP_CHANGELOG_URL, mod_id)
-        ).read()
+        response = request.urlopen(f"{WORKSHOP_CHANGELOG_URL}/{mod_id}").read()
         response = response.decode("utf-8")
-        match = UPDATE_PATTERN.search(response)
-
-        if match:
+        if match := UPDATE_PATTERN.search(response):
             updated_at = datetime.fromtimestamp(int(match.group(1)))
             created_at = datetime.fromtimestamp(os.path.getmtime(path))
             print("[DEBUG] Workshop date", datetime.fromtimestamp(int(match.group(1))))
@@ -121,8 +118,8 @@ def mod_needs_update(mod_id, path):
 def update_mods():
 
     for mod_name, mod_id in MODS.items():
-        path = "{}/{}".format(SQUAD_WORKSHOP_DIR, mod_id)
-        targetpath = "{}/{}".format(SQUAD_MODS_DIR, mod_id)
+        path = f"{SQUAD_WORKSHOP_DIR}/{mod_id}"
+        targetpath = f"{SQUAD_MODS_DIR}/{mod_id}"
 
         # Check if mod needs to be updated
         if os.path.isdir(path):
@@ -134,53 +131,48 @@ def update_mods():
                 if os.path.islink(targetpath):
                     os.unlink(targetpath)
             else:
-                print(
-                    'No update required for "{}" ({})... SKIPPING'.format(
-                        mod_name, mod_id
-                    )
-                )
+                print(f'No update required for "{mod_name}" ({mod_id})... SKIPPING')
                 continue
 
         # Keep trying until the download actually succeeded
         tries = 0
         while os.path.isdir(path) is False and tries < 10:
-            log('Updating "{}" ({}) | {}'.format(mod_name, mod_id, tries + 1))
+            log(f'Updating "{mod_name}" ({mod_id}) | {tries + 1}')
 
-            steam_cmd_params = " +force_install_dir {}".format(SQUAD_SERVER_DIR)
-            steam_cmd_params += " +login {} {}".format(STEAM_USER, STEAM_PASS)
-            steam_cmd_params += " +workshop_download_item {} {} validate".format(
-                SQUAD_WORKSHOP_ID, mod_id
+            steam_cmd_params = (
+                f" +force_install_dir {SQUAD_SERVER_DIR}"
+                + f" +login {STEAM_USER} {STEAM_PASS}"
+                + f" +workshop_download_item {SQUAD_WORKSHOP_ID} {mod_id} validate"
+                + " +quit"
             )
-            steam_cmd_params += " +quit"
-
             call_steamcmd(steam_cmd_params)
 
             # Sleep for a bit so that we can kill the script if needed
             time.sleep(5)
 
-            tries = tries + 1
+            tries += 1
 
         if tries >= 10:
-            log("!! Updating {} failed after {} tries !!".format(mod_name, tries))
+            log(f"!! Updating {mod_name} failed after {tries} tries !!")
 
 
 def create_mod_symlinks():
     for mod_name, mod_id in MODS.items():
-        link_path = "{}/{}".format(SQUAD_MODS_DIR, mod_id)
-        real_path = "{}/{}".format(SQUAD_WORKSHOP_DIR, mod_id)
+        link_path = f"{SQUAD_MODS_DIR}/{mod_id}"
+        real_path = f"{SQUAD_WORKSHOP_DIR}/{mod_id}"
 
         if os.path.isdir(real_path):
             if not os.path.exists(link_path):
                 os.symlink(real_path, link_path)
-                print("Creating symlink '{}'...".format(link_path))
+                print(f"Creating symlink '{link_path}'...")
         else:
-            print("Mod '{}' does not exist! ({})".format(mod_name, real_path))
+            print(f"Mod '{mod_name}' does not exist! ({real_path})")
 
 
 # endregion
 
 
-log("Updating Squad Server ({})".format(SQUAD_SERVER_ID))
+log(f"Updating Squad Server ({SQUAD_SERVER_ID})")
 
 update_server()
 
@@ -188,7 +180,7 @@ log("Updating mods")
 
 try:
     update_mods()
-except:
+except Exception:
     print("Error on mod update!!")
 
 log("Creating symlinks...")

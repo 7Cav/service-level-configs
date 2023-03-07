@@ -22,6 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import contextlib
 import os
 import os.path
 import re
@@ -30,9 +31,8 @@ import time
 import requests
 import json
 import threading
-import concurrent.futures
 
-
+from glob import glob
 from datetime import datetime
 from urllib import request
 
@@ -41,15 +41,15 @@ thread_local = threading.local()
 
 # region Configuration / ENV
 STEAM_CMD = "/home/container/steamcmd/steamcmd.sh"  # Alternatively "steamcmd" if package is installed
-STEAM_USER = os.getenv('STEAM_USER')
-STEAM_PASS = os.getenv('STEAM_PASS')
-GITHUB_MODS = os.getenv('GITHUB_MODS_URL')
+STEAM_USER = os.getenv("STEAM_USER")
+STEAM_PASS = os.getenv("STEAM_PASS")
+GITHUB_MODS = os.getenv("GITHUB_MODS_URL")
 
 A3_SERVER_ID = "233780"
 A3_SERVER_DIR = "/home/container"
 A3_WORKSHOP_ID = "107410"
 
-A3_WORKSHOP_DIR = "{}/steamapps/workshop/content/{}".format(A3_SERVER_DIR, A3_WORKSHOP_ID)
+A3_WORKSHOP_DIR = f"{A3_SERVER_DIR}/steamapps/workshop/content/{A3_WORKSHOP_ID}"
 A3_MODS_DIR = "/home/container"
 A3_KEYS_DIR = "/home/container/keys"
 
@@ -57,13 +57,14 @@ A3_KEYS_DIR = "/home/container/keys"
 MODPACK_PATH = "/home/container/modpack.html"
 
 UPDATE_PATTERN = re.compile(r"workshopAnnouncement.*?<p id=\"(\d+)\">", re.DOTALL)
-TITLE_PATTERN = re.compile(r"(?<=<div class=\"workshopItemTitle\">)(.*?)(?=<\/div>)", re.DOTALL)
+TITLE_PATTERN = re.compile(
+    r"(?<=<div class=\"workshopItemTitle\">)(.*?)(?=<\/div>)", re.DOTALL
+)
 WORKSHOP_CHANGELOG_URL = "https://steamcommunity.com/sharedfiles/filedetails/changelog"
 
-try:
+with contextlib.suppress(Exception):
     os.remove("/home/container/serverprofile/DataCache/cache_lock")
-except:
-    pass
+
 
 # Thread Testing:
 def get_session():
@@ -71,19 +72,21 @@ def get_session():
         thread_local.session = requests.Session()
     return thread_local.session
 
+
 # endregion
 # Grab json from github
 response = requests.get(GITHUB_MODS)
 jsdata = json.loads(response.text)
-#MODPACK_NAME = jsdata.get('modpack_name')
-MODS = jsdata.get('mods')
-#SERVER_MODS = jsdata.get('server_mods')
-#OPTIONAL_MODS = jsdata.get('optional_mods')
-#DLC = jsdata.get('dlc')
+# MODPACK_NAME = jsdata.get('modpack_name')
+MODS = jsdata.get("mods")
+# SERVER_MODS = jsdata.get('server_mods')
+# OPTIONAL_MODS = jsdata.get('optional_mods')
+# DLC = jsdata.get('dlc')
 
-#end json grab
+# end json grab
 
 # region Functions
+
 
 def log(msg):
     print("")
@@ -93,43 +96,45 @@ def log(msg):
 
 
 def call_steamcmd(params):
-    os.system("{} {}".format(STEAM_CMD, params))
+    os.system(f"{STEAM_CMD} {params}")
     print("")
 
 
 def update_server():
-	steam_cmd_params = " +login {} {}".format(STEAM_USER, STEAM_PASS)
-	steam_cmd_params += " +force_install_dir {}".format(A3_SERVER_DIR)
-	steam_cmd_params += " +app_update {} validate".format(A3_SERVER_ID)
-	steam_cmd_params += " +quit"
-
-	call_steamcmd(steam_cmd_params)
+    steam_cmd_params = (
+        f" +force_install_dir {A3_SERVER_DIR}"
+        + f" +login {STEAM_USER} {STEAM_PASS}"
+        + f" +app_update {A3_SERVER_ID} validate"
+        + " +quit"
+    )
+    call_steamcmd(steam_cmd_params)
 
 
 def mod_needs_update(mod_id, path):
     if os.path.isdir(path):
-        response = request.urlopen("{}/{}".format(WORKSHOP_CHANGELOG_URL, mod_id)).read()
+        response = request.urlopen(f"{WORKSHOP_CHANGELOG_URL}/{mod_id}").read()
         response = response.decode("utf-8")
-        match = UPDATE_PATTERN.search(response)
-
-        if match:
+        if match := UPDATE_PATTERN.search(response):
             updated_at = datetime.fromtimestamp(int(match.group(1)))
             created_at = datetime.fromtimestamp(os.path.getmtime(path))
-            print ('[DEBUG] Workshop date', datetime.fromtimestamp(int(match.group(1))))
-            print ('[DEBUG] Modified date', datetime.fromtimestamp(os.path.getmtime(path)))
+            print("[DEBUG] Workshop date", datetime.fromtimestamp(int(match.group(1))))
+            print(
+                "[DEBUG] Modified date", datetime.fromtimestamp(os.path.getmtime(path))
+            )
             return updated_at >= created_at
 
     return False
 
+
 def update_mods():
 
     for mod_name, mod_id in MODS.items():
-        path = "{}/{}".format(A3_WORKSHOP_DIR, mod_id)
-        targetpath = "{}/{}".format(A3_SERVER_DIR, mod_name)
+        path = f"{A3_WORKSHOP_DIR}/{mod_id}"
+        targetpath = f"{A3_SERVER_DIR}/{mod_name}"
 
         # Check if mod needs to be updated
         if os.path.isdir(path):
-            
+
             if mod_needs_update(mod_id, path):
                 # Delete existing folder so that we can verify whether the
                 # download succeeded
@@ -137,40 +142,38 @@ def update_mods():
                 if os.path.islink(targetpath):
                     os.unlink(targetpath)
             else:
-                print("No update required for \"{}\" ({})... SKIPPING".format(mod_name, mod_id, path))
+                print(f'No update required for "{mod_name}" ({mod_id})... SKIPPING')
                 continue
 
         # Keep trying until the download actually succeeded
         tries = 0
         while os.path.isdir(path) is False and tries < 10:
-            log("Updating \"{}\" ({}) | {}".format(mod_name, mod_id, tries + 1))
+            log(f'Updating "{mod_name}" ({mod_id}) | {tries + 1}')
 
-            steam_cmd_params = " +login {} {}".format(STEAM_USER, STEAM_PASS)
-            steam_cmd_params += " +force_install_dir {}".format(A3_SERVER_DIR)
-            steam_cmd_params += " +workshop_download_item {} {} validate".format(
-                A3_WORKSHOP_ID,
-                mod_id
+            steam_cmd_params = (
+                f" +force_install_dir {A3_SERVER_DIR}"
+                + f" +login {STEAM_USER} {STEAM_PASS}"
+                + f" +workshop_download_item {A3_WORKSHOP_ID} {mod_id} validate"
+                + " +quit"
             )
-            steam_cmd_params += " +quit"
 
             call_steamcmd(steam_cmd_params)
 
             # Sleep for a bit so that we can kill the script if needed
             time.sleep(5)
 
-            tries = tries + 1
+            tries += 1
 
         if tries >= 10:
-            log("!! Updating {} failed after {} tries !!".format(mod_name, tries))
+            log(f"!! Updating {mod_name} failed after {tries} tries !!")
 
 
 def lowercase_workshop_dir():
     def rename_all(root, items):
         for name in items:
-            try:
+            with contextlib.suppress(OSError):
                 os.rename(os.path.join(root, name), os.path.join(root, name.lower()))
-            except OSError:
-                pass
+
     for root, dirs, files in os.walk(A3_WORKSHOP_DIR, topdown=False):
         rename_all(root, dirs)
         rename_all(root, files)
@@ -178,68 +181,94 @@ def lowercase_workshop_dir():
 
 def create_mod_symlinks():
     for mod_name, mod_id in MODS.items():
-        link_path = "{}/{}".format(A3_MODS_DIR, mod_name)
-        real_path = "{}/{}".format(A3_WORKSHOP_DIR, mod_id)
+        link_path = f"{A3_MODS_DIR}/{mod_name}"
+        real_path = f"{A3_WORKSHOP_DIR}/{mod_id}"
 
         if os.path.isdir(real_path):
             if not os.path.exists(link_path):
-                #shutil.copytree(real_path, link_path)
+                # shutil.copytree(real_path, link_path)
                 os.symlink(real_path, link_path)
-                print("Creating symlink '{}'...".format(link_path))
+                print(f"Creating symlink '{link_path}'...")
         else:
-            print("Mod '{}' does not exist! ({})".format(mod_name, real_path))
+            print(f"Mod '{mod_name}' does not exist! ({real_path})")
 
 
-key_regex = re.compile(r'(key).*', re.I)
+key_regex = re.compile(r"(key).*", re.I)
 
 
 def copy_keys():
     # Check for broken symlinks
     for key in os.listdir(A3_KEYS_DIR):
-        key_path = "{}/{}".format(A3_KEYS_DIR, key)
+        key_path = f"{A3_KEYS_DIR}/{key}"
         if os.path.islink(key_path) and not os.path.exists(key_path):
-            print("Removing outdated server key '{}'".format(key))
+            print(f"Removing outdated server key '{key}'")
             os.remove(key_path)
     # Update/add new key symlinks
     for mod_name, mod_id in MODS.items():
-        #if mod_name not in SERVER_MODS:
-            real_path = "{}/{}".format(A3_WORKSHOP_DIR, mod_id)
-            if not os.path.isdir(real_path):
-                print("Couldn't copy key for mod '{}', directory doesn't exist.".format(mod_name))
-            else:
-                dirlist = os.listdir(real_path)
-                keyDirs = [x for x in dirlist if re.search(key_regex, x)]
-
-                if keyDirs:
-                    keyDir = keyDirs[0]
-                    if os.path.isfile("{}/{}".format(real_path, keyDir)):
-                        # Key is placed in root directory
-                        key = keyDir
+        # if mod_name not in SERVER_MODS:
+        real_path = f"{A3_WORKSHOP_DIR}/{mod_id}"
+        if not os.path.isdir(real_path):
+            print(f"Couldn't copy key for mod '{mod_name}', directory doesn't exist.")
+        else:
+            dirlist = os.listdir(real_path)
+            if keyDirs := [x for x in dirlist if re.search(key_regex, x)]:
+                keyDir = keyDirs[0]
+                if os.path.isfile(f"{real_path}/{keyDir}"):
+                    # Key is placed in root directory
+                    key = keyDir
+                    key_path = os.path.join(A3_KEYS_DIR, key)
+                    if not os.path.exists(key_path):
+                        print(f"Creating copy to key for mod '{mod_name}' ({key})")
+                        shutil.copyfile(os.path.join(real_path, key), key_path)
+                else:
+                    # Key is in a folder
+                    for key in os.listdir(os.path.join(real_path, keyDir)):
+                        real_key_path = os.path.join(real_path, keyDir, key)
                         key_path = os.path.join(A3_KEYS_DIR, key)
                         if not os.path.exists(key_path):
-                            print("Creating copy to key for mod '{}' ({})".format(mod_name, key))
-                            shutil.copyfile(os.path.join(real_path, key), key_path)
-                    else:
-                        # Key is in a folder
-                        for key in os.listdir(os.path.join(real_path, keyDir)):
-                            real_key_path = os.path.join(real_path, keyDir, key)
-                            key_path = os.path.join(A3_KEYS_DIR, key)
-                            if not os.path.exists(key_path):
-                                print("Creating copy to key for mod '{}' ({})".format(mod_name, key))
-                                shutil.copyfile(real_key_path, key_path)
-                else:
-                    print("!! Couldn't find key folder for mod {} !!".format(mod_name))
+                            print(f"Creating copy to key for mod '{mod_name}' ({key})")
+                            shutil.copyfile(real_key_path, key_path)
+            else:
+                print(f"!! Couldn't find key folder for mod {mod_name} !!")
+
+
+def save_rpt():
+    path = "/home/container/"
+    try:
+        rpt3 = glob(os.path.join(path, "RPT_3_*"))[0]
+        os.remove(rpt3)
+        log("Removing RPT3")
+    except IndexError:
+        log("RPT_3 Not Found - Skipping")
+    try:
+        rpt2 = glob(os.path.join(path, "RPT_2_*"))[0]
+        new_name = rpt2.replace("RPT_2_", "RPT_3_")
+        os.rename(rpt2, new_name)
+        log("Moving RPT_2 to RPT_3")
+    except IndexError:
+        log("RPT_2 Not Found - Skipping")
+
+    try:
+        rpt1 = glob(os.path.join(path, "RPT_1_*"))[0]
+        new_name = rpt1.replace("RPT_1_", "RPT_2_")
+        os.rename(rpt1, new_name)
+        log("Moving RPT_1 to RPT_2")
+    except IndexError:
+        log("RPT_1 Not Found - Skipping")
+    try:
+        os.rename("/home/container/RPT.log", time.strftime("RPT_1_%Y%m%d%H%M%S.log"))
+        log("Backing up RPT.log to RPT_1")
+    except Exception:
+        log("No RPT.log Found - Skipping")
+
 
 # endregion
-def print_launch_params():
-    rel_path = os.path.relpath(A3_MODS_DIR, A3_SERVER_DIR)
-    params = "-mod"
-    for mod_name, mod_id in MODS.items():
-        params += "{}/{}\;".format(rel_path, mod_name)
-        
-    print(params)
 
-log("Updating A3 server ({})".format(A3_SERVER_ID))
+
+log("Backing up RPT")
+save_rpt()
+
+log(f"Updating A3 server ({A3_SERVER_ID})")
 
 update_server()
 
@@ -247,8 +276,8 @@ log("Updating mods")
 
 try:
     update_mods()
-except:
-    print('error on mod update!!')
+except Exception:
+    print("error on mod update!!")
 
 log("Converting uppercase files/folders to lowercase...")
 lowercase_workshop_dir()
@@ -259,14 +288,5 @@ create_mod_symlinks()
 
 log("Copying server keys...")
 copy_keys()
-
-#log("Generating modpack .html file...")
-#try:
-#    generate_preset()
-#except:
-#    print('error on generating preset file!!')
-
-log('Generating parameters')
-print_launch_params()
 
 log("Done!")
