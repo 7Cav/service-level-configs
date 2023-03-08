@@ -26,8 +26,6 @@ import contextlib
 import json
 import os
 import os.path
-import pathlib
-import queue
 import re
 import shutil
 import threading
@@ -195,8 +193,6 @@ def is_mod_outdated(mod_id: int, path: str) -> bool:
         print(f"[WARNING] {path} is not a directory")
         return False
 
-
-
     return False
 
 
@@ -209,7 +205,7 @@ def update_mods():
         # Check if mod needs to be updated
         if os.path.isdir(path):
 
-            if mod_needs_update(mod_id, path):
+            if is_mod_outdated(mod_id, path):
                 # Delete existing folder so that we can verify whether the
                 # download succeeded
                 shutil.rmtree(path)
@@ -225,10 +221,10 @@ def update_mods():
             log(f'Updating "{mod_name}" ({mod_id}) | {tries + 1}')
 
             steam_cmd_params = (
-                f" +force_install_dir {A3_SERVER_DIR}"
-                + f" +login {STEAM_USER} {STEAM_PASS}"
-                + f" +workshop_download_item {A3_WORKSHOP_ID} {mod_id} validate"
-                + " +quit"
+                f" +force_install_dir {A3_SERVER_DIR}",
+                +f" +login {STEAM_USER} {STEAM_PASS}",
+                +f" +workshop_download_item {A3_WORKSHOP_ID} {mod_id} validate",
+                +" +quit",
             )
 
             call_steamcmd(steam_cmd_params)
