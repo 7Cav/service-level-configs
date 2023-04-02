@@ -28,9 +28,9 @@ import os
 import os.path
 import re
 import shutil
+import sys
 import threading
 import time
-import sys
 from datetime import datetime
 from glob import glob
 from pathlib import Path
