@@ -30,6 +30,7 @@ import re
 import shutil
 import threading
 import time
+import sys
 from datetime import datetime
 from glob import glob
 from pathlib import Path
@@ -38,13 +39,32 @@ import requests
 
 thread_local = threading.local()
 
+
 # region Configuration / ENV
+class EnvironmentVariableError(Exception):
+    pass
+
 
 # Set variables for SteamCMD, Steam user, password, and GitHub mods URL
 STEAM_CMD = "/home/container/steamcmd/steamcmd.sh"  # Alternatively "steamcmd" if package is installed
 STEAM_USER = os.getenv("STEAM_USER")
+if STEAM_USER is None:
+    raise EnvironmentVariableError(
+        "STEAM_USER environment variable is not set. Please ensure this is in the panel under\
+            'Startup' > 'Environment Variables'"
+    )
 STEAM_PASS = os.getenv("STEAM_PASS")
+if STEAM_PASS is None:
+    raise EnvironmentVariableError(
+        "STEAM_PASS environment variable is not set. Please ensure this is in the panel under\
+            'Startup' > 'Environment Variables'"
+    )
 GITHUB_MODS_URL = os.getenv("GITHUB_MODS_URL")
+if GITHUB_MODS_URL is None:
+    raise EnvironmentVariableError(
+        "GITHUB_MODS_URL environment variable is not set. Please ensure this is in the panel under\
+            'Startup' > 'Environment Variables"
+    )
 
 # Set variables for Arma 3 server ID, server directory, and workshop ID
 A3_SERVER_ID = "233780"
@@ -96,8 +116,16 @@ def get_session():
 
 
 # Send a GET request to the GitHub mods URL and parse the response as JSON
-response = requests.get(GITHUB_MODS_URL)
-jsdata = json.loads(response.text)
+try:
+    response = requests.get(GITHUB_MODS_URL)
+    response.raise_for_status()  # Check if the response contains any HTTP errors
+    jsdata = json.loads(response.text)
+except requests.exceptions.RequestException as e:
+    print(f"Error fetching data from GITHUB_MODS_URL: {e}")
+    sys.exit(1)  # Exit the script with a non-zero status code
+except json.JSONDecodeError as e:
+    print(f"Error parsing JSON data from GITHUB_MODS_URL: {e}")
+    sys.exit(1)  # Exit the script with a non-zero status code
 
 # Extract the 'mods' list from the JSON data
 MODS = jsdata.get("mods")
@@ -220,14 +248,22 @@ def update_mods():
         while os.path.isdir(path) is False and tries < 10:
             log(f'Updating "{mod_name}" ({mod_id}) | {tries + 1}')
 
-            steam_cmd_params = (
-                f" +force_install_dir {A3_SERVER_DIR}",
-                +f" +login {STEAM_USER} {STEAM_PASS}",
-                +f" +workshop_download_item {A3_WORKSHOP_ID} {mod_id} validate",
-                +" +quit",
-            )
+            steam_cmd_params = [
+                "+force_install_dir",
+                A3_SERVER_DIR,
+                "+login",
+                STEAM_USER,
+                STEAM_PASS,
+                "+workshop_download_item",
+                A3_WORKSHOP_ID,
+                mod_id,
+                "validate",
+                "+quit",
+            ]
+            # Join the list of parameters into a single string separated by spaces
+            steam_cmd_str = " ".join(steam_cmd_params)
 
-            call_steamcmd(steam_cmd_params)
+            call_steamcmd(steam_cmd_str)
 
             # Sleep for a bit so that we can kill the script if needed
             time.sleep(5)
@@ -343,8 +379,9 @@ if __name__ == "__main__":
     log("Updating mods")
     try:
         update_mods()
-    except Exception:
-        print("error on mod update!!")
+    except Exception as e:
+        print("Error on mod update:", e)
+        sys.exit(1)
     log("Converting uppercase files/folders to lowercase...")
     lowercase_workshop_dir()
     log("Creating symlinks...")
