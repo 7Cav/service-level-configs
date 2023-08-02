@@ -15,11 +15,11 @@ name: Validate files
 # Start the job on all push #
 #############################
 on:
-  push:
-    branches: [develop]
-  pull_request:
-    branches: [develop]
-
+#  push:
+#    branches: [develop]
+#  pull_request:
+#    branches: [develop]
+  workflow_dispatch:
 ###############
 # Set the Job #
 ###############
