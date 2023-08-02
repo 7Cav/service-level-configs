@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cavbot2-deployment
+  namespace: 7cav
+  labels:
+    app: cavbot2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cavbot2
+  template:
+    metadata:
+      labels:
+        app: cavbot2
+    spec:
+      containers:
+        - name: cavbot
+          image: registry.digitalocean.com/s6containers/cavbot2
+          imagePullPolicy: Always
+          env:
+            - name: BOT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: cavbotenv
+                  key: bot_token
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: cavbotenv
+                  key: api_key
+      imagePullSecrets:
+        - name: s6containers
