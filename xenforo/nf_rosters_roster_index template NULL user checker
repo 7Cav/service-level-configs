@@ -1,0 +1,88 @@
+<!-- This template is to be used on the nf_rosters_roster_index template in cases where we have a NULL user error on milpacs
+It will display the null user as "unknown user" when rendering the page to enable easier debugging -->
+
+<xf:title>{{ phrase('nf_rosters_rosters') }}</xf:title>
+<xf:head option="metaNoindex"><meta name="robots" content="noindex" /></xf:head>
+<xf:head option="metaVerification"><meta name="google-site-verification" content="BRGJEf-KjoxcfVWG5C927HLCn2MDcOZRAZQYcKLr-LE" /></xf:head>
+<xf:css src="nf_rosters.less" />
+<meta name="robots" content="noindex">
+
+<xf:pageaction if="$xf.visitor.canManageRosterUsers()">
+    <xf:button href="{{ link('rosters/add-user', $selectedRoster) }}" class="button--cta" icon="add">
+        {{ phrase('add_user') }}
+    </xf:button>
+</xf:pageaction>
+
+<div class="block">
+    <div class="block-container">
+        <div class="block-tabHeader tabs" data-xf-init="tabs" role="tablist">
+            <span class="hScroller" data-xf-init="h-scroller">
+                <span class="hScroller-scroll">
+                    <xf:foreach loop="$rosters" key="$rosterId" value="$roster">
+                        <a class="tabs-tab{{ $selectedRoster.roster_id == $rosterId ? ' is-active' : '' }}" href="{{ link('rosters', $roster) }}" aria-controls="roster-{$rosterId}">{{ $roster.title }}</a>
+                    </xf:foreach>
+                </span>
+            </span>
+        </div>
+
+        <xf:if is="$groupedUsers is not empty">
+            <ul class="tabPanes">
+                <li class="is-active" id="roster-{$roster.roster_id}">
+                    <div class="block-body">
+                        <xf:datalist class="rosterUserList">
+                            <xf:foreach loop="$groupedUsers" key="$positionGroupId" value="$rosterUsers">
+                                <xf:datarow rowtype="subsection" rowclass="dataList-row--noHover rosterHeaderRow">
+                                    <xf:cell class="rostersHeaderRow" colspan="5">
+										{{ $positionGroups.{$positionGroupId} > 0 ? $positionGroups.{$positionGroupId}.title : phrase('nf_rosters_uncategorized') }}
+                                    </xf:cell>
+                                </xf:datarow>
+								<xf:datarow rowtype="header">
+									<xf:cell>&nbsp;</xf:cell>
+									<xf:cell>{{ phrase('user_name') }}</xf:cell>
+									<xf:cell>{{ phrase('nf_rosters_position') }}</xf:cell>
+									<xf:foreach loop="$xf.app.getCustomFields('nfRosterFields', 'both', {$selectedRoster.field_cache})" key="$fieldId" value="$fieldDefinition">
+										<xf:cell>
+											<xf:if is="$fieldDefinition.hasValue({$selectedRoster.field_cache.{$fieldDefinition.field_id}})">
+												{$fieldDefinition.title}
+											</xf:if>
+										</xf:cell>
+									</xf:foreach>
+								</xf:datarow>
+                                <xf:foreach loop="$rosterUsers" value="$rosterUser">
+                                    <xf:datarow
+                                        href="{{ link('rosters/edit-user', $selectedRoster, {'relation_id': $rosterUser.relation_id}) }}">
+                                        <xf:cell class="dataList-cell--min dataList-cell--imageSmall">
+                                            <xf:if is="$rosterUser.Rank">
+                                                {{ rosters_rank_image($rosterUser.Rank) }}
+                                            </xf:if>
+                                        </xf:cell>
+                                        <xf:cell>
+                                            <a href="{{ link('rosters/profile', $rosterUser) }}">{{ $rosterUser.getName() }}</a>
+                                        </xf:cell>
+										<xf:cell>{{ $rosterUser.Position.position_title }}</xf:cell>
+										<xf:foreach loop="$xf.app.getCustomFields('nfRosterFields', 'both')" key="$fieldId" value="$fieldDefinition">
+											<xf:cell>
+												<xf:if is="$fieldDefinition.hasValue({$rosterUser.custom_fields.{$fieldDefinition.field_id}})">
+													<xf:set var="$fieldValue"><xf:macro name="custom_fields_macros::custom_field_value"
+														arg-definition="{$fieldDefinition}"
+														arg-value="{$rosterUser.custom_fields.{$fieldDefinition.field_id}}" /></xf:set>
+													<xf:if is="$fieldDefinition.wrapper_template">
+														{$fieldDefinition.getFormattedOutput($fieldValue)|raw}
+													<xf:else />
+														{$fieldValue}
+													</xf:if>
+												</xf:if>
+											</xf:cell>
+										</xf:foreach>
+                                    </xf:datarow>
+                                </xf:foreach>
+                            </xf:foreach>
+                        </xf:datalist>
+                    </div>
+                </li>
+            </ul>
+        <xf:else />
+            <div class="block-row">{{ phrase('nf_rosters_no_users_have_been_added_to_this_roster_yet') }}</div>
+        </xf:if>
+    </div>
+</div>
