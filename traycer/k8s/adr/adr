@@ -1,0 +1,2 @@
+ADR uses push to deploy, modifications to the yaml should be done via the github repo and will be automatically deployed.
+https://github.com/7Cav/adr/tree/main/config
