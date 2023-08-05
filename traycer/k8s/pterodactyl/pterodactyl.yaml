@@ -1,0 +1,124 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pterodactyl
+  namespace: 7cav
+spec:
+  selector:
+    matchLabels:
+      app: pterodactyl
+  replicas: 1
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: pterodactyl
+      annotations:
+        deploy-date: "deploy-date-value"
+    spec:
+      containers:
+      - name: pterodactyl
+        image: ghcr.io/pterodactyl/panel:latest
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits: 
+            memory: "256Mi"
+            cpu: "500m" 
+        ports: 
+          - containerPort: 80
+        env:
+        - name: DB_PASSWORD
+          valueFrom: 
+            secretKeyRef: 
+              key: DB_PASSWORD
+              name: pterodactyl-panel
+        - name: DB_DATABASE
+          value: "pterodactyl_panel"
+        - name: APP_ENV
+          value: "production"
+        - name: APP_ENVIRONMENT_ONLY
+          value: "false"
+        - name: CACHE_DRIVER
+          value: "redis"
+        - name: SESSION_DRIVER
+          value: "redis"
+        - name: QUEUE_DRIVER
+          value: "redis"
+        - name: REDIS_HOST
+          value: "localhost"
+        - name: TRUSTED_PROXIES
+          value: "*"
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              key: DB_HOST
+              name: "pterodactyl-panel" # database server ip or dns
+        - name: DB_PORT
+          valueFrom:
+            secretKeyRef:
+              key: DB_PORT
+              name: "pterodactyl-panel"
+        - name: APP_URL
+          value: "https://panel.7cav.us" # url of server panel
+        - name: APP_TIMEZONE
+          value: "UTC"
+        - name: APP_SERVICE_AUTHOR
+          value: "admin@7cav.us"
+        volumeMounts:
+          - name: env
+            mountPath: /app/var
+            readOnly: true
+      - name: redis-pterodactyl
+        image: redis:alpine
+      volumes:
+        - name: env
+          secret:
+            secretName: pterodactyl-env
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pterodactyl
+  namespace: 7cav
+spec:
+  selector:
+    app: pterodactyl
+  ports:
+    - name: http
+      protocol: TCP
+      port: 6999
+      targetPort: 80
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pterodactyl
+  namespace: 7cav
+  labels:
+    app.kubernetes.io/name: pterodactyl
+    app.kubernetes.io/instance: pterodactyl
+  annotations:
+    cert-manager.io/issuer: letsencrypt-nginx
+spec:
+  tls:
+    - hosts:
+      - "panel.7cav.us"
+      secretName: letsencrypt-pterodactyl2
+  ingressClassName: nginx
+  rules:
+  - host: panel.7cav.us
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pterodactyl
+            port:
+              name: http
