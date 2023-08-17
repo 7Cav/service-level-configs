@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cav-api
+  namespace: 7cav
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cav-api
+  template:
+    metadata:
+      labels:
+        app: cav-api
+    spec:
+      containers:
+        - name: cav-api
+          image: registry.digitalocean.com/s6containers/api:1
+          ports:
+          - containerPort: 10000
+            name: grpc
+          - containerPort: 11000
+            name: http
+          env:
+          - name: PORT
+            value: "10000"
+          - name: DB_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-mysql
+                key: db_username
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-mysql
+                key: db_password
+          - name: DB_HOST
+            valueFrom:
+              secretKeyRef:
+                name: api-mysql
+                key: db_host
+          - name: DB_PORT
+            valueFrom:
+              secretKeyRef:
+                name: api-mysql
+                key: db_port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cav-api
+  namespace: 7cav
+spec:
+  selector:
+    app: cav-api
+  ports:
+    - name: http
+      protocol: TCP
+      port: 11000
+      targetPort: 11000
+    - name: grpc
+      protocol: TCP
+      port: 10000
+      targetPort: 10000
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cav-api
+  namespace: 7cav
+  labels:
+    app.kubernetes.io/name: cav-api
+    app.kubernetes.io/instance: cav-api
+  annotations:
+    cert-manager.io/issuer: letsencrypt-nginx
+spec:
+  tls:
+    - hosts:
+      - "api.7cav.us"
+      secretName: letsencrypt-cav-api
+  ingressClassName: nginx
+  rules:
+  - host: api.7cav.us
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: cav-api
+            port:
+              name: http
