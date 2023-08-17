@@ -53,6 +53,19 @@ spec:
           value: "localhost"
         - name: TRUSTED_PROXIES
           value: "*"
+        - name: APP_DEBUG
+          value: "true"
+        - name: QUEUE_HIGH
+          value: "high"
+        - name: QUEUE_STANDARD
+          value: "standard"
+        - name: QUEUE_LOW
+          value: "low"
+        - name: APP_KEY
+          valueFrom:
+            secretKeyRef:
+              key: APP_KEY
+              name: "pterodactyl-panel"
         - name: DB_HOST
           valueFrom:
             secretKeyRef:
@@ -69,16 +82,8 @@ spec:
           value: "UTC"
         - name: APP_SERVICE_AUTHOR
           value: "admin@7cav.us"
-        volumeMounts:
-          - name: env
-            mountPath: /app/var
-            readOnly: true
       - name: redis-pterodactyl
         image: redis:alpine
-      volumes:
-        - name: env
-          secret:
-            secretName: pterodactyl-env
 ---
 apiVersion: v1
 kind: Service
