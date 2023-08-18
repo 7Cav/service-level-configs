@@ -1,6 +1,6 @@
 ### Containers
 
-- php-fpm
+- php-fpm - add gmp
 - elasticsearch
 - smtp
 - redis
