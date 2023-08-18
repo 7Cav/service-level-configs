@@ -4,35 +4,35 @@ LABEL org.opencontainers.image.authors="Adam Jarvis <adam@jarvis.gg> 7Cav IMO <i
 
 RUN set -ex
 
-RUN apt-get update; \
-    apt-get install -y --no-install-recommends \
+RUN apk update && apk add --no-cache \
+    build-base \
+    autoconf \
     imagemagick \
     wget \
-    libapache2-mod-fcgid \
-    libfcgi-bin \
-    libc-client-dev \
+    fcgi \
     libmcrypt-dev \
-    libfreetype6-dev \
-    libjpeg62-turbo-dev \
+    freetype-dev \
+    libjpeg-turbo-dev \
     libpng-dev \
-    libjpeg-dev \
     mariadb-client \
-    libmagickwand-dev \
+    imagemagick-dev \
     libxml2-dev \
     libzip-dev \
     libmemcached-dev \
-    libssl-dev \
+    openssl-dev \
     unzip \
-    zip
+    zip \
+    gmp-dev
 
-RUN pecl install imagick; \
-    pecl install memcached; \
-    pecl install redis;
+RUN set -ex \
+    && pecl install imagick \
+    && pecl install memcached \
+    && pecl install redis;
 
 RUN PHP_OPENSSL=yes docker-php-ext-configure imap --with-kerberos --with-imap-ssl; \
     echo "extension=memcached.so" >> /usr/local/etc/php/conf.d/memcached.ini;
 
-RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/; \
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg; \
     docker-php-ext-configure zip; \
     docker-php-ext-enable imagick; \
     docker-php-ext-enable redis;
@@ -46,7 +46,8 @@ RUN docker-php-ext-install imap; \
     docker-php-ext-install exif; \
     docker-php-ext-install gd; \
     docker-php-ext-install zip; \
-    docker-php-ext-install opcache
+    docker-php-ext-install opcache; \
+    docker-php-ext-install gmp
 
 RUN apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
     rm -rf /var/lib/apt/lists/*;
