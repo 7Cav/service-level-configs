@@ -1,0 +1,109 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xenforo
+  namespace: 7cav
+spec:
+  selector:
+    matchLabels:
+      app: xenforo
+  replicas: 1
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: xenforo
+      annotations:
+        deploy-date: "deploy-date-value"
+    spec:
+      securityContext:
+        runAsUser: 1003
+        runAsGroup: 998
+      containers:
+      - name: xenforo
+        image: jarvvski/xenforo-2-php-fpm:alpine
+        workingDir: /var/www/html
+        env:
+        - name: DB_PORT
+          valueFrom: 
+            secretKeyRef: 
+              key: DB_PORT
+              name: xenforo
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              key: DB_HOST
+              name: xenforo
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              key: DB_USER
+              name: xenforo
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: DB_PASSWORD
+              name: xenforo
+        - name: REDIS_HOST
+          key: localhost
+        - name: REDIS_PORT
+          key: "6379"
+        - name: PHP_MEMORY_LIMIT
+          key: 1G
+      - name: xenforo-redis
+        image: redis:alpine
+      - name: xenforo-smtp
+        image: namshi/smtp
+        env:
+        - name: KEY_PATH
+          key: TODO
+        - name: PORT
+          key: "25"
+        - name: MAILNAME
+          key: jtchance.7cav.us
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: xenforo
+  namespace: 7cav
+spec:
+  selector:
+    app: xenforo
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: xenforo
+  namespace: 7cav
+  labels:
+    app.kubernetes.io/name: xenforo
+    app.kubernetes.io/instance: xenforo
+  annotations:
+    cert-manager.io/issuer: letsencrypt-nginx
+spec:
+  tls:
+    - hosts:
+      - "devforum.7cav.us"
+      secretName: letsencrypt-xenforo
+  ingressClassName: nginx
+  rules:
+  - host: devforum.7cav.us
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: xenforo
+            port:
+              name: http
