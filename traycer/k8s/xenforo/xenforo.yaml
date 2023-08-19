@@ -26,6 +26,9 @@ spec:
       - name: xenforo
         image: jarvvski/xenforo-2-php-fpm:alpine
         workingDir: /var/www/html
+        volumeMounts:
+          - name: xenforo-volume
+            mountPath: /var/www/html
         env:
         - name: DB_PORT
           valueFrom: 
@@ -48,22 +51,26 @@ spec:
               key: DB_PASSWORD
               name: xenforo
         - name: REDIS_HOST
-          key: localhost
+          value: localhost
         - name: REDIS_PORT
-          key: "6379"
+          value: "6379"
         - name: PHP_MEMORY_LIMIT
-          key: 1G
+          value: 1G
       - name: xenforo-redis
-        image: redis:alpine
+        image: redis
       - name: xenforo-smtp
         image: namshi/smtp
         env:
         - name: KEY_PATH
-          key: TODO
+          value: TODO
         - name: PORT
-          key: "25"
+          value: "25"
         - name: MAILNAME
-          key: jtchance.7cav.us
+          value: jtchance.7cav.us
+      volumes:
+        - name: xenforo-volume
+          persistentVolumeClaim:
+            claimName: xenforo-pvc
 ---
 apiVersion: v1
 kind: Service

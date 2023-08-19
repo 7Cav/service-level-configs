@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: xenforo-helper
+  namespace: 7cav
+spec:
+  containers:
+  - name: helper-container
+    image: busybox
+    command: ["sleep", "36000"]  # Keep the pod running for a while
+    volumeMounts:
+    - name: xenforo-volume
+      mountPath: /mnt/xenforo  # Mount path to the PVC
+  volumes:
+  - name: xenforo-volume
+    persistentVolumeClaim:
+      claimName: xenforo-pvc  # Use your PVC name here

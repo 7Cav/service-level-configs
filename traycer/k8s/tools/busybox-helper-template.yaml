@@ -1,0 +1,19 @@
+# a helper pod for attaching to persistent volumes to manage data
+# you need to change APPNAME and CLAIMNAME (CLAIMNAME should usually be APPNAME-pvc)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: APPNAME-helper
+  namespace: 7cav
+spec:
+  containers:
+  - name: helper-container
+    image: busybox
+    command: ["sleep", "36000"]  # Keep the pod running for a while
+    volumeMounts:
+    - name: APPNAME-volume
+      mountPath: /mnt/APPNAME  # Mount path to the PVC
+  volumes:
+  - name: APPNAME-volume
+    persistentVolumeClaim:
+      claimName: CLAIMNAME  # Use your PVC name here
