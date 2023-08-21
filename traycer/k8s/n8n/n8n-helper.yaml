@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: n8n-helper
+  namespace: 7cav
+spec:
+  containers:
+  - name: helper-container
+    image: busybox
+    command: ["sleep", "36000"]  # Keep the pod running for a while
+    volumeMounts:
+    - name: n8n-volume
+      mountPath: /mnt/n8n  # Mount path to the PVC
+  volumes:
+  - name: n8n-volume
+    persistentVolumeClaim:
+      claimName: n8n-pvc  # Use your PVC name here

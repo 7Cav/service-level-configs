@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: n8n
+  namespace: 7cav
+spec:
+  selector:
+    matchLabels:
+      app: n8n
+  replicas: 1
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: n8n
+      annotations:
+        deploy-date: "deploy-date-value"
+    spec:
+      containers:
+      - name: n8n
+        image: docker.n8n.io/n8nio/n8n
+        volumeMounts:
+          - name: n8n-volume
+            mountPath: /home/node/
+        env:
+        - name: N8N_HOST
+          value: n8n.7cav.us
+        - name: N8N_PORT
+          value: "5678"
+        - name: N8N_PROTOCOL
+          value: https
+        - name: N8N_USER_FOLDER
+          value: /home/node/n8n
+        - name: NODE_ENV
+          value: production
+        - name: WEBHOOK_URL
+          value: https://n8n.7cav.us/
+        - name: GENERIC_TIMEZONE
+          value: utc
+      volumes:
+        - name: n8n-volume
+          persistentVolumeClaim:
+            claimName: n8n-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: n8n
+  namespace: 7cav
+spec:
+  selector:
+    app: n8n
+  ports:
+    - name: http
+      protocol: TCP
+      port: 5678
+      targetPort: 5678
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: n8n
+  namespace: 7cav
+  labels:
+    app.kubernetes.io/name: n8n
+    app.kubernetes.io/instance: n8n
+  annotations:
+    cert-manager.io/issuer: letsencrypt-nginx
+spec:
+  tls:
+    - hosts:
+      - "n8n.7cav.us"
+      secretName: letsencrypt-n8n
+  ingressClassName: nginx
+  rules:
+  - host: n8n.7cav.us
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: n8n
+            port:
+              name: http
