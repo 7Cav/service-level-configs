@@ -83,7 +83,7 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 80
+      port: 7989
       targetPort: 80
   type: ClusterIP
 ---
