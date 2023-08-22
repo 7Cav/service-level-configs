@@ -18,6 +18,7 @@ RUN         dpkg --add-architecture i386 \
     && touch ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} \
     && chgrp 0 ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} \
     && chmod g+rw ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} \
+    && pip install --upgrade pip \
     && pip3 install -r /requirements.txt
 
 ADD         passwd.template /passwd.template
