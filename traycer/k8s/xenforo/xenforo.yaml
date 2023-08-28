@@ -61,12 +61,23 @@ spec:
       - name: xenforo-smtp
         image: namshi/smtp
         env:
-        - name: KEY_PATH
-          value: TODO
         - name: PORT
           value: "25"
         - name: MAILNAME
           value: jtchance.7cav.us
+      - name: xenforo-elastic
+        image: elasticsearch:7.14.2
+        env:
+        - name: node.name
+          value: kifarunix-demo-es
+        - name: cluster.name
+          value: es-docker-cluster
+        - name: discovery.type
+          value: single-node
+        - name: bootstrap.memory_lock
+          value: "true"
+        - name: ES_JAVA_OPTS
+          value: "-Xms512m -Xmx512m"
       volumes:
         - name: xenforo-volume
           persistentVolumeClaim:
