@@ -1,3 +1,4 @@
+NO LONGER IN USE 
 cav_whitelisted_steamids = [
 "76561197997124640",
 "76561198007243124",
